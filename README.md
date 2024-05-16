@@ -8,7 +8,7 @@
 - OS: ProxMox
 - VMs
   - 🛜 Router
-    - OS: PfSense / OpenSense
+    - OS: PfSense / OPNSense
   - 🐋 Docker
     - OS: Debian / Ubuntu
     - Containers
