@@ -1,0 +1,12 @@
+version: "2.1"
+services:
+  nginx:
+    image: henahax/treasurehunt:latest
+    container_name: henahax-treasurehunt
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+    ports:
+      - 8085:3000
+    restart: unless-stopped
