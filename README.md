@@ -5,6 +5,7 @@
 - Hardware
   - Intel N100
   - external hard drive enclosure, fast usb connection
+  - https://www.amazon.de/AIOPCWA-Support-Storage-2-5GbE-Computer/dp/B0D5LCLQL6
 - OS: ProxMox
 - VMs
   - 🛜 Router
