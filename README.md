@@ -3,23 +3,22 @@
 ## 🍗 HenahaxServer
 
 - Hardware
-  - Intel N100
+  - [Intel N100](https://www.amazon.de/AIOPCWA-Support-Storage-2-5GbE-Computer/dp/B0D5LCLQL6)
   - external hard drive enclosure, fast usb connection
-  - https://www.amazon.de/AIOPCWA-Support-Storage-2-5GbE-Computer/dp/B0D5LCLQL6
-- OS: ProxMox
+- OS: [ProxMox](https://www.proxmox.com/)
 - VMs
   - 🛜 Router
-    - OS: PfSense / OPNSense
+    - OS: [pfSense](https://www.pfsense.org/) / [OPNsense](https://opnsense.org/)
   - 🐋 Docker
-    - OS: Debian / Ubuntu
+    - OS: [debian](https://www.debian.org/index.de.html/) / [Ubuntu](https://ubuntu.com/)
     - Containers
-      - Portainer
-      - Reverse Proxy: Nginx Proxy Manager / træfik
+      - [Portainer](https://www.portainer.io/)
+      - Reverse Proxy: [Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)
       - ...
   - 🏠 Home
-    - OS: Home Assistant
+    - OS: [Home Assistant](https://www.home-assistant.io/)
   - 🖫 NAS
-    - OS: OpenMediaVault / Unraid / TrueNAS
+    - OS: [OpenMediaVault](https://www.openmediavault.org/) / [Unraid](https://unraid.net/) / [TrueNAS](https://www.truenas.com/)
     - Files
       - Document Archive
       - Media
