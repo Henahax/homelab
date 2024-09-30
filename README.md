@@ -6,17 +6,17 @@ future system in planning:
 
 ## 🍗 HenahaxServer
 
-- **IP:** `x.x.x.2`
+- **IP:** `192.168.0.2`
 - **OS:** [ProxMox](https://www.proxmox.com/)
 - **Hardware**
-  - Intel N100: [example](https://www.amazon.de/AIOPCWA-Support-Storage-2-5GbE-Computer/dp/B0D5LCLQL6)
+  - Intel N100: [example](https://www.amazon.de/AIOPCWA-Support-Storage-2-5GbE-Computer/dp/B0D5LCLQL6) / [example](https://cwwk.net/collections/frontpage/products/x86-p5-development-version-special-machine-4-m-2-nvme-adapter-board-only-applicable-to-cwwk-x86-p5-n100-i3-n305-model-%E7%9A%84%E5%89%AF%E6%9C%AC)
   - external hard drive enclosure, fast usb connection
 - **VMs**
   - **🛜 HenahaxRouter**
-    - IP: `x.x.x.1`
+    - IP: `192.168.0.1`
     - OS: [pfSense](https://www.pfsense.org/) / [OPNsense](https://opnsense.org/)
   - **🐋 HenahaxDocker**
-    - IP: `x.x.x.3`
+    - IP: `192.168.0.3`
     - OS: [debian](https://www.debian.org/index.de.html/) / [Ubuntu](https://ubuntu.com/) / [alpine](https://www.alpinelinux.org/)
     - Containers:
       - Dynamic DNS: [CloudFlare DDNS](https://hub.docker.com/r/oznu/cloudflare-ddns/)
@@ -26,14 +26,14 @@ future system in planning:
       - Personal Websites: [Nginx](hhttps://nginx.org/)
       - ...
   - **🖫 HenahaxNAS**
-    - IP: `x.x.x.4`
+    - IP: `192.168.0.4`
     - OS: [OpenMediaVault](https://www.openmediavault.org/) / [Unraid](https://unraid.net/) / [TrueNAS](https://www.truenas.com/)
     - Files:
       - Document Archive
       - Media
       - Backups
   - **🏠 HenahaxHome**
-    - IP: `x.x.x.5`
+    - IP: `192.168.0.5`
     - OS: [Home Assistant](https://www.home-assistant.io/)
 
 ### Notes
