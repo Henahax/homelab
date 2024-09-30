@@ -2,14 +2,14 @@
 
 ## 🍗 HenahaxServer
 
-- **IP:** `x.x.x.1`
+- **IP:** `x.x.x.2`
 - **Hardware**
   - [Intel N100](https://www.amazon.de/AIOPCWA-Support-Storage-2-5GbE-Computer/dp/B0D5LCLQL6)
   - external hard drive enclosure, fast usb connection
 - **OS:** [ProxMox](https://www.proxmox.com/)
 - **VMs**
   - **🛜 HenahaxRouter**
-    - IP: `x.x.x.2`
+    - IP: `x.x.x.1`
     - OS: [pfSense](https://www.pfsense.org/) / [OPNsense](https://opnsense.org/)
   - **🐋 HenahaxDocker**
     - IP: `x.x.x.3`
