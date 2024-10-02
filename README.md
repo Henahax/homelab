@@ -24,6 +24,7 @@ future system in planning:
       - Reverse Proxy: [Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)
       - VPN Server: [WireGuard](https://www.wireguard.com/)
       - Personal Websites: [Node.js](https://nodejs.org/en) / [Deno](https://deno.com/)
+      - Document Management: [Paperless-ngx](https://docs.paperless-ngx.com/)
       - ...
   - **🖫 HenahaxNAS**
     - IP: `192.168.0.4`
