@@ -23,7 +23,7 @@ future system in planning:
       - Container Management: [Portainer](https://www.portainer.io/) / [Dockge](https://dockge.kuma.pet/)
       - Reverse Proxy: [Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)
       - VPN Server: [WireGuard](https://www.wireguard.com/)
-      - Personal Websites: [Nginx](https://nginx.org/)
+      - Personal Websites: [Node.js](https://nodejs.org/en) / [Deno](https://deno.com/)
       - ...
   - **🖫 HenahaxNAS**
     - IP: `192.168.0.4`
