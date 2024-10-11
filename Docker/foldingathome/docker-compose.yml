@@ -1,8 +1,8 @@
 version: "2.1"
 services:
   foldingathome:
-    image: lscr.io/linuxserver/foldingathome:latest
     container_name: foldingathome
+    image: lscr.io/linuxserver/foldingathome:latest
     environment:
       - PUID=1000
       - PGID=1000

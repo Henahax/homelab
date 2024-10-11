@@ -1,8 +1,8 @@
 version: "2.1"
 services:
   nginx:
-    image: henahax/homepage:latest
     container_name: henahax-homepage
+    image: henahax/homepage:latest
     environment:
       - PUID=1000
       - PGID=1000

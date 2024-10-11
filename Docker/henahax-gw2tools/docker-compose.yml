@@ -1,8 +1,8 @@
-version: "2.1"
+name: henahax-gw2tool
 services:
   nginx:
-    image: henahax/gw2tools:latest
     container_name: henahax-gw2tools
+    image: henahax/gw2tools:latest
     environment:
       - PUID=1000
       - PGID=1000
