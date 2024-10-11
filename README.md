@@ -54,4 +54,4 @@ future system in planning:
 
 ### Notes
 
-- Network Containers potentually on Router VM
+- Network Containers potentially on Router VM
