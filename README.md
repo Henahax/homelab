@@ -41,16 +41,16 @@ future system in planning:
         - Research contribution: [Folding@home](https://foldingathome.org/)
         - SSH tarpit: [Endlessh](https://github.com/skeeto/endlessh)
 
-  - **🖫 `Data`**
+  - **🏠 `Home`**
     - IP: `192.168.0.4`
+    - OS: [Home Assistant](https://www.home-assistant.io/)
+  - **🖫 `Data`**
+    - IP: `192.168.0.5`
     - OS: [OpenMediaVault](https://www.openmediavault.org/) / [Unraid](https://unraid.net/) / [TrueNAS](https://www.truenas.com/)
     - Files:
       - Document Archive
       - Media
       - Backups
-  - **🏠 `Home`**
-    - IP: `192.168.0.5`
-    - OS: [Home Assistant](https://www.home-assistant.io/)
 
 ### Notes
 
