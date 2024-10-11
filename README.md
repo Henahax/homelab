@@ -27,7 +27,7 @@ future system in planning:
         - Monitoring: [Uptime Kuma](https://uptime.kuma.pet/)
         - Notifications: [ntfy](https://docs.ntfy.sh/)
       - **Network**:
-        - Dynamic DNS: [CloudFlare DDNS](https://hub.docker.com/r/oznu/cloudflare-ddns/)
+        - Dynamic DNS: [CloudFlare DDNS](https://hub.docker.com/r/oznu/cloudflare-ddns)
         - Reverse Proxy: [Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)
         - VPN Server: [WireGuard](https://www.wireguard.com/)
         - DNS Ad Blocking: [Pi-hole](https://pi-hole.net/)
