@@ -17,7 +17,7 @@ future system in planning:
     - OS: [pfSense](https://www.pfsense.org/) / [OPNsense](https://opnsense.org/)
   - **🐋 HenahaxDocker**
     - IP: `192.168.0.3`
-    - OS: [debian](https://www.debian.org/index.de.html/) / [Ubuntu](https://ubuntu.com/) / [alpine](https://www.alpinelinux.org/)
+    - OS: [debian](https://www.debian.org/) / [Ubuntu](https://ubuntu.com/) / [alpine](https://www.alpinelinux.org/)
     - Containers:
       - Dynamic DNS: [CloudFlare DDNS](https://hub.docker.com/r/oznu/cloudflare-ddns/)
       - Container Management: [Portainer](https://www.portainer.io/) / [Dockge](https://dockge.kuma.pet/)
@@ -25,7 +25,7 @@ future system in planning:
       - VPN Server: [WireGuard](https://www.wireguard.com/)
       - Notifications: [ntfy](https://docs.ntfy.sh/)
       - Monitoring: [Uptime Kuma](https://uptime.kuma.pet/)
-      - Personal Websites: [Node.js](https://nodejs.org/en) / [Deno](https://deno.com/)
+      - Personal Websites: [Node.js](https://nodejs.org/) / [Deno](https://deno.com/)
       - Document Management: [Paperless-ngx](https://docs.paperless-ngx.com/)
       - ...
   - **🖫 HenahaxNAS**
