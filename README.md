@@ -23,6 +23,8 @@ future system in planning:
       - Container Management: [Portainer](https://www.portainer.io/) / [Dockge](https://dockge.kuma.pet/)
       - Reverse Proxy: [Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)
       - VPN Server: [WireGuard](https://www.wireguard.com/)
+      - Notifications: [ntfy](https://docs.ntfy.sh/)
+      - Monitoring: [Uptime Kuma](https://uptime.kuma.pet/)
       - Personal Websites: [Node.js](https://nodejs.org/en) / [Deno](https://deno.com/)
       - Document Management: [Paperless-ngx](https://docs.paperless-ngx.com/)
       - ...
