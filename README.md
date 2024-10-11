@@ -21,23 +21,23 @@ future system in planning:
     - IP: `192.168.0.3`
     - OS: [debian](https://www.debian.org/) / [Ubuntu](https://ubuntu.com/) / [alpine](https://www.alpinelinux.org/)
     - Containers:
-      - Admin:
+      - **Admin**:
         - Container Management: [Portainer](https://www.portainer.io/) / [Dockge](https://dockge.kuma.pet/)
         - Dashboard: [Homarr](https://homarr.dev/)
         - Monitoring: [Uptime Kuma](https://uptime.kuma.pet/)
         - Notifications: [ntfy](https://docs.ntfy.sh/)
-      - Network:
+      - **Network**:
         - Dynamic DNS: [CloudFlare DDNS](https://hub.docker.com/r/oznu/cloudflare-ddns/)
         - Reverse Proxy: [Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)
         - VPN Server: [WireGuard](https://www.wireguard.com/)
         - DNS Ad Blocking: [Pi-hole](https://pi-hole.net/)
-      - Private:
+      - **Private**:
         - Media System: [Jellyfin](https://jellyfin.org/)
         - Document Management: [Paperless-ngx](https://docs.paperless-ngx.com/)
-      - Public:
+      - **Public**:
         - Personal Websites: [Node.js](https://nodejs.org/) / [Deno](https://deno.com/)
         - Voice-Chat: [teamspeak](https://www.teamspeak.com/)
-      - Misc:
+      - **Misc**:
         - Research contribution: [Folding@home](https://foldingathome.org/)
         - SSH tarpit: [Endlessh](https://github.com/skeeto/endlessh)
 
