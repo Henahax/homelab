@@ -4,7 +4,7 @@ current system private
 
 future system in planning:
 
-## 🍗 HenahaxServer
+## 🍗 `HenahaxServer`
 
 - **IP:** `192.168.0.2`
 - **OS:** [ProxMox](https://www.proxmox.com/)
@@ -13,10 +13,10 @@ future system in planning:
   - external hard drive enclosure, fast usb connection
 - **VMs**
 
-  - **🛜 HenahaxRouter**
+  - **🛜 `HenahaxRouter`**
     - IP: `192.168.0.1`
     - OS: [pfSense](https://www.pfsense.org/) / [OPNsense](https://opnsense.org/)
-  - **🐋 HenahaxDocker**
+  - **🐋 `HenahaxServices`**
 
     - IP: `192.168.0.3`
     - OS: [debian](https://www.debian.org/) / [Ubuntu](https://ubuntu.com/) / [alpine](https://www.alpinelinux.org/)
@@ -41,14 +41,14 @@ future system in planning:
         - Research contribution: [Folding@home](https://foldingathome.org/)
         - SSH tarpit: [Endlessh](https://github.com/skeeto/endlessh)
 
-  - **🖫 HenahaxNAS**
+  - **🖫 `HenahaxData`**
     - IP: `192.168.0.4`
     - OS: [OpenMediaVault](https://www.openmediavault.org/) / [Unraid](https://unraid.net/) / [TrueNAS](https://www.truenas.com/)
     - Files:
       - Document Archive
       - Media
       - Backups
-  - **🏠 HenahaxHome**
+  - **🏠 `HenahaxHome`**
     - IP: `192.168.0.5`
     - OS: [Home Assistant](https://www.home-assistant.io/)
 
