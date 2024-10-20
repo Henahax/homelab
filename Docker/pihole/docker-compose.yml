@@ -16,9 +16,12 @@ services:
       # WEBPASSWORD: 'set a secure password here or it will be random'
     # Volumes store your data between container upgrades
     volumes:
-      - "/volumes/pihole/pihole:/etc/pihole"
-      - "/volumes/pihole/dnsmasq.d:/etc/dnsmasq.d"
+      - "pihole-pihole:/etc/pihole"
+      - "pihole-dnsmasq:/etc/dnsmasq.d"
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
       - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
     restart: unless-stopped
+volumes:
+  pihole-pihole:
+  pihole-dnsmasq:

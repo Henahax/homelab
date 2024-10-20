@@ -8,8 +8,11 @@ services:
       - PGID=1000
       - TZ=Europe/Berlin
     volumes:
-      - /volumes/foldingathome:/config
+      - foldingathome-config:/config
     ports:
       - 7396:7396
       - 36330:36330 #optional
     restart: unless-stopped
+
+volumes:
+  foldingathome-config:
