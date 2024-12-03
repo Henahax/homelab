@@ -40,13 +40,17 @@ future system in planning:
       - **Misc**:
         - Research contribution: [Folding@home](https://foldingathome.org/)
         - SSH tarpit: [Endlessh](https://github.com/skeeto/endlessh)
+        - ollama
+        - hedgedoc
+        - nextcloud
+        - immich
 
   - **🏠 `Home`**
     - IP: `192.168.0.4`
     - OS: [Home Assistant](https://www.home-assistant.io/)
   - **🖫 `Data`**
     - IP: `192.168.0.5`
-    - OS: [OpenMediaVault](https://www.openmediavault.org/) / [Unraid](https://unraid.net/) / [TrueNAS](https://www.truenas.com/)
+    - OS: [TrueNAS](https://www.truenas.com/) / [OpenMediaVault](https://www.openmediavault.org/)
     - Files:
       - Document Archive
       - Media
