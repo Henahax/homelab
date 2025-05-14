@@ -9,16 +9,14 @@ future system in planning:
 - **IP:** `192.168.0.2`
 - **OS:** [ProxMox](https://www.proxmox.com/)
 - **Hardware**
-  - Intel N100: [example](https://www.amazon.de/AIOPCWA-Support-Storage-2-5GbE-Computer/dp/B0D5LCLQL6) / [example](https://cwwk.net/collections/frontpage/products/x86-p5-development-version-special-machine-4-m-2-nvme-adapter-board-only-applicable-to-cwwk-x86-p5-n100-i3-n305-model-%E7%9A%84%E5%89%AF%E6%9C%AC)
-  - external hard drive enclosure, fast usb connection
+  - Intel N100 / Intel N305 / analyze others
+  - NAS-Case with multiple 3.5 HDDs
 - **VMs**
-
   - **🛜 `Router`**
-    - IP: `192.168.0.1`
+    - IP: `192.168.0.3`
     - OS: [pfSense](https://www.pfsense.org/) / [OPNsense](https://opnsense.org/)
   - **🐋 `Services`**
-
-    - IP: `192.168.0.3`
+    - IP: `192.168.4`
     - OS: [debian](https://www.debian.org/) / [Ubuntu](https://ubuntu.com/) / [alpine](https://www.alpinelinux.org/)
     - Containers:
       - **Admin**:
@@ -44,10 +42,6 @@ future system in planning:
         - hedgedoc
         - nextcloud
         - immich
-
-  - **🏠 `Home`**
-    - IP: `192.168.0.4`
-    - OS: [Home Assistant](https://www.home-assistant.io/)
   - **🖫 `Data`**
     - IP: `192.168.0.5`
     - OS: [TrueNAS](https://www.truenas.com/) / [OpenMediaVault](https://www.openmediavault.org/)
@@ -55,6 +49,9 @@ future system in planning:
       - Document Archive
       - Media
       - Backups
+  - **🏠 `Home`**
+    - IP: `192.168.0.6`
+    - OS: [Home Assistant](https://www.home-assistant.io/)
 
 ### Notes
 
