@@ -10,14 +10,15 @@ future system in planning:
 - **OS:** [ProxMox](https://www.proxmox.com/)
 - **Hardware**
   - Intel N100 / Intel N305 / analyze others
-  - NAS-Case with multiple 3.5 HDDs
+  - SSDs for OS and VMs
+  - multiple 3.5 HDDs, passed through to TrueNAS SCALE VM
 - **VMs**
   - **🛜 `Router`**
     - IP: `192.168.0.3`
     - OS: [pfSense](https://www.pfsense.org/) / [OPNsense](https://opnsense.org/)
   - **🐋 `Services`**
     - IP: `192.168.4`
-    - OS: [debian](https://www.debian.org/) / [Ubuntu](https://ubuntu.com/) / [alpine](https://www.alpinelinux.org/)
+    - OS: [debian](https://www.debian.org/)
     - Containers:
       - **Admin**:
         - Container Management: [Portainer](https://www.portainer.io/) / [Dockge](https://dockge.kuma.pet/)
@@ -44,7 +45,8 @@ future system in planning:
         - immich
   - **🖫 `Data`**
     - IP: `192.168.0.5`
-    - OS: [TrueNAS](https://www.truenas.com/) / [OpenMediaVault](https://www.openmediavault.org/)
+    - OS: [TrueNAS SCALE](https://www.truenas.com/truenas-scale/)
+    - manages ZFS
     - Files:
       - Document Archive
       - Media
