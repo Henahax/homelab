@@ -43,6 +43,7 @@ future system in planning:
         - hedgedoc
         - nextcloud
         - immich
+        - n8n
   - **🖫 `Data`**
     - IP: `192.168.0.5`
     - OS: [TrueNAS SCALE](https://www.truenas.com/truenas-scale/)
