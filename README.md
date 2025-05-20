@@ -10,7 +10,7 @@ future system in planning:
 - **OS:** [ProxMox](https://www.proxmox.com/)
 - **Hardware**
   - **CPU**
-    - Intel N305 / Inter N355 / Intel Core i3-14100
+    - Intel N305 / Intel N355 / Intel Core i3-14100
   - **Mainboard**
     - 2+ Ethernet
     - 2+ NVMe
