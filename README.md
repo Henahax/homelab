@@ -9,9 +9,16 @@ future system in planning:
 - **IP:** `192.168.0.2`
 - **OS:** [ProxMox](https://www.proxmox.com/)
 - **Hardware**
-  - Intel N100 / Intel N305 / analyze others
-  - SSDs for OS and VMs
-  - multiple 3.5 HDDs, passed through to TrueNAS SCALE VM
+  - **CPU**
+    - Intel N305 / Inter N355 / Intel Core i3-14100
+  - **Mainboard**
+    - 2+ Ethernet
+    - 2+ NVMe
+    - 4+ SATA
+  - **Storage**
+    - 2 SSDs for OS, VMs
+    - SSD for Storage
+    - HDD for Backup
 - **VMs**
   - **🛜 `Router`**
     - IP: `192.168.0.3`
@@ -21,14 +28,15 @@ future system in planning:
     - OS: [debian](https://www.debian.org/)
     - Containers:
       - **Admin**:
-        - Container Management: [Portainer](https://www.portainer.io/) / [Dockge](https://dockge.kuma.pet/)
+        - Container Management: [Portainer](https://www.portainer.io/) / [Dockge](https://dockge.kuma.pet/) / [Arcane](https://arcane.ofkm.dev/)
         - Dashboard: [Homarr](https://homarr.dev/)
         - Monitoring: [Uptime Kuma](https://uptime.kuma.pet/)
+        - Monitoring Dashboard: [Grafana](https://grafana.com/)
         - Notifications: [ntfy](https://docs.ntfy.sh/)
       - **Network**:
         - Dynamic DNS: [CloudFlare DDNS](https://hub.docker.com/r/oznu/cloudflare-ddns)
         - Reverse Proxy: [Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)
-        - VPN Server: [WireGuard](https://www.wireguard.com/)
+        - VPN Server: [WireGuard](https://www.wireguard.com/) / [tailscale](https://tailscale.com/)
         - DNS Ad Blocking: [Pi-hole](https://pi-hole.net/)
       - **Private**:
         - Media System: [Jellyfin](https://jellyfin.org/)
