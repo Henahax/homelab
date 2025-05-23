@@ -19,10 +19,14 @@ future system in planning:
     - 2 SSDs for OS, VMs
     - SSD for Storage
     - HDD for Backup
-- **VMs**
+  - **Case**
+    - µATX / ITX
+    - 2+ 3.5" HDD
+    - 2+ 2.5" SSD
+- **Virtual Machines**
   - **🛜 `Router`**
     - IP: `192.168.0.3`
-    - OS: [pfSense](https://www.pfsense.org/) / [OPNsense](https://opnsense.org/)
+    - OS: [OPNsense](https://opnsense.org/) / [pfSense](https://www.pfsense.org/)
   - **🐋 `Services`**
     - IP: `192.168.4`
     - OS: [debian](https://www.debian.org/)
@@ -47,10 +51,10 @@ future system in planning:
       - **Misc**:
         - Research contribution: [Folding@home](https://foldingathome.org/)
         - SSH tarpit: [Endlessh](https://github.com/skeeto/endlessh)
-        - ollama
+        - Large Langugage Models: ollama
         - hedgedoc
-        - nextcloud
-        - immich
+        - File hosting: [Nextcloud](https://nextcloud.com/)
+        - Photo & video management: [immich](https://immich.app/)
         - n8n
   - **🖫 `Data`**
     - IP: `192.168.0.5`
