@@ -32,30 +32,31 @@ future system in planning:
     - OS: [debian](https://www.debian.org/)
     - Containers:
       - **Admin**:
-        - Container Management: [Portainer](https://www.portainer.io/) / [Dockge](https://dockge.kuma.pet/) / [Arcane](https://arcane.ofkm.dev/)
+        - Container management: [Portainer](https://www.portainer.io/) / [Dockge](https://dockge.kuma.pet/) / [Arcane](https://arcane.ofkm.dev/)
         - Dashboard: [Homarr](https://homarr.dev/)
         - Monitoring: [Uptime Kuma](https://uptime.kuma.pet/)
-        - Monitoring Dashboard: [Grafana](https://grafana.com/)
+        - Monitoring dashboard: [Grafana](https://grafana.com/)
         - Notifications: [ntfy](https://docs.ntfy.sh/)
       - **Network**:
         - Dynamic DNS: [CloudFlare DDNS](https://hub.docker.com/r/oznu/cloudflare-ddns)
-        - Reverse Proxy: [Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)
-        - VPN Server: [WireGuard](https://www.wireguard.com/) / [tailscale](https://tailscale.com/)
-        - DNS Ad Blocking: [Pi-hole](https://pi-hole.net/)
+        - Reverse proxy: [Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)
+        - VPN server: [WireGuard](https://www.wireguard.com/) / [tailscale](https://tailscale.com/)
+        - DNS ad blocking: [Pi-hole](https://pi-hole.net/)
       - **Private**:
-        - Media System: [Jellyfin](https://jellyfin.org/)
-        - Document Management: [Paperless-ngx](https://docs.paperless-ngx.com/)
+        - File hosting: [Nextcloud](https://nextcloud.com/)
+        - Document management: [Paperless-ngx](https://docs.paperless-ngx.com/)
+        - Photo & video management: [immich](https://immich.app/)
+        - Media system: [Jellyfin](https://jellyfin.org/)
+        - Personal notes: [Obsidian](https://obsidian.md/)
+        - Collaborative notes: [HedgeDoc](https://hedgedoc.org/)
+        - Large Langugage Model: [Ollama](https://ollama.com/)
+        - Workflow automation: [n8n](https://n8n.io/)
       - **Public**:
-        - Personal Websites: [Node.js](https://nodejs.org/) / [Deno](https://deno.com/)
-        - Voice-Chat: [teamspeak](https://www.teamspeak.com/)
+        - Websites: [Node.js](https://nodejs.org/) / [Deno](https://deno.com/)
+        - Voice chat: [teamspeak](https://www.teamspeak.com/)
       - **Misc**:
         - Research contribution: [Folding@home](https://foldingathome.org/)
         - SSH tarpit: [Endlessh](https://github.com/skeeto/endlessh)
-        - Large Langugage Models: ollama
-        - hedgedoc
-        - File hosting: [Nextcloud](https://nextcloud.com/)
-        - Photo & video management: [immich](https://immich.app/)
-        - n8n
   - **🖫 `Data`**
     - IP: `192.168.0.5`
     - OS: [TrueNAS SCALE](https://www.truenas.com/truenas-scale/)

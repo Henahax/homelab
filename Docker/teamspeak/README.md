@@ -1,41 +1,49 @@
 # henahax.de Teamspeak
 
-## Eingang & Info
+todo
 
-## [spacer]Spiele
+## `Eingang & Info`
 
-### Deadlock
+todo
 
-``[b]Links:[/b]
-[url=https://forums.playdeadlock.com/forums/changelog.10/]Updates[/url]``
+## `[spacer]Spiele`
 
-## Diablo
+todo
 
-``[b]Links:[/b]
-[url=https://news.blizzard.com/diablo4/24140808/diablo-iv-patch-notes/]Updates[/url]``
+### `Deadlock`
 
-### Dota
+`[b]Links:[/b]
+[url=https://forums.playdeadlock.com/forums/changelog.10/]Updates[/url]`
 
-``[b]Links:[/b]
-[url=https://www.dota2.com/patches/]Updates[/url]``
+## `Diablo`
 
-### Guild Wars
+`[b]Links:[/b]
+[url=https://news.blizzard.com/diablo4/24140808/diablo-iv-patch-notes/]Updates[/url]`
 
-``[b]Links:[/b]
+### `Dota`
+
+`[b]Links:[/b]
+[url=https://www.dota2.com/patches/]Updates[/url]`
+
+### `Guild Wars`
+
+`[b]Links:[/b]
 [url=https://en-forum.guildwars2.com/forum/6-game-update-notes]Updates[/url]
 [url=https://docs.google.com/spreadsheets/d/1X18uEAemfXXzJ0E-iOkZiH6SYuER-pkGS5h-EqBG77U/edit#gid=0]Raid-Planer[/url]
-[url=https://gw2Tools.henahax.de]Tobis GW2 Werkzeuge[/url]``
+[url=https://gw2Tools.henahax.de]Tobis GW2 Werkzeuge[/url]`
 
-### Hunt: Showdown
+### `Hunt: Showdown`
 
-### Rainbow Six
+todo
 
-``[b]Links:[/b]
-[url=https://www.ubisoft.com/de-de/game/rainbow-six/siege/news-updates/]Updates[/url]``
+### `Rainbow Six`
 
-### Sonstige Spiele
+`[b]Links:[/b]
+[url=https://www.ubisoft.com/de-de/game/rainbow-six/siege/news-updates/]Updates[/url]`
 
-``Für regelmäßige Stammspiele gerne wegen eines Kanales und Moderationsrechten bei @henahax melden.
+### `Sonstige Spiele`
+
+`Für regelmäßige Stammspiele gerne wegen eines Kanal und Moderationsrechten bei @henahax melden.
 [b]Überblick über Spielesammlung auf verschiedene Plattformen:[/b]
 [url=https://www.gog.com/galaxy/]GOG Galaxy[/url]
 [b]Wöchentlich kostenlose Spiele
@@ -46,12 +54,20 @@ Einfach dem Account hinzufügen und später spielen:[/b]
 [url=https://play.pokemonshowdown.com/]Pokémon Showdown - Battle Simulator[/url]
 [url=https://garticphone.com/]Gartic Phone - Stille Post mit Zeichnen[/url]
 [url=https://skribbl.io/]skribble.io - Pictionary[/url]
-[url=https://www.chess.com/]Chess.com - Schach[/url]``
+[url=https://www.chess.com/]Chess.com - Schach[/url]`
 
-## [spacer]Sonstiges
+## `[spacer]Sonstiges`
 
-### Musik
+todo
 
-### Unterhaltung
+### `Musik`
 
-### Abwesend
+todo
+
+### `Unterhaltung`
+
+todo
+
+### `Abwesend`
+
+todo
