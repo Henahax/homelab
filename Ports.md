@@ -1,47 +1,36 @@
 # local port list
 
-|default|alternative|protocol|service|
-|-:|-:|-|-|
-|2222|22|tcp|endlessh|
-|||||
-|53||tcp|pi-hole|
-|53||udp|pi-hole|
-|67||udp|pi-hole|
-|80|todo|tcp|pi-hole|
-|123||udp|pi-hole|
-|443|todo|udp|pi-hole|
-|||||
-|22|2222|tcp|ssh|
-|||||
-|3000||tcp|grafana|
-|||||
-|3001||tcp|uptime-kuma|
-|||||
-|7396||tcp|foldingathome|
-|||||
-|7575||tcp|homarr|
-|||||
-|80|8080|tcp|personal Website: Homepage|
-|80|8081|tcp|personal Website: GW2Tools|
-|80|8082|tcp|personal Website: TreasueHunt|
-|||||
-|9000||tcp|portainer|
-|||||
-|9987||udp|teamspeak|
-|10011||tcp|teamspeak|
-|30033||tcp|teamspeak|
-|||||
-|51820||udp|wireguard|
-|51821||tcp|wireguard|
-|||||
-
-| Name   | Age | Role     |
-|--------|-----|----------|
-| **Group 1** |||
-| Alice  | 25  | Engineer |
-| Bob    | 30  | Designer |
-| Carol  | 27  | Manager  |
-| **Group 2** |||
-| Dave   | 35  | Engineer |
-| Eve    | 29  | Designer |
-| Frank  | 32  | Manager  |
+|service|default|alternative|protocol|
+|-|-:|-:|-|
+|***endlessh***||||
+||2222|`22`|tcp|
+|***pi-hole***||||
+||53||tcp|
+||53||udp|
+||67||udp|
+||80|todo|tcp|
+||123||udp|
+||443|todo|udp|
+|***ssh***||||
+||22|`2222`|tcp|
+|***grafana***||||
+||`3000`||tcp|
+|***uptime-kuma***||||
+||`3001`||tcp|
+|***foldingathome***||||
+||`7396`||tcp|
+|***homarr***||||
+||`7575`||tcp|
+|***node.js***||||
+|Homepage|80|`8080`|tcp|
+|GW2Tools|80|`8081`|tcp|
+|TreasueHunt|80|`8082`|tcp|
+|***portainer***||||
+||`9000`||tcp|
+|***teamspeak***||||
+||`9987`||udp|
+||`10011`||tcp|
+||`30033`||tcp|
+|***wireguard***||||
+||`51820`||udp|
+||`51821`||tcp|
