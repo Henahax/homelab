@@ -1,36 +1,47 @@
-# local port list
+# service vm ports
 
-|service|default|alternative|protocol|
-|-|-:|-:|-|
-|**endlessh**||||
-||`2222`|`22`|tcp|
-|**pi-hole**||||
-||`53`|`53`|tcp|
-||`53`|`53`|udp|
-||`67`||udp|
-||`80`|todo|tcp|
-||`123`||udp|
-||`443`|todo|udp|
-|**ssh**||||
-||`22`|`2222`|tcp|
-|**grafana**||||
-||`3000`||tcp|
-|**uptime-kuma**||||
-||`3001`||tcp|
-|**foldingathome**||||
-||`7396`||tcp|
-|**homarr**||||
-||`7575`||tcp|
-|**node.js**||||
-|*Homepage*|`80`|`8080`|tcp|
-|*GW2Tools*|`80`|`8081`|tcp|
-|*TreasueHunt*|`80`|`8082`|tcp|
-|**portainer**||||
-||`9000`||tcp|
-|**teamspeak**||||
-||`9987`||udp|
-||`10011`||tcp|
-||`30033`||tcp|
-|**wireguard**||||
-||`51820`||udp|
-||`51821`||tcp|
+|service|protocol|default|alt|
+|-|-:|-:|-:|
+|**📁 Nginx Proxy Manager**||||
+|*http*|`TCP`|`80`||
+|*https*|`TCP`|`443`||
+|*admin*|`TCP`|`81`||
+|*optional FTP*|`TCP`|`21`||
+|**📁 Pi-hole**||||
+|*DNS*|`TCP`|`53`||
+|*DNS*|`UDP`|`53`||
+|*optional DHCP*|`UDP`|`67`||
+|*admin*|`TCP`|`80`|todo|
+|*optional NTP*|`UDP`|`123`||
+|*optional FTL DNS*|`UDP`|`443`|todo|
+|**📁 ssh**||||
+||`TCP`|`22`|`2222`|
+|**📁 endlessh**||||
+||`TCP`|`2222`|`22`|
+|**📁 portainer**||||
+||`TCP`|`9000`||
+|**📁 grafana**||||
+||`TCP`|`3000`||
+|**📁 uptime-kuma**||||
+||`TCP`|`3001`||
+|**📁 homarr**||||
+||`TCP`|`7575`||
+|**📁 node.js**||||
+|*Homepage*|`TCP`|`80`|`8080`|
+|*GW2Tools*|`TCP`|`80`|`8081`|
+|*TreasueHunt*|`TCP`|`80`|`8082`|
+|**📁 teamspeak**||||
+|*voice*|`UDP`|`9987`||
+|*file transfer*|`TCP`|`30033`||
+|*optional server query (raw)*|`TCP`|`10011`||
+|*optional server query (SSH)*|`TCP`|`10022`||
+|*optional web query http*|`TCP`|`10080`||
+|*optional web query https*|`TCP`|`10443`||
+|*optional TSDNS*|`TCP`|`41144`||
+|**📁 wireguard**||||
+||`UDP`|`51820`||
+||`TCP`|`51821`||
+|**📁 ntfy**||||
+||`TCP`|`80`|todo|
+|**📁 foldingathome**||||
+||`TCP`|`7396`||
