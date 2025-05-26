@@ -3,7 +3,7 @@
 |service|default|alternative|protocol|
 |-|-:|-:|-|
 |**endlessh**||||
-||2222|`22`|tcp|
+||`2222`|`22`|tcp|
 |**pi-hole**||||
 ||`53`|`53`|tcp|
 ||`53`|`53`|udp|
