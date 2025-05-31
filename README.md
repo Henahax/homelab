@@ -16,9 +16,15 @@ future system in planning:
     - 2+ NVMe
     - 4+ SATA
   - **Storage**
-    - 2 SSDs for OS, VMs
-    - SSD for Storage
-    - HDD for Backup
+    - Drives / Pools:
+      - SSD: Host OS
+      - SSD: VMs & Containers
+      - SSD: Cache (optional)
+      - HDD: Documents
+      - HDD: Media
+      - HDD: Backup (VMs & Containers)
+      - HDD: Backup (Documents)
+      - HDD: Backup (Media)
   - **Case**
     - µATX / ITX
     - 2+ 3.5" HDD
