@@ -78,3 +78,7 @@ future system in planning:
 ### Notes
 
 - Network Containers potentially on Router VM
+
+### TODO
+
+- servarr stack
