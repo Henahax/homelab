@@ -3,7 +3,7 @@
 |||
 |-|-|
 |*Name*|**`Server`**|
-|*IP-Address*|**`192.168.2`**|
+|*IP-Address*|**`192.168.0.2`**|
 |*Operating system*|**[ProxMox](https://www.proxmox.com/)**|
 
 ## Hardware
@@ -26,7 +26,7 @@
 |||
 |-|-|
 |*Name*|**`Router`**|
-|*IP-Address*|**`192.168.3`**|
+|*IP-Address*|**`192.168.0.3`**|
 |*Operating system*|**[OPNsense](https://opnsense.org/) / [pfSense](https://www.pfsense.org/)**|
 
 ### 💾 Data
@@ -34,7 +34,7 @@
 |||
 |-|-|
 |*Name*|**`Data`**|
-|*IP-Address*|**`192.168.5`**|
+|*IP-Address*|**`192.168.0.5`**|
 |*Operating system*|**[TrueNAS SCALE](https://www.truenas.com/truenas-scale/)**|
 |*Software*||
 
@@ -44,16 +44,16 @@
 |-|-|
 |Documents||
 |Media||
-|Volumes|persistent volumes of container services|
+|Container Volumes|persistent volumes of container services|
 
 ### 🐋 Services
 
 |||
 |-|-|
 |*Name*|**`Services`**|
-|*IP-Address*|**`192.168.4`**|
+|*IP-Address*|**`192.168.0.4`**|
 |*Operating system*|**[Debian](https://www.debian.org/)**|
-|*Software*|**Docker**|
+|*Software*|**[Docker](https://www.docker.com/)**|
 
 #### Containers
 
@@ -87,6 +87,6 @@
 |||
 |-|-|
 |*Name*|**`Home`**|
-|*IP-Address*|**`192.168.6`**|
+|*IP-Address*|**`192.168.0.6`**|
 |*Operating system*|**[Home Assistant](https://www.home-assistant.io/)**|
 |*Software*||
