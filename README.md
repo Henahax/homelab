@@ -8,14 +8,18 @@
 
 ## Hardware
 
-|Category|Reqirements|Choices|
-|-|-|-|
-|CPU|...|Intel N305 / Intel N355 / Intel Core i3-14100|
-|Mainboard|2+ Ethernet||
-||2+ NVMe||
-||4+ SATA||
-|Storage|||
-|Case|||
+|Category|Reqirements|Info|Hardware|
+|-|-|-|-|
+|CPU|||Intel N305 / Intel N355 / Intel Core i3-14100|
+|Mainboard|2+ Ethernet|Intel||
+||2+ NVMe|||
+||4+ SATA|||
+|Storage|SSD, 64+ GB|OS||
+||SSD, 500+ GB|VMs & Containers||
+||SSD/HDD, 500+ GB|File-Share||
+||HDD, 1+ TB|Media||
+||HDD, 1+ TB|Backup||
+|Case|4+ 3.5"||[Jonsbo N4 Black](https://www.jonsbo.com/en/products/N4Black.html)|
 
 ## ZFS
 
