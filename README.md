@@ -1,6 +1,6 @@
 # Homelab
 
-|||
+|Type|Data|
 |-|-|
 |*Name*|**`Server`**|
 |*IP-Address*|**`192.168.0.2`**|
@@ -27,7 +27,7 @@
 
 ### 🛜 Router
 
-|||
+|Type|Data|
 |-|-|
 |*Name*|**`Router`**|
 |*IP-Address*|**`192.168.0.3`**|
@@ -35,7 +35,7 @@
 
 ### 💾 Data
 
-|||
+|Type|Data|
 |-|-|
 |*Name*|**`Data`**|
 |*IP-Address*|**`192.168.0.5`**|
@@ -52,7 +52,7 @@
 
 ### 🐋 Services
 
-|||
+|Type|Data|
 |-|-|
 |*Name*|**`Services`**|
 |*IP-Address*|**`192.168.0.4`**|
@@ -88,7 +88,7 @@
 
 ### 🏠 Home
 
-|||
+|Type|Data|
 |-|-|
 |*Name*|**`Home`**|
 |*IP-Address*|**`192.168.0.6`**|
