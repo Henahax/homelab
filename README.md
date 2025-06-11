@@ -2,9 +2,9 @@
 
 |Type|Data|
 |-|-|
-|*Name*|**`Server`**|
-|*IP-Address*|**`192.168.0.2`**|
-|*Operating system*|**[ProxMox](https://www.proxmox.com/)**|
+|Name|**`Server`**|
+|IP-Address|**`192.168.0.2`**|
+|Operating system|**[ProxMox](https://proxmox.com/)**|
 
 ## Hardware
 
@@ -29,18 +29,18 @@
 
 |Type|Data|
 |-|-|
-|*Name*|**`Router`**|
-|*IP-Address*|**`192.168.0.3`**|
-|*Operating system*|**[OPNsense](https://opnsense.org/) / [pfSense](https://www.pfsense.org/)**|
+|Name|**`Router`**|
+|IP-Address|**`192.168.0.3`**|
+|Operating system|**[OPNsense](https://opnsense.org/) / [pfSense](https://pfsense.org/)**|
 
 ### 💾 Data
 
 |Type|Data|
 |-|-|
-|*Name*|**`Data`**|
-|*IP-Address*|**`192.168.0.5`**|
-|*Operating system*|**[TrueNAS SCALE](https://www.truenas.com/truenas-scale/)**|
-|*Software*||
+|Name|**`Data`**|
+|IP-Address|**`192.168.0.5`**|
+|Operating system|**[TrueNAS SCALE](https://truenas.com/truenas-scale/)**|
+|Software||
 
 #### "Volumes"
 
@@ -54,26 +54,26 @@
 
 |Type|Data|
 |-|-|
-|*Name*|**`Services`**|
-|*IP-Address*|**`192.168.0.4`**|
-|*Operating system*|**[Debian](https://www.debian.org/)**|
-|*Software*|**[Docker](https://www.docker.com/)**|
+|Name|**`Services`**|
+|IP-Address|**`192.168.0.4`**|
+|Operating system|**[Debian](https://debian.org/)**|
+|Software|**[Docker](https://docker.com/)**|
 
 #### Containers
 
 |Category|Description|Services|
 |-|-|-|
-|**Admin**|Container management|[Portainer](https://www.portainer.io/) / [Dockge](https://dockge.kuma.pet/) / [Arcane](https://arcane.ofkm.dev/)|
+|**Admin**|Container management|[Portainer](https://portainer.io/) / [Dockge](https://dockge.kuma.pet/) / [Arcane](https://arcane.ofkm.dev/)|
 ||Dashboard|[Homarr](https://homarr.dev/)|
 ||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|
 ||Monitoring dashboard|[Grafana](https://grafana.com/)|
 ||Notifications|[ntfy](https://docs.ntfy.sh/)|
 |**Network**|Dynamic DNS|[CloudFlare DDNS](https://hub.docker.com/r/oznu/cloudflare-ddns)|
 ||Reverse proxy|[Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)|
-||VPN server|[WireGuard](https://www.wireguard.com/) / [tailscale](https://tailscale.com/)|
+||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|
 ||DNS ad blocking|[Pi-hole](https://pi-hole.net/)|
 |**Public**|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|
-||Voice chat|[teamspeak](https://www.teamspeak.com/)|
+||Voice chat|[teamspeak](https://teamspeak.com/)|
 |**Private**|File hosting|[Nextcloud](https://nextcloud.com/)|
 ||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|
 ||Photo & video management|[immich](https://immich.app/)|
@@ -90,7 +90,7 @@
 
 |Type|Data|
 |-|-|
-|*Name*|**`Home`**|
-|*IP-Address*|**`192.168.0.6`**|
-|*Operating system*|**[Home Assistant](https://www.home-assistant.io/)**|
-|*Software*||
+|Name|**`Home`**|
+|IP-Address|**`192.168.0.6`**|
+|Operating system|**[Home Assistant](https://home-assistant.io/)**|
+|Software||
