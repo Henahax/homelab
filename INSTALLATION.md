@@ -23,3 +23,7 @@ work in progress installation order to prevent dependence conflicts
       3. Docker VM
       4. Home VM
 3. Go Live
+
+## notes
+
+docker (volume) location: edit daemon.json file
