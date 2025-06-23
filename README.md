@@ -84,7 +84,7 @@
 ||Workflow automation|[n8n](https://n8n.io/)|
 ||Media automation|[Servarr](https://wiki.servarr.com/)|
 |**Miscellaneous**|Research contribution|[Folding@home](https://foldingathome.org/)|
-||SSH tarpit|[Endlessh](https://github.com/skeeto/endlessh)|
+||SSH tarpit|[Endlessh](https://github.com/skeeto/endlessh) / [endlessh-go](https://github.com/shizunge/endlessh-go)|
 
 ### 🏠 Home
 
