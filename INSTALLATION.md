@@ -26,4 +26,31 @@ work in progress installation order to prevent dependence conflicts
 
 ## notes
 
+## order
+
 docker (volume) location: edit daemon.json file
+
+```mermaid
+   graph TD;
+   hardware[setup hardware]
+   proxmox[install ProxMox]
+   network[setup ProxMox network]
+   zfs[setup ProxMox ZFS]
+   vm-router[install VM router: OPNSense]
+   vm-nas[install VM NAS: TrueNAS Scale]
+   vm-services[install VM services: Debian]
+   vm-home[install VM home: Home-Assistant]
+   directory-volumes[NFS directory: volumes]
+   directory-backups[NFS directory: backups]
+   containers[setup containers: services]
+
+   hardware-->proxmox-->network
+   proxmox-->zfs-->vm-nas-->directory-volumes
+   vm-nas-->directory-backups
+   network-->vm-router
+   proxmox-->vm-services
+   proxmox-->vm-home
+   directory-volumes-->containers
+   vm-services-->containers
+
+```
