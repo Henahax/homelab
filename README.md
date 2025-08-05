@@ -10,7 +10,7 @@
 
 |Category|Reqirements|Info|Hardware|
 |-|-|-|-|
-|**CPU**|||Intel N305 / Intel N355 / Intel Core i3-14100|
+|**CPU**|||AMD Ryzen 7 5700G|
 |**Mainboard**|2+ Ethernet|Intel||
 ||2+ NVMe|||
 ||4+ SATA|||
@@ -63,7 +63,8 @@
 
 |Category|Description|Services|
 |-|-|-|
-|**Admin**|Container management|[Portainer](https://portainer.io/) / [Dockge](https://dockge.kuma.pet/) / [Arcane](https://arcane.ofkm.dev/)|
+|**Admin**|Container management|[Portainer](https://portainer.io/)|
+||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|
 ||Dashboard|[Homarr](https://homarr.dev/)|
 ||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|
 ||Monitoring dashboard|[Grafana](https://grafana.com/)|
