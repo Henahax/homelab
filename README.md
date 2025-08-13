@@ -10,16 +10,17 @@
 
 |Category|Reqirements|Info|Hardware|
 |-|-|-|-|
-|**CPU**|||AMD Ryzen 7 5700G|
-|**Mainboard**|2+ Ethernet|Intel||
-||2+ NVMe|||
+|**CPU**|8+ cores||[AMD Ryzen 7 5700G](https://www.intel.com/content/www/us/en/products/sku/231805/intel-core-i3n305-processor-6m-cache-up-to-3-80-ghz/specifications.html)|
+||power efficient (C-states)|||
+|**Mainboard**|1+ Ethernet|Intel|[ASRock B550M Pro4](https://www.asrock.com/mb/AMD/B550M%20Pro4/index.de.asp)|
+||1+ NVMe|||
 ||4+ SATA|||
-|**Storage**|SSD, 64+ GB|OS||
-||SSD, 500+ GB|VMs & Containers||
-||SSD/HDD, 500+ GB|File-Share||
-||HDD, 1+ TB|Media||
-||HDD, 1+ TB|Backup||
 |**Case**|4+ 3.5"||[Jonsbo N4 Black](https://www.jonsbo.com/en/products/N4Black.html)|
+|**Storage**|SSD, 500+ GB|OS, VMs, containers||
+||SSD, 100+ GB|container volumes||
+||SSD, 1+ TB|file-share||
+||HDD, 1+ TB|media||
+||HDD, 1+ TB|backup||
 
 ## ZFS
 
