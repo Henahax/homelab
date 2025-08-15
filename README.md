@@ -77,6 +77,7 @@
 |**Public**|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|
 ||Voice chat|[teamspeak](https://teamspeak.com/)|
 |**Private**|File hosting|[Nextcloud](https://nextcloud.com/)|
+||Password management|[Vaultwarden](https://github.com/dani-garcia/vaultwarden/)|
 ||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|
 ||Photo & video management|[immich](https://immich.app/)|
 ||Media system|[Jellyfin](https://jellyfin.org/)|
