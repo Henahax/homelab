@@ -39,7 +39,7 @@
 |-|-|
 |Name|**`Data`**|
 |IP-Address|**`192.168.0.5`**|
-|Operating system|**[TrueNAS SCALE](https://truenas.com/truenas-scale/)**|
+|Operating system|**[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)**|
 |Software||
 
 ### 🏠 Home
