@@ -17,7 +17,7 @@
 ||4+ SATA|||
 |***Case***|4+ 3.5"||[Jonsbo N4 Black](https://www.jonsbo.com/en/products/N4Black.html)|
 |***Storage***|SSD SATA, 250+ GB|system (OS, VMs, containers)||
-||SSD NVMe, 250+ GB|service-data (volumes of services)||
+||SSD NVMe, 250+ GB|services-data (volumes of services)||
 ||SSD SATA, 1+ TB|file-share (NextCloud data)||
 ||HDD SATA, 2+ TB|data (media, documents)||
 ||HDD SATA, 2+ TB|backup||
