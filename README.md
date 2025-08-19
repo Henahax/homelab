@@ -4,23 +4,22 @@
 |-|-|
 |Name|**`Server`**|
 |IP-Address|**`192.168.0.2`**|
-|Operating system|**[ProxMox](https://proxmox.com/)**|
+|Operating system|**[Proxmox](https://proxmox.com/)**|
 
 ## Hardware
 
 |Category|Reqirements|Info|Hardware|
 |-|-|-|-|
-|***CPU***|8+ cores||[AMD Ryzen 7 5700G](https://www.intel.com/content/www/us/en/products/sku/231805/intel-core-i3n305-processor-6m-cache-up-to-3-80-ghz/specifications.html)|
+|***CPU***|8+ cores||Intel Core i5-14400T|
 ||power efficient (C-states)|||
-|***Mainboard***|1+ Ethernet|Intel|[ASRock B550M Pro4](https://www.asrock.com/mb/AMD/B550M%20Pro4/index.de.asp)|
+|***Mainboard***|1+ Ethernet|Intel|Biostar B760MXC PRO 2.0|
 ||1+ NVMe|||
 ||4+ SATA|||
 |***Case***|4+ 3.5"||[Jonsbo N4 Black](https://www.jonsbo.com/en/products/N4Black.html)|
-|***Storage***|SSD SATA, 250+ GB|system (OS, VMs, containers)||
-||SSD NVMe, 250+ GB|services-data (volumes of services)||
-||SSD SATA, 1+ TB|file-share (NextCloud data)||
-||HDD SATA, 2+ TB|data (media, documents)||
-||HDD SATA, 2+ TB|backup||
+|***Storage***|SSD NVMe, 250+ GB|system (OS, VMs, containers)|Kingston KC3000 512GB|
+||SSD NVMe, 250+ GB|services-data (volumes of services)|Kingston KC3000 1TB|
+||HDD SATA, 2+ TB|data (media, documents)|Seagate IronWolf NAS HDD +Rescue 4TB|
+||HDD SATA, 2+ TB|backup|Seagate IronWolf NAS HDD +Rescue 4TB|
 
 ## Virtual machines
 
@@ -40,7 +39,6 @@
 |Name|**`Data`**|
 |IP-Address|**`192.168.0.5`**|
 |Operating system|**[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)**|
-|Software||
 
 ### 🏠 Home
 
@@ -49,17 +47,6 @@
 |Name|**`Home`**|
 |IP-Address|**`192.168.0.6`**|
 |Operating system|**[Home Assistant](https://home-assistant.io/)**|
-|Software||
-
-### 🛜 Router
-
-(postponed to later)
-
-|Type|Data|
-|-|-|
-|Name|**`Router`**|
-|IP-Address|**`192.168.0.3`**|
-|Operating system|**[OPNsense](https://opnsense.org/) / [pfSense](https://pfsense.org/)**|
 
 ## ZFS
 
@@ -67,7 +54,6 @@ todo
 
 - SSD system
 - SSD docker-volumes
-- SSD cloud
 - HDD media
 - HDD backup
 
@@ -99,3 +85,7 @@ running on 🐋 Services-VM
 ||Voice chat|[TeamSpeak](https://teamspeak.com/)|
 |***Miscellaneous***|Research contribution|[Folding@home](https://foldingathome.org/)|
 ||SSH tarpit|[Endlessh](https://github.com/skeeto/endlessh) / [endlessh-go](https://github.com/shizunge/endlessh-go)|
+
+## backup
+
+todo
