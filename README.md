@@ -69,11 +69,12 @@ running on 🐋 Services-VM
 ||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|
 ||Monitoring dashboard|[Grafana](https://grafana.com/)|
 ||Notifications|[ntfy](https://docs.ntfy.sh/)|
+||Database administration|[pgAdmin](https://www.pgadmin.org/)|
+|***Database***|Databases for services|[PostgreSQL](https://www.postgresql.org/)|
 |***Network***|Dynamic DNS|[CloudFlare DDNS](https://hub.docker.com/r/oznu/cloudflare-ddns)|
 ||Reverse proxy|[Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)|
 ||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|
 ||DNS ad blocking|[Pi-hole](https://pi-hole.net/)|
-|***Database***|Databases for services|[PostgreSQL](https://www.postgresql.org/)|
 |***Private***|File sync & share|[Nextcloud](https://nextcloud.com/)|
 ||Password vault|[VaultWarden](https://github.com/dani-garcia/vaultwarden)|
 ||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|
