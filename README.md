@@ -63,6 +63,7 @@ running on 🐋 Services-VM
 
 |Category|Description|Services|
 |-|-|-|
+|***Database***|Database for services|[PostgreSQL](https://www.postgresql.org/)|
 |***Admin***|Container management|[Portainer](https://portainer.io/)|
 ||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|
 ||Dashboard|[Homarr](https://homarr.dev/)|
@@ -85,6 +86,14 @@ running on 🐋 Services-VM
 ||Voice chat|[TeamSpeak](https://teamspeak.com/)|
 |***Miscellaneous***|Research contribution|[Folding@home](https://foldingathome.org/)|
 ||SSH tarpit|[Endlessh](https://github.com/skeeto/endlessh) / [endlessh-go](https://github.com/shizunge/endlessh-go)|
+
+## Databases
+
+use PostgreSQL where possible
+
+- nextcloud
+- teamspeak
+- NodeJS applications
 
 ## backup
 
