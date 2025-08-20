@@ -63,7 +63,6 @@ running on 🐋 Services-VM
 
 |Category|Description|Services|
 |-|-|-|
-|***Database***|Database for services|[PostgreSQL](https://www.postgresql.org/)|
 |***Admin***|Container management|[Portainer](https://portainer.io/)|
 ||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|
 ||Dashboard|[Homarr](https://homarr.dev/)|
@@ -74,7 +73,8 @@ running on 🐋 Services-VM
 ||Reverse proxy|[Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)|
 ||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|
 ||DNS ad blocking|[Pi-hole](https://pi-hole.net/)|
-|***Private***|File hosting|[Nextcloud](https://nextcloud.com/)|
+|***Database***|Databases for services|[PostgreSQL](https://www.postgresql.org/)|
+|***Private***|File sync & share|[Nextcloud](https://nextcloud.com/)|
 ||Password vault|[VaultWarden](https://github.com/dani-garcia/vaultwarden)|
 ||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|
 ||Photo & video management|[immich](https://immich.app/)|
