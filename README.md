@@ -17,7 +17,7 @@
 ||4+ SATA|||
 |***Case***|4+ 3.5"||Jonsbo N4 Black|
 |***Storage***|SSD NVMe, 250+ GB|`System` (OS, VMs, containers)|Kingston KC3000 512GB|
-||SSD NVMe, 250+ GB|`Services Data` (volumes of services)|Kingston KC3000 1TB|
+||SSD NVMe, 250+ GB|`Volumes` (volumes of services)|Kingston KC3000 1TB|
 ||HDD SATA, 4+ TB|`Data` (media, documents)|Seagate IronWolf NAS HDD +Rescue 8TB|
 ||HDD SATA, 2+ TB|`Backup`|Seagate IronWolf NAS HDD +Rescue 4TB|
 
@@ -63,7 +63,7 @@ running on 🐋 Services-VM
 
 |Category|Description|Services|
 |-|-|-|
-|***Admin***|Container management|[Portainer](https://portainer.io/)|
+|***Admin***|Container management|[Portainer](https://portainer.io/) / komodo|
 ||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|
 ||Dashboard|[Homarr](https://homarr.dev/)|
 ||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|
