@@ -16,10 +16,10 @@
 ||1+ NVMe|||
 ||4+ SATA|||
 |***Case***|4+ 3.5"||Jonsbo N4 Black|
-|***Storage***|SSD NVMe, 250+ GB|system (OS, VMs, containers)|Kingston KC3000 512GB|
-||SSD NVMe, 250+ GB|services-data (volumes of services)|Kingston KC3000 1TB|
-||HDD SATA, 8+ TB|data (media, documents)|Seagate IronWolf NAS HDD +Rescue 8TB|
-||HDD SATA, 2+ TB|backup|Seagate IronWolf NAS HDD +Rescue 4TB|
+|***Storage***|SSD NVMe, 250+ GB|`System` (OS, VMs, containers)|Kingston KC3000 512GB|
+||SSD NVMe, 250+ GB|`Services Data` (volumes of services)|Kingston KC3000 1TB|
+||HDD SATA, 4+ TB|`Data` (media, documents)|Seagate IronWolf NAS HDD +Rescue 8TB|
+||HDD SATA, 2+ TB|`Backup`|Seagate IronWolf NAS HDD +Rescue 4TB|
 
 ## Virtual machines
 
