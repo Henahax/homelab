@@ -15,10 +15,10 @@
 |***Mainboard***|1+ Ethernet|Intel|Biostar B760MXC PRO 2.0|
 ||1+ NVMe|||
 ||4+ SATA|||
-|***Case***|4+ 3.5"||[Jonsbo N4 Black](https://www.jonsbo.com/en/products/N4Black.html)|
+|***Case***|4+ 3.5"||Jonsbo N4 Black|
 |***Storage***|SSD NVMe, 250+ GB|system (OS, VMs, containers)|Kingston KC3000 512GB|
 ||SSD NVMe, 250+ GB|services-data (volumes of services)|Kingston KC3000 1TB|
-||HDD SATA, 2+ TB|data (media, documents)|Seagate IronWolf NAS HDD +Rescue 4TB|
+||HDD SATA, 8+ TB|data (media, documents)|Seagate IronWolf NAS HDD +Rescue 8TB|
 ||HDD SATA, 2+ TB|backup|Seagate IronWolf NAS HDD +Rescue 4TB|
 
 ## Virtual machines
