@@ -61,7 +61,7 @@ running on 🐋 Services-VM
 ||Media system|[Jellyfin](https://docs.linuxserver.io/images/docker-jellyfin/)|
 ||Personal notes|[Obsidian](https://docs.linuxserver.io/images/docker-obsidian/)|
 ||Large Langugage Model|[Ollama](https://ollama.com/)|
-||Media automation|[Servarr](https://wiki.servarr.com/) (linuxserver.io if possible)|
+||Media automation|[Radarr](https://docs.linuxserver.io/images/docker-radarr/), [Sonarr](https://docs.linuxserver.io/images/docker-sonarr/), [Prowlarr](https://docs.linuxserver.io/images/docker-prowlarr/), [Bazarr](https://docs.linuxserver.io/images/docker-bazarr/), [Whisparr](https://wiki.servarr.com/whisparr) - [*Servarr*](https://wiki.servarr.com/)|
 |***Public***|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|
 ||Voice chat|[TeamSpeak](https://teamspeak.com/)|
 |***Miscellaneous***|Research contribution|[Folding@home](https://docs.linuxserver.io/images/docker-foldingathome/)|
