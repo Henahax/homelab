@@ -23,9 +23,9 @@
 
 |Name|Info|IP address|Operationg system|
 |-|-|-|-|
-|**`services`**|🐋 Docker host|**`192.168.0.4`**|[Debian](https://debian.org/)|
-|**`data`**|💾 NAS|**`192.168.0.5`**|[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)|
-|**`home`**|🏠 Home automation|**`192.168.0.6`**|[Home Assistant](https://home-assistant.io/)|
+|**`services`**|🐋 Docker host|**`192.168.0.10`**|[Debian](https://debian.org/)|
+|**`data`**|💾 NAS|**`192.168.0.11`**|[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)|
+|**`home`**|🏠 Home automation|**`192.168.0.12`**|[Home Assistant](https://home-assistant.io/)|
 
 ## ZFS
 
@@ -53,7 +53,7 @@ running on 🐋 Services-VM
 |***Network***|Dynamic DNS|[ddclient](https://docs.linuxserver.io/images/docker-ddclient/)|
 ||Reverse proxy|[Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)|
 ||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|
-||DNS ad blocking|[Pi-hole](https://pi-hole.net/)|
+||DNS ad blocking|[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) / [Pi-hole](https://pi-hole.net/)|
 |***Private***|File sync & share|[Nextcloud](https://docs.linuxserver.io/images/docker-nextcloud/)|
 ||Password vault|[VaultWarden](https://github.com/dani-garcia/vaultwarden)|
 ||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|
