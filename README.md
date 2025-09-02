@@ -36,6 +36,10 @@ todo
 - HDD media
 - HDD backup
 
+    volumes:
+
+  - /test/myapp/config:/config
+
 ## Containers
 
 running on 🐋 Services-VM
