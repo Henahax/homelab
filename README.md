@@ -16,7 +16,7 @@
 |***Case***|4+ 3.5"||Jonsbo N4 Black|
 |***Storage***|SSD NVMe, 250+ GB|`system` (OS, VMs, containers)|Kingston KC3000 512GB|
 ||SSD NVMe, 250+ GB|`volumes` (volumes of services)|Kingston KC3000 1TB|
-||HDD SATA, 4+ TB|`share` (media, documents)|Seagate IronWolf NAS HDD +Rescue 8TB|
+||HDD SATA, 4+ TB|`files` (media, documents)|Seagate IronWolf NAS HDD +Rescue 8TB|
 ||HDD SATA, 2+ TB|`backup`|Seagate IronWolf NAS HDD +Rescue 4TB|
 
 ## Virtual machines
@@ -24,7 +24,7 @@
 |Name|Info|IP address|Operationg system|
 |-|-|-|-|
 |**`services`**|🐋 Docker host|**`192.168.0.10`**|[Debian](https://debian.org/)|
-|**`data`**|💾 NAS|**`192.168.0.11`**|[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)|
+|**`nas`**|💾 NAS|**`192.168.0.11`**|[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)|
 |**`home`**|🏠 Home automation|**`192.168.0.12`**|[Home Assistant](https://home-assistant.io/)|
 
 ## ZFS
