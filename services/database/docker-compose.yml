@@ -1,5 +1,5 @@
+---
 version: "3.9"
-
 services:
   postgresql:
     image: postgres:latest
@@ -16,7 +16,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
         # Named volume mapped to host path in the bottom section
-
   pgadmin:
     image: dpage/pgadmin4:latest
     container_name: pgadmin
@@ -47,8 +46,10 @@ volumes:
       type: none
       device: /volumes/pgadmin # Host path on your ZFS dataset
       o: bind
+
 networks:
   postgres-network:
     driver: bridge
+    internal: true
   teamspeak-network:
-    external: true
+    external: false
