@@ -52,4 +52,4 @@ networks:
     driver: bridge
     internal: true
   teamspeak-network:
-    external: false
+    external: true
