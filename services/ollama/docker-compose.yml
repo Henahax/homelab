@@ -13,17 +13,10 @@ services:
     environment:
       - OLLAMA_NUM_PARALLEL=4
       - OLLAMA_MAX_LOADED_MODELS=3
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
     restart: unless-stopped
 
   webui:
-    image: ghcr.io/ollama-webui/ollama-webui:main
+    image: ghcr.io/ollama-webui/ollama-webui:latest
     container_name: ollama-webui
     ports:
       - "3000:8080"
