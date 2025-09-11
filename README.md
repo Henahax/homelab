@@ -63,7 +63,7 @@ running on 🐋 Services-VM
 ||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|
 ||Photo & video management|[immich](https://immich.app/)|
 ||Media system|[Jellyfin](https://docs.linuxserver.io/images/docker-jellyfin/)|
-||Personal notes|[Obsidian](https://docs.linuxserver.io/images/docker-obsidian/)|
+||Personal notes|[Obsidian](https://docs.linuxserver.io/images/docker-obsidian/) / TODO: Joplin|
 ||Large Langugage Model|[Ollama](https://ollama.com/)|
 ||Media automation|[Radarr](https://docs.linuxserver.io/images/docker-radarr/), [Sonarr](https://docs.linuxserver.io/images/docker-sonarr/), [Prowlarr](https://docs.linuxserver.io/images/docker-prowlarr/), [Bazarr](https://docs.linuxserver.io/images/docker-bazarr/), [Whisparr](https://wiki.servarr.com/whisparr) - [*Servarr*](https://wiki.servarr.com/)|
 |***Public***|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|
