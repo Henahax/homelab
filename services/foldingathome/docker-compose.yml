@@ -17,7 +17,7 @@ services:
       - 7396:7396 #optional
     restart: unless-stopped
 volumes:
-  teamspeak_data:
+  foldingathome_data:
     driver: local
     driver_opts:
       type: none
