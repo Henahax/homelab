@@ -10,7 +10,6 @@ services:
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     networks:
       - postgres-network
-      - teamspeak-network
     ports:
       - "5432:5432"
     volumes:
@@ -49,7 +48,4 @@ volumes:
 
 networks:
   postgres-network:
-    driver: bridge
-    internal: true
-  teamspeak-network:
-    external: true
+    name: postgres-network
