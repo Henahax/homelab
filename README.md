@@ -8,16 +8,16 @@
 
 |Category|Requirements|Info|Hardware|
 |-|-|-|-|
-|***CPU***|8+ cores||Intel Core i5-14400T|
+|***CPU***|8+ cores|||
 ||power efficient (C-states)|||
-|***Mainboard***|1+ Ethernet|Intel|Biostar B760MXC PRO 2.0|
+|***Mainboard***|1+ Ethernet|||
 ||1+ NVMe|||
 ||4+ SATA|||
-|***Case***|4+ 3.5"||Jonsbo N4 Black|
-|***Storage***|SSD NVMe, 250+ GB|`system` (OS, VMs, containers)|Kingston KC3000 512GB|
-||SSD NVMe, 250+ GB|`volumes` (volumes of services)|Kingston KC3000 1TB|
-||HDD SATA, 4+ TB|`files` (media, documents)|Seagate IronWolf NAS HDD +Rescue 8TB|
-||HDD SATA, 2+ TB|`backup`|Seagate IronWolf NAS HDD +Rescue 4TB|
+|***Case***|4+ 3.5"|||
+|***Storage***|SSD NVMe, 250+ GB|`system` (OS, VMs, containers)||
+||SSD NVMe, 250+ GB|`volumes` (volumes of services)||
+||HDD SATA, 4+ TB|`files` (media, documents)||
+||HDD SATA, 2+ TB|`backup`||
 
 ## Virtual machines
 
@@ -54,7 +54,7 @@ running on 🐋 Services-VM
 ||Notifications|[ntfy](https://docs.ntfy.sh/)|
 ||Database administration|[pgAdmin](https://www.pgadmin.org/)|
 |***Database***|Databases for services|[PostgreSQL](https://www.postgresql.org/)|
-|***Network***|Dynamic DNS|[ddclient](https://docs.linuxserver.io/images/docker-ddclient/)|
+|***Network***|Dynamic DNS|[ddclient](https://docs.linuxserver.io/images/docker-ddclient/) / [ddns-updater](https://github.com/qdm12/ddns-updater)|
 ||Reverse proxy|[Nginx Proxy Manager](https://nginxproxymanager.com/) / [træfik](https://traefik.io/)|
 ||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|
 ||DNS ad blocking|[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) / [Pi-hole](https://pi-hole.net/)|
