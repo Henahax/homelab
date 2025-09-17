@@ -8,16 +8,16 @@
 
 |Category|Requirements|Info|Hardware|
 |-|-|-|-|
-|***CPU***|8+ cores|||
+|***CPU***|6+ cores||[Intel Core i5-12400](https://www.intel.de/content/www/de/de/products/sku/134586/intel-core-i512400-processor-18m-cache-up-to-4-40-ghz/specifications.html)|
 ||power efficient (C-states)|||
-|***Mainboard***|1+ Ethernet|||
+|***Mainboard***|1+ Ethernet||[GIGABYTE B760M DS3H AX DDR4](https://www.gigabyte.com/de/Motherboard/B760M-DS3H-AX-DDR4-rev-1x)|
 ||1+ NVMe|||
 ||4+ SATA|||
-|***Case***|4+ 3.5"|||
-|***Storage***|SSD NVMe, 250+ GB|`system` (OS, VMs, containers)||
-||SSD NVMe, 250+ GB|`volumes` (volumes of services)||
-||HDD SATA, 4+ TB|`files` (media, documents)||
-||HDD SATA, 2+ TB|`backup`||
+|***Case***|4+ 3.5"||[Jonsbo N4 Black](https://www.jonsbo.com/en/products/N4Black.html)|
+|***Storage***|SSD NVMe, 250+ GB|`system` (OS, VMs, containers)|[Kingston KC3000 512GB](https://www.kingston.com/de/support/technical/products/kc3000)|
+||SSD NVMe, 250+ GB|`volumes` (volumes of services)|[Kingston KC3000 1TB](https://www.kingston.com/de/support/technical/products/kc3000)|
+||HDD SATA, 4+ TB|`files` (media, documents)|[Seagate IronWolf NAS HDD +Rescue 8TB](https://www.seagate.com/de/de/products/nas-drives/ironwolf-hard-drive/)|
+||HDD SATA, 2+ TB|`backup`|[Seagate IronWolf NAS HDD +Rescue 4TB](https://www.seagate.com/de/de/products/nas-drives/ironwolf-hard-drive/)|
 
 ## Virtual machines
 
