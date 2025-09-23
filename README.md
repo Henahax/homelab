@@ -52,7 +52,7 @@ running on 🐋 Services-VM
 
 Ports: `host:container`
 
-|Category|Description|Services|TCP|UDP|
+|Category|Description|Services|Port (default: `TCP`)|Info|
 |-|-|-|-|-|
 |**Admin**|Container management|[Komodo](https://komo.do/)|`TODO`||
 ||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|`TODO`||
@@ -63,7 +63,9 @@ Ports: `host:container`
 |**Database**|Databases for services|[PostgreSQL](https://www.postgresql.org/)|`5432:5432`||
 ||Database administration|[pgAdmin](https://www.pgadmin.org/)|`TODO`||
 |**Network**|Dynamic DNS|[ddns-updater](https://github.com/qdm12/ddns-updater)|`TODO`||
-||Reverse proxy|[træfik](https://traefik.io/)| `80:80` `443:443` `TODO:8080`||
+||Reverse proxy|[træfik](https://traefik.io/)|`80:80`|http|
+||||`443:443`|https|
+||||`TODO:8080`|Webinterface|
 ||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|`TODO`||
 ||DNS ad blocking|[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) / [Pi-hole](https://pi-hole.net/)|`TODO`||
 |**Files**|File sync & share|[Nextcloud](https://docs.linuxserver.io/images/docker-nextcloud/)|`TODO`||
@@ -75,8 +77,14 @@ Ports: `host:container`
 |**Private**|Password vault|[VaultWarden](https://github.com/dani-garcia/vaultwarden)|`TODO`||
 ||Personal notes|[Obsidian](https://docs.linuxserver.io/images/docker-obsidian/) / TODO: Joplin|`TODO`||
 ||Large Langugage Model|[Ollama](https://ollama.com/)|`TODO`||
-|**Public**|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|`TODO-TODO:80`||
-||Voice chat|[TeamSpeak](https://teamspeak.com/)|`30033:30033` (`10011:10011`) (`10022:10022`) (`10080:10080`) (`10443:10443`) (`41144:41144`)|`9987:9987`|
+|**Public**|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|`TODO-TODO:80`|Port range for multiple websites|
+||Voice chat|[TeamSpeak](https://teamspeak.com/)|`UDP` `9987:9987`|Voice|
+||||`30033:30033`|Filetransfer|
+||||`10011:10011`|ServerQuery (raw)|
+||||`10022:10022`|ServerQuery (SSH)|
+||||`10080:10080`|WebQuery (http)|
+||||`10443:10443`|WebQuery (https)|
+||||`41144:41144`|TSDNS|
 |**Miscellaneous**|Research contribution|[Folding@home](https://docs.linuxserver.io/images/docker-foldingathome/)|`TODO`||
 ||SSH tarpit|[Endlessh](https://github.com/skeeto/endlessh) / [endlessh-go](https://github.com/shizunge/endlessh-go)|`TODO`||
 
