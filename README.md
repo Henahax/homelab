@@ -46,6 +46,14 @@ todo
 
   - /test/myapp/config:/config
 
+# Ports
+|Category|Port range|
+|-|-|
+|Public Web|`8080-8099`|
+|Admin Panels||
+|Internal APIs||
+|Monitoring||
+
 ## Containers
 
 running on 🐋 Services-VM
