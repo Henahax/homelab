@@ -6,32 +6,32 @@
 
 ## Hardware
 
-|Category|Requirements|Hardware|Info|
+|Category|Requirements|Hardware *(alternative)*|Info|
 |-|-|-|-|
-|***CPU***|6+ cores|[Intel Core i5-12400](https://www.intel.de/content/www/de/de/products/sku/134586/intel-core-i512400-processor-18m-cache-up-to-4-40-ghz/specifications.html)||
+|**CPU**|6+ cores|Intel Core i5-14400 *(Intel Core i5-13400)*||
 ||power efficient (C-states)|||
-|***Mainboard***|1+ Ethernet|[GIGABYTE B760M DS3H AX DDR4](https://www.gigabyte.com/de/Motherboard/B760M-DS3H-AX-DDR4-rev-1x)||
+|**Mainboard**|1+ Ethernet|MSI PRO B760-P DDR4 II *(GIGABYTE B760M DS3H AX DDR4)*||
 ||1+ NVMe|||
 ||4+ SATA|||
-|***Memory***|32+ GB|G.Skill Aegis UDIMM 32GB Kit, DDR4-3200||
-|***Power Supply***|SFX|be quiet! SFX Power 3 450W SFX||
+|**Memory**|32+ GB|G.Skill Aegis UDIMM 32GB Kit, DDR4-3200||
+|**Power Supply**|400+ W|Corsair CX Series 2023 CX550 550W *(be quiet! SFX Power 3 450W SFX)*||
 ||efficient under low load|||
-|***Case***|4+ 3.5"|[Jonsbo N4 Black](https://www.jonsbo.com/en/products/N4Black.html)||
-||small formfactor|||
-|***Case Fan***|PWM|Noctua NF-A12x25 LS-PWM, 120mm||
+|**Case**|4+ 3.5"|Inter-Tech 4088 [Rev. 2], 4HE *(Jonsbo N4 Black)*||
+|**Case Fan**|PWM|Noctua NF-A12x25, 120mm||
 ||low noise|||
-|***Storage***|SSD NVMe, 250+ GB|[Kingston KC3000 512GB](https://www.kingston.com/de/support/technical/products/kc3000)|`system` (OS, VMs, containers)|
-||SSD NVMe, 250+ GB|[Kingston KC3000 1TB](https://www.kingston.com/de/support/technical/products/kc3000)|`volumes` (volumes of services)|
-||HDD SATA, 4+ TB|[Seagate IronWolf NAS HDD +Rescue 8TB](https://www.seagate.com/de/de/products/nas-drives/ironwolf-hard-drive/)|`files` (media, documents)|
-||HDD SATA, 2+ TB|[Seagate IronWolf NAS HDD +Rescue 4TB](https://www.seagate.com/de/de/products/nas-drives/ironwolf-hard-drive/)|`backup`|
+|**Storage**|SSD NVMe, 250+ GB|Kingston KC3000 512GB|`system` *(OS, VMs, containers)*|
+||SSD NVMe, 250+ GB|Kingston KC3000 1TB|`volumes` *(volumes of services)*|
+||HDD SATA, 4+ TB|Seagate IronWolf NAS HDD +Rescue 8TB|`files` *(media, documents)*|
+||HDD SATA, 2+ TB|Seagate IronWolf NAS HDD +Rescue 4TB|`backup`|
 
 ## Virtual machines
 
 |Name|Info|IP address|Operationg system|
 |-|-|-|-|
-|**`services`**|🐋 Docker host|`192.168.0.10`|[Debian](https://debian.org/)|
-|**`nas`**|💾 NAS|`192.168.0.11`|[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)|
-|**`home`**|🏠 Home automation|`192.168.0.12`|[Home Assistant](https://home-assistant.io/)|
+|**`router`** *future*|🛜 Router|`192.168.0.10`|[OPNsense](https://opnsense.org/)|
+|**`services`**|🐋 Docker host|`192.168.0.11`|[Debian](https://debian.org/)|
+|**`nas`**|💾 NAS|`192.168.0.12`|[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)|
+|**`home`**|🏠 Home automation|`192.168.0.13`|[Home Assistant](https://home-assistant.io/)|
 
 ## ZFS
 
@@ -61,7 +61,7 @@ running on 🐋 Services-VM
 
 Ports: `host:container`
 
-|Category|Description|Services|Port (default: `TCP`)|Info|
+|Category|Description|Services|Port *(default: `TCP`)*|Info|
 |-|-|-|-|-|
 |**Admin**|Container management|[Komodo](https://komo.do/)|`TODO`||
 ||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|`TODO`||
