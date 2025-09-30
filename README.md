@@ -59,15 +59,18 @@ todo
 
 running on 🐋 Services-VM
 
-Ports: `host:container`
+Port Info:
 
-|Category|Description|Services|Port *(default: `TCP`)*|Info|
+- default: `TCP`
+- `host:container`
+
+|Category|Description|Services|Port|Info|
 |-|-|-|-|-|
 |**Admin**|Container management|[Komodo](https://komo.do/)|`TODO`||
 ||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|`TODO`||
 ||Dashboard|[Homarr](https://homarr.dev/)|`TODO`||
 ||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|`TODO`||
-||Monitoring dashboard|[Grafana](https://grafana.com/)|`3000:3000`||
+||Monitoring dashboard|[Grafana](https://grafana.com/)|`TODO:3000`||
 ||Notifications|[ntfy](https://docs.ntfy.sh/)|`TODO`||
 |**Database**|Databases for services|[PostgreSQL](https://www.postgresql.org/)|`5432:5432`||
 ||Database administration|[pgAdmin](https://www.pgadmin.org/)|`TODO`||
