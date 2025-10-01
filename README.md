@@ -80,6 +80,7 @@ Port Info:
 ||||`TODO:8080`|Webinterface|
 ||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|`TODO`||
 ||DNS ad blocking|[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) / [Pi-hole](https://pi-hole.net/)|`TODO`||
+||TODO|TODO: Pangolin|`TODO`||
 |**Files**|File sync & share|[Nextcloud](https://docs.linuxserver.io/images/docker-nextcloud/)|`TODO`||
 ||file synchronisation|[Syncthing](https://hub.docker.com/r/linuxserver/syncthing)|`TODO`||
 ||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|`TODO:8000`||
