@@ -64,7 +64,11 @@ Port Info:
 - default: `TCP`
 - `host:container`
 
-TODO: Pangolin, n8m
+TODO:
+
+- Pangolin
+- n8m
+- syncthing
 
 |Category|Description|Services|Port|Info|
 |-|-|-|-|-|
@@ -101,10 +105,6 @@ TODO: Pangolin, n8m
 ||||`41144:41144`|TSDNS|
 |**Miscellaneous**|Research contribution|[Folding@home](https://docs.linuxserver.io/images/docker-foldingathome/)|`TODO`||
 ||SSH tarpit|[Endlessh](https://github.com/skeeto/endlessh) / [endlessh-go](https://github.com/shizunge/endlessh-go)|`TODO`||
-
-todo:
-
-- syncthing
 
 ## Databases
 
