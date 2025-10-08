@@ -8,21 +8,23 @@
 
 |Category|Requirements|Hardware *(alternative)*|Info|
 |-|-|-|-|
-|**CPU**|6+ cores|Intel Core i5-14400 *(Intel Core i5-13400)*||
+|**CPU**|6+ cores|Intel Core Ultra 5 225||
 ||power efficient (C-states)|||
-|**Mainboard**|1+ Ethernet|MSI PRO B760-P DDR4 II *(GIGABYTE B760M DS3H AX DDR4)*||
+|**Mainboard**|1+ Ethernet|ASRock B860I WiFi|2 Ethernet, enables router|
 ||1+ NVMe|||
 ||4+ SATA|||
-|**Memory**|32+ GB|G.Skill Aegis UDIMM 32GB Kit, DDR4-3200||
-|**Power Supply**|400+ W|Corsair CX Series 2023 CX550 550W *(be quiet! SFX Power 3 450W SFX)*||
+|**Memory**|32+ GB|Crucial Pro UDIMM 32GB Kit, DDR5-5600||
+|**Power Supply**|400+ W|be quiet! SFX Power 3 450W SFX||
 ||efficient under low load|||
-|**Case**|4+ 3.5"|Inter-Tech 4088 [Rev. 2], 4HE *(Jonsbo N4 Black)*||
-|**Case Fan**|PWM|Noctua NF-A12x25, 120mm||
+|**Case**|4+ 3.5"|Jonsbo N2||
+|**Case Fan**|PWM|Noctua NF-A12x25 LS-PWM||
 ||low noise|||
-|**Storage**|SSD NVMe, 250+ GB|Kingston KC3000 512GB|`system` *(OS, VMs, containers)*|
+|**Storage**|SSD SATA, 32+ GB|SanDisk Z400s *(used)*|`boot` *(OS)*|
+||SSD NVMe, 250+ GB|Kingston KC3000 512GB|`system` *(VMs, containers)*|
 ||SSD NVMe, 250+ GB|Kingston KC3000 1TB|`volumes` *(volumes of services)*|
+||SSD SATA, 250+ GB|Samsung SSD 850 EVO 250GB *(used, future)*|`cache` *(cache for TrueNAS)*|
 ||HDD SATA, 4+ TB|Seagate IronWolf NAS HDD +Rescue 8TB|`files` *(media, documents)*|
-||HDD SATA, 2+ TB|Seagate IronWolf NAS HDD +Rescue 4TB|`backup`|
+||HDD SATA, 2+ TB|Seagate IronWolf NAS HDD +Rescue 4TB|`backup` *(boot, system, volumes, some of files)*|
 
 ## Virtual machines
 
