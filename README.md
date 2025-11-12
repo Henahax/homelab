@@ -16,7 +16,7 @@
 |**Memory**|32+ GB|Crucial Pro UDIMM 32GB Kit, DDR5-5600||
 |**Power Supply**|400+ W|be quiet! SFX Power 3 450W SFX||
 ||efficient under low load|||
-|**Case**|4+ 3.5"|Jonsbo N2||
+|**Case**|4+ 3.5"|Jonsbo N3||
 |**Case Fan**|PWM|Noctua NF-A12x25 LS-PWM||
 ||low noise|||
 |**Storage**|SSD SATA, 32+ GB|SanDisk Z400s *(used)*|`boot` *(OS)*|
