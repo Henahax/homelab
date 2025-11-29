@@ -13,18 +13,14 @@
 |**Mainboard**|1+ Ethernet|ASRock B860I WiFi|2 Ethernet, enables router|
 ||1+ NVMe|||
 ||4+ SATA|||
-|**Memory**|32+ GB|Crucial Pro UDIMM 32GB Kit, DDR5-5600||
+|**Memory**|32+ GB|Kingston UDIMM 32GB Kit, DDR5-5200||
 |**Power Supply**|400+ W|be quiet! SFX Power 3 450W SFX||
 ||efficient under low load|||
 |**Case**|4+ 3.5"|Jonsbo N3||
-|**Case Fan**|PWM|Noctua NF-A12x25 LS-PWM||
-||low noise|||
-|**Storage**|SSD SATA, 32+ GB|SanDisk Z400s *(used)*|`boot` *(OS)*|
-||SSD NVMe, 250+ GB|Kingston KC3000 512GB|`system` *(VMs, containers)*|
-||SSD NVMe, 250+ GB|Kingston KC3000 1TB|`volumes` *(volumes of services)*|
-||SSD SATA, 250+ GB|Samsung SSD 850 EVO 250GB *(used, future)*|`cache` *(cache for TrueNAS)*|
-||HDD SATA, 4+ TB|Seagate IronWolf NAS HDD +Rescue 8TB|`files` *(media, documents)*|
-||HDD SATA, 2+ TB|Seagate IronWolf NAS HDD +Rescue 4TB|`backup` *(boot, system, volumes, some of files)*|
+|**Storage**|SSD NVMe, ZFS mirror|2x Western Digital NVMe SSD 1TB|`system`|
+||HDD SATA|Seagate IronWolf NAS HDD +Rescue 8TB|`files` *(media, documents)*|
+||HDD SATA|Seagate IronWolf NAS HDD +Rescue 4TB|`backup` *(boot, system, volumes, some of files)*|
+||SSD SATA|Samsung SSD 850 EVO 250GB *(used, future)*|`cache` *(cache for TrueNAS)*|
 
 ## Virtual machines
 
@@ -35,18 +31,25 @@
 |**`nas`**|💾 NAS|`192.168.0.12`|[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)|
 |**`home`**|🏠 Home automation|`192.168.0.13`|[Home Assistant](https://home-assistant.io/)|
 
-## ZFS
+## File System
 
-todo
-
-- SSD system
-- SSD docker-volumes
-- HDD media
-- HDD backup
-
-    volumes:
-
-  - /test/myapp/config:/config
+- systen (ZFS mirror)
+  - boot (ZFS dataset)
+  - vm-data (ZFS dataset)
+  - container-data (ZFS dataset)
+- files (ZFS)
+  - documents (ZFS dataset)
+  - notes (zfs dataset)
+  - photos (ZFS dataset)
+  - media (ZFS dataset)
+    - music
+    - movies
+    - tv
+- backup (ZFS)
+  - boot (ZFS dataset)
+  - vm-data (ZFS dataset)
+  - container-data (ZFS dataset)
+- cache
 
 ## Ports
 
