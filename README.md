@@ -27,13 +27,13 @@
 |Name|Info|IP address|Operationg system|
 |-|-|-|-|
 |**`router`** *future*|🛜 Router|`192.168.0.10`|[OPNsense](https://opnsense.org/)|
-|**`services`**|🐋 Docker host|`192.168.0.11`|[Debian](https://debian.org/)|
-|**`nas`**|💾 NAS|`192.168.0.12`|[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)|
-|**`home`**|🏠 Home automation|`192.168.0.13`|[Home Assistant](https://home-assistant.io/)|
+|**`services`**|🐋 Docker host|`192.168.0.11`|[Debian](https://debian.org/) (LXC)|
+|**`nas`**|💾 NAS|`192.168.0.12`|[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/) (VM)|
+|**`home`**|🏠 Home automation|`192.168.0.13`|[Home Assistant](https://home-assistant.io/) (VM)|
 
 ## File System
 
-- systen (ZFS mirror)
+- system (ZFS mirror)
   - boot (ZFS dataset)
   - vm-data (ZFS dataset)
   - container-data (ZFS dataset)
