@@ -1,6 +1,3 @@
----
-version: "3.9"
-
 services:
   tailscale-nginx:
     image: tailscale/tailscale:latest

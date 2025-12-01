@@ -77,7 +77,7 @@ TODO:
 
 |Category|Description|Services|Port|Info|
 |-|-|-|-|-|
-|**Admin**|Container management|[Komodo](https://komo.do/)|`TODO`||
+|**Admin**|Container management|[Portainer](https://www.portainer.io/)|`TODO:9443`||
 ||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|`TODO`||
 ||Dashboard|[Homarr](https://homarr.dev/)|`TODO`||
 ||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|`TODO`||
