@@ -6,7 +6,7 @@
 
 ## Hardware
 
-|Category|Requirements|Hardware *(alternative)*|Info|
+|Category|Requirements|Hardware|Info|
 |-|-|-|-|
 |**CPU**|6+ cores|Intel Core Ultra 5 225||
 ||power efficient (C-states)|||
@@ -19,7 +19,7 @@
 |**Case**|4+ 3.5"|Jonsbo N3||
 |**Storage**|SSD NVMe, ZFS mirror|2x Western Digital NVMe SSD 1TB|`system`|
 ||HDD SATA|Seagate IronWolf NAS HDD +Rescue 8TB|`files` *(media, documents)*|
-||HDD SATA|Seagate IronWolf NAS HDD +Rescue 4TB|`backup` *(boot, system, volumes, some of files)*|
+||HDD SATA|Seagate IronWolf NAS HDD +Rescue 4TB|`backup` *(boot, system, volumes, documents)*|
 ||SSD SATA|Samsung SSD 850 EVO 250GB *(used, future)*|`cache` *(cache for TrueNAS)*|
 
 ## Virtual machines
@@ -27,11 +27,11 @@
 |Name|Info|IP address|Operationg system|
 |-|-|-|-|
 |**`router`** *future*|🛜 Router|`192.168.0.10`|[OPNsense](https://opnsense.org/)|
-|**`services`**|🐋 Docker host|`192.168.0.11`|[Debian](https://debian.org/) (LXC)|
-|**`nas`**|💾 NAS|`192.168.0.12`|[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/) (VM)|
-|**`home`**|🏠 Home automation|`192.168.0.13`|[Home Assistant](https://home-assistant.io/) (VM)|
+|**`services`**|🐋 Docker host|`192.168.0.11`|[Debian](https://debian.org/)|
+|**`nas`**|💾 NAS|`192.168.0.12`|[TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/)|
+|**`home`**|🏠 Home automation|`192.168.0.13`|[Home Assistant](https://home-assistant.io/)|
 
-## File System
+## Drives & File System
 
 - system (ZFS mirror)
   - boot (ZFS dataset)
