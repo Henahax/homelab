@@ -42,23 +42,26 @@
   - notes (zfs dataset)
   - photos (ZFS dataset)
   - media (ZFS dataset)
-    - music
+    - books
     - movies
+    - music
     - tv
 - backup (ZFS)
   - boot (ZFS dataset)
   - vm-data (ZFS dataset)
   - container-data (ZFS dataset)
+  - documents (ZFS dataset)
+  - photos (ZFS dataset)
 - cache
 
 ## Ports
 
 |Category|Port range|
 |-|-|
-|Public Web|`8080-8099`|
-|Admin Panels||
-|Internal APIs||
+|Admin Panels|`3000-3999`|
+|Internal services||
 |Monitoring||
+|Public Web|`8080-8099`|
 
 ## Containers
 
@@ -75,41 +78,41 @@ TODO:
 - n8m
 - syncthing
 
-|Category|Description|Services|Port|Info|
-|-|-|-|-|-|
-|**Admin**|Container management|[Portainer](https://www.portainer.io/)|`TODO:9443`||
-||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|`TODO`||
-||Dashboard|[Homarr](https://homarr.dev/)|`TODO`||
-||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|`TODO`||
-||Monitoring dashboard|[Grafana](https://grafana.com/)|`TODO:3000`||
-||Notifications|[ntfy](https://docs.ntfy.sh/)|`TODO`||
-|**Database**|Databases for services|[PostgreSQL](https://www.postgresql.org/)|`5432:5432`||
-||Database administration|[pgAdmin](https://www.pgadmin.org/)|`TODO`||
-|**Network**|Dynamic DNS|[ddns-updater](https://github.com/qdm12/ddns-updater)|`TODO`||
-||Reverse proxy|[træfik](https://traefik.io/)|`80:80`|http|
-||||`443:443`|https|
-||||`TODO:8080`|Webinterface|
-||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|`TODO`||
-||DNS ad blocking|[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) / [Pi-hole](https://pi-hole.net/)|`TODO`||
-|**Files**|File sync & share|[Nextcloud](https://docs.linuxserver.io/images/docker-nextcloud/)|`TODO`||
-||file synchronisation|[Syncthing](https://hub.docker.com/r/linuxserver/syncthing)|`TODO`||
-||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|`TODO:8000`||
-|**Media**|Media system|[Jellyfin](https://docs.linuxserver.io/images/docker-jellyfin/)|`TODO`||
-||Photo & video management|[immich](https://immich.app/)|`TODO`||
-||Media automation|[Radarr](https://docs.linuxserver.io/images/docker-radarr/), [Sonarr](https://docs.linuxserver.io/images/docker-sonarr/), [Prowlarr](https://docs.linuxserver.io/images/docker-prowlarr/), [Bazarr](https://docs.linuxserver.io/images/docker-bazarr/), [Whisparr](https://wiki.servarr.com/whisparr) - [*Servarr*](https://wiki.servarr.com/)|`TODO`||
-|**Private**|Password vault|[VaultWarden](https://github.com/dani-garcia/vaultwarden)|`TODO`||
-||Personal notes|[Obsidian](https://docs.linuxserver.io/images/docker-obsidian/) / TODO: Joplin|`TODO`||
-||Large Langugage Model|[Ollama](https://ollama.com/)|`TODO`||
-|**Public**|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|`TODO-TODO:80`|Port range for multiple websites|
-||Voice chat|[TeamSpeak](https://teamspeak.com/)|`UDP` `9987:9987`|Voice|
-||||`30033:30033`|Filetransfer|
-||||`10011:10011`|ServerQuery (raw)|
-||||`10022:10022`|ServerQuery (SSH)|
-||||`10080:10080`|WebQuery (http)|
-||||`10443:10443`|WebQuery (https)|
-||||`41144:41144`|TSDNS|
-|**Miscellaneous**|Research contribution|[Folding@home](https://docs.linuxserver.io/images/docker-foldingathome/)|`TODO`||
-||SSH tarpit|[Endlessh](https://github.com/skeeto/endlessh) / [endlessh-go](https://github.com/shizunge/endlessh-go)|`TODO`||
+|Category|Description|Services|Port|Info|Priority|
+|-|-|-|-|-|-|
+|**Admin**|Container management|[Portainer](https://www.portainer.io/)|`TODO:9443`||⭐⭐⭐|
+||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|`TODO`|||
+||Dashboard|[Homarr](https://homarr.dev/)|`TODO`|||
+||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|`TODO`|||
+||Monitoring dashboard|[Grafana](https://grafana.com/)|`TODO:3000`|||
+||Notifications|[ntfy](https://docs.ntfy.sh/)|`TODO`|||
+|**Database**|Databases for services|[PostgreSQL](https://www.postgresql.org/)|`5432:5432`||⭐⭐|
+||Database administration|[pgAdmin](https://www.pgadmin.org/)|`TODO`||⭐|
+|**Network**|Dynamic DNS|[ddns-updater](https://github.com/qdm12/ddns-updater)|`TODO`||⭐⭐|
+||Reverse proxy|[træfik](https://traefik.io/)|`80:80`|http|⭐⭐⭐|
+||||`443:443`|https||
+||||`TODO:8080`|Webinterface||
+||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|`TODO`||⭐|
+||DNS ad blocking|[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) / [Pi-hole](https://pi-hole.net/)|`TODO`||⭐|
+|**Files**|File sync & share|[Nextcloud](https://docs.linuxserver.io/images/docker-nextcloud/)|`TODO`||⭐⭐|
+||file synchronisation|[Syncthing](https://hub.docker.com/r/linuxserver/syncthing)|`TODO`|||
+||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|`TODO:8000`|||
+|**Media**|Media system|[Jellyfin](https://docs.linuxserver.io/images/docker-jellyfin/)|`TODO`|||
+||Photo & video management|[immich](https://immich.app/)|`TODO`|||
+||Media automation|[Radarr](https://docs.linuxserver.io/images/docker-radarr/), [Sonarr](https://docs.linuxserver.io/images/docker-sonarr/), [Prowlarr](https://docs.linuxserver.io/images/docker-prowlarr/), [Bazarr](https://docs.linuxserver.io/images/docker-bazarr/), [Whisparr](https://wiki.servarr.com/whisparr) - [*Servarr*](https://wiki.servarr.com/)|`TODO`|||
+|**Private**|Password vault|[VaultWarden](https://github.com/dani-garcia/vaultwarden)|`TODO`|||
+||Personal notes|[Obsidian](https://docs.linuxserver.io/images/docker-obsidian/)|`TODO`||⭐⭐|
+||Large Langugage Model|[Ollama](https://ollama.com/)|`TODO`|||
+|**Public**|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|`TODO-TODO:80`|Port range for multiple websites||
+||Voice chat|[TeamSpeak](https://teamspeak.com/)|`UDP` `9987:9987`|Voice|⭐⭐|
+||||`30033:30033`|Filetransfer||
+||||`10011:10011`|ServerQuery (raw)||
+||||`10022:10022`|ServerQuery (SSH)||
+||||`10080:10080`|WebQuery (http)||
+||||`10443:10443`|WebQuery (https)||
+||||`41144:41144`|TSDNS||
+|**Miscellaneous**|Research contribution|[Folding@home](https://docs.linuxserver.io/images/docker-foldingathome/)|`TODO:7396`|||
+||SSH tarpit|[endlessh-go](https://github.com/shizunge/endlessh-go)|`TODO`|||
 
 ## Databases
 
