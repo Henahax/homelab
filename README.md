@@ -81,26 +81,26 @@ TODO:
 |Category|Description|Services|Port|Info|Priority|
 |-|-|-|-|-|-|
 |**Admin**|Container management|[Portainer](https://www.portainer.io/)|`TODO:9443`||⭐⭐⭐|
-||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|`TODO`|||
-||Dashboard|[Homarr](https://homarr.dev/)|`TODO`|||
-||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|`TODO`|||
+||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|`TODO:8080`|||
+||Dashboard|[Homarr](https://homarr.dev/)|`TODO:7575`|||
+||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|`TODO:3001`|||
 ||Monitoring dashboard|[Grafana](https://grafana.com/)|`TODO:3000`|||
-||Notifications|[ntfy](https://docs.ntfy.sh/)|`TODO`|||
+||Notifications|[ntfy](https://docs.ntfy.sh/)|`TODO:80`|||
 |**Database**|Databases for services|[PostgreSQL](https://www.postgresql.org/)|`5432:5432`||⭐⭐|
-||Database administration|[pgAdmin](https://www.pgadmin.org/)|`TODO`||⭐|
-|**Network**|Dynamic DNS|[ddns-updater](https://github.com/qdm12/ddns-updater)|`TODO`||⭐⭐|
+||Database administration|[pgAdmin](https://www.pgadmin.org/)|`TODO:8080`||⭐⭐|
+|**Network**|Dynamic DNS|[ddns-updater](https://github.com/qdm12/ddns-updater)|`TODO:8000`||⭐⭐|
 ||Reverse proxy|[træfik](https://traefik.io/)|`80:80`|http|⭐⭐⭐|
 ||||`443:443`|https||
 ||||`TODO:8080`|Webinterface||
 ||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|`TODO`||⭐|
 ||DNS ad blocking|[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) / [Pi-hole](https://pi-hole.net/)|`TODO`||⭐|
-|**Files**|File sync & share|[Nextcloud](https://docs.linuxserver.io/images/docker-nextcloud/)|`TODO`||⭐⭐|
+|**Files**|File sync & share|[Nextcloud](https://docs.linuxserver.io/images/docker-nextcloud/)|`TODO:443`||⭐⭐|
 ||file synchronisation|[Syncthing](https://hub.docker.com/r/linuxserver/syncthing)|`TODO`|||
 ||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|`TODO:8000`|||
 |**Media**|Media system|[Jellyfin](https://docs.linuxserver.io/images/docker-jellyfin/)|`TODO`|||
 ||Photo & video management|[immich](https://immich.app/)|`TODO`|||
 ||Media automation|[Radarr](https://docs.linuxserver.io/images/docker-radarr/), [Sonarr](https://docs.linuxserver.io/images/docker-sonarr/), [Prowlarr](https://docs.linuxserver.io/images/docker-prowlarr/), [Bazarr](https://docs.linuxserver.io/images/docker-bazarr/), [Whisparr](https://wiki.servarr.com/whisparr) - [*Servarr*](https://wiki.servarr.com/)|`TODO`|||
-|**Private**|Password vault|[VaultWarden](https://github.com/dani-garcia/vaultwarden)|`TODO`|||
+|**Private**|Password vault|[VaultWarden](https://github.com/dani-garcia/vaultwarden)|`TODO:80`|||
 ||Personal notes|[Obsidian](https://docs.linuxserver.io/images/docker-obsidian/)|`TODO`||⭐⭐|
 ||Large Langugage Model|[Ollama](https://ollama.com/)|`TODO`|||
 |**Public**|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|`TODO-TODO:80`|Port range for multiple websites||
