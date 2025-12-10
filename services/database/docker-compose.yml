@@ -1,49 +1,60 @@
+version: "3.9"
+
 services:
-  postgresql:
-    image: postgres:latest
-    container_name: postgresql
+  teamspeak:
+    image: teamspeak
+    container_name: teamspeak
     restart: unless-stopped
     environment:
-      POSTGRES_USER: "${POSTGRES_USER}"
-      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
-    networks:
-      - postgres-network
+      TS3SERVER_DB_PLUGIN: ts3db_postgresql
+      TS3SERVER_DB_SQLCREATEPATH: create_postgresql
+      TS3SERVER_DB_HOST: postgresql # service name of Postgres in the other stack
+      TS3SERVER_DB_USER: "${TEAMSPEAK_DB_USER}"
+      TS3SERVER_DB_PASSWORD: "${TEAMSPEAK_DB_PASSWORD}"
+      TS3SERVER_DB_NAME: teamspeak
+      TS3SERVER_DB_WAITUNTILREADY: 30
+      TS3SERVER_LICENSE: accept
     ports:
-      - "5432:5432"
+      - "9987:9987/udp"
+      - "10011:10011"
+      - "30033:30033"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-        # Named volume mapped to host path in the bottom section
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    container_name: pgadmin
+      - teamspeak-data:/var/ts3server/
+    networks:
+      - postgres-network # external network to reach Postgres
+
+  sinusbot:
+    image: sinusbot/docker
+    container_name: sinusbot
     restart: unless-stopped
     environment:
-      PGADMIN_DEFAULT_EMAIL: "${PGADMIN_DEFAULT_EMAIL}"
-      PGADMIN_DEFAULT_PASSWORD: "${PGADMIN_DEFAULT_PASSWORD}"
-    networks:
-      - postgres-network
+      TZ: Europe/Berlin
     ports:
-      - "8080:80"
+      - "8087:8087"
     volumes:
-      - pgadmin_data:/var/lib/pgadmin
-        # Named volume mapped to host path in the bottom section
-    depends_on:
-      - postgresql
+      - sinusbot-data:/opt/sinusbot/data
+      - sinusbot-scripts:/opt/sinusbot/scripts
 
 volumes:
-  postgres_data:
+  teamspeak-data:
     driver: local
     driver_opts:
       type: none
-      device: /volumes/postgres # Host path on your ZFS dataset
+      device: /volumes/teamspeak
       o: bind
-  pgadmin_data:
+  sinusbot-data:
     driver: local
     driver_opts:
       type: none
-      device: /volumes/pgadmin # Host path on your ZFS dataset
+      device: /volumes/sinusbot
+      o: bind
+  sinusbot-scripts:
+    driver: local
+    driver_opts:
+      type: none
+      device: /volumes/sinusbot/scripts
       o: bind
 
 networks:
   postgres-network:
-    name: postgres-network
+    external: true

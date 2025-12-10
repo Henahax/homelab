@@ -4,18 +4,26 @@ services:
     image: portainer/portainer-ce:lts
     restart: always
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock # on host system
+      - docker_sock:/var/run/docker.sock # on host system
       - portainer_data:/data # named bind mount to ZFS dataset
     ports:
       - 9443:9443
       # - 8000:8000 # Edge Agents
-networks:
-  default:
-    name: portainer_network
+
 volumes:
+  docker_sock:
+    driver: local
+    driver_opts:
+      type: none
+      device: /var/run/docker.sock
+      o: bind
   portainer_data:
     driver: local
     driver_opts:
       type: none
       device: /volumes/portainer # Host path on your ZFS dataset
       o: bind
+
+networks:
+  default:
+    name: portainer_network

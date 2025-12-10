@@ -10,9 +10,29 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "8080:8080" # Traefik dashboard
+      - "8080:8080"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./traefik.yml:/etc/traefik/traefik.yml:ro
-      - ./certs:/certs:ro
+      - docker_sock:/var/run/docker.sock:ro
+      - traefik_config:/etc/traefik/traefik.yml:ro
+      - traefik_certs:/certs:ro
     restart: unless-stopped
+
+volumes:
+  docker_sock:
+    driver: local
+    driver_opts:
+      type: none
+      device: /var/run/docker.sock
+      o: bind
+  traefik_config:
+    driver: local
+    driver_opts:
+      type: none
+      device: /volumes/traefik/config/traefik.yml # adjust path
+      o: bind
+  traefik_certs:
+    driver: local
+    driver_opts:
+      type: none
+      device: /volumes/traefik/certs # adjust path
+      o: bind
