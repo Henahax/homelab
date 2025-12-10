@@ -101,7 +101,7 @@ TODO:
 ||Photo & video management|[immich](https://immich.app/)|`TODO`|||
 ||Media automation|[Radarr](https://docs.linuxserver.io/images/docker-radarr/), [Sonarr](https://docs.linuxserver.io/images/docker-sonarr/), [Prowlarr](https://docs.linuxserver.io/images/docker-prowlarr/), [Bazarr](https://docs.linuxserver.io/images/docker-bazarr/), [Whisparr](https://wiki.servarr.com/whisparr) - [*Servarr*](https://wiki.servarr.com/)|`TODO`|||
 |**Private**|Password vault|[VaultWarden](https://github.com/dani-garcia/vaultwarden)|`TODO:80`|||
-||Personal notes|[Obsidian](https://docs.linuxserver.io/images/docker-obsidian/)|`TODO`||⭐⭐|
+||Personal notes|[Joplin](https://docs.linuxserver.io/images/docker-joplin/)|`TODO`||⭐⭐|
 ||Large Langugage Model|[Ollama](https://ollama.com/)|`TODO`|||
 |**Public**|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|`TODO-TODO:80`|Port range for multiple websites||
 ||Voice chat|[TeamSpeak](https://teamspeak.com/)|`UDP` `9987:9987`|Voice|⭐⭐|
