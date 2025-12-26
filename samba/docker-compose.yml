@@ -1,0 +1,19 @@
+services:
+  samba:
+    image: dperson/samba:latest
+    container_name: samba
+    restart: always
+    ports:
+      - "137:137/udp"
+      - "138:138/udp"
+      - "139:139"
+      - "445:445"
+    volumes:
+      - /container-volumes:/mount # <-- your ZFS dataset
+      - /container-volumes/samba:/config # persistent Samba config
+    environment:
+      - USERID=1000
+      - GROUPID=1000
+      - TZ=Europe/Berlin
+      - SAMBA_USERS=admin;password123 # user "admin" with password "password123"
+    command: "-s 'ContainerVolumes;/mount;yes;yes;admin'"
