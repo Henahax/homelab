@@ -21,7 +21,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /volumes/portainer # Host path on your ZFS dataset
+      device: /container-volumes/portainer # Host path on your ZFS dataset
       o: bind
 
 networks:
