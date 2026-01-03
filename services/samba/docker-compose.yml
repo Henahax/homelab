@@ -1,0 +1,25 @@
+services:
+  samba:
+    image: ghcr.io/servercontainers/samba:latest
+    container_name: samba
+    restart: always
+    network_mode: "host"
+    cap_add:
+      - CAP_NET_ADMIN
+    environment:
+      # Samba user/password and UID/GID mapping
+      ACCOUNT_Henahax: "password"
+      UID_Henahax: "1000"
+      GID_Henahax: "1000"
+
+      # Samba global settings
+      SAMBA_GLOBAL_STANZA: "server string = Docker Samba Server"
+
+      # NetBIOS name (optional, shows up in Windows Explorer)
+      NETBIOS_NAME: "services"
+
+      # Share configuration with forced user/group
+      SAMBA_VOLUME_CONFIG_data: "[container-volumes];path=/shares/data;available=yes;browsable=yes;writable=yes;guest ok=no;force user=Henahax"
+
+    volumes:
+      - /container-volumes:/shares/data
