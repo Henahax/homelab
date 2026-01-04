@@ -7,9 +7,9 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_USER: Henahax
-      POSTGRES_PASSWORD: strong-password
+      POSTGRES_PASSWORD: "password"
     volumes:
-      - /container-volumes/postgres:/var/lib/postgresql/data
+      - /container-volumes/postgres:/var/lib/postgresql
 
   pgadmin:
     image: dpage/pgadmin4
@@ -18,7 +18,7 @@ services:
     ports:
       - "8888:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: mail@mail.com
+      PGADMIN_DEFAULT_EMAIL: mail@test.com
       PGADMIN_DEFAULT_PASSWORD: "password"
       PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "False"
     volumes:
