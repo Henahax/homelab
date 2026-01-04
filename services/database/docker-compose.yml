@@ -1,60 +1,33 @@
-version: "3.9"
-
 services:
-  teamspeak:
-    image: teamspeak
-    container_name: teamspeak
-    restart: unless-stopped
-    environment:
-      TS3SERVER_DB_PLUGIN: ts3db_postgresql
-      TS3SERVER_DB_SQLCREATEPATH: create_postgresql
-      TS3SERVER_DB_HOST: postgresql # service name of Postgres in the other stack
-      TS3SERVER_DB_USER: "${TEAMSPEAK_DB_USER}"
-      TS3SERVER_DB_PASSWORD: "${TEAMSPEAK_DB_PASSWORD}"
-      TS3SERVER_DB_NAME: teamspeak
-      TS3SERVER_DB_WAITUNTILREADY: 30
-      TS3SERVER_LICENSE: accept
+  database:
+    image: postgres
+    container_name: postgres
+    restart: always
     ports:
-      - "9987:9987/udp"
-      - "10011:10011"
-      - "30033:30033"
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: Henahax
+      POSTGRES_PASSWORD: strong-password
     volumes:
-      - teamspeak-data:/var/ts3server/
-    networks:
-      - postgres-network # external network to reach Postgres
+      - /container-volumes/postgres:/var/lib/postgresql/data
 
-  sinusbot:
-    image: sinusbot/docker
-    container_name: sinusbot
-    restart: unless-stopped
-    environment:
-      TZ: Europe/Berlin
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
     ports:
-      - "8087:8087"
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: mail@mail.com
+      PGADMIN_DEFAULT_PASSWORD: "password"
+      PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "False"
     volumes:
-      - sinusbot-data:/opt/sinusbot/data
-      - sinusbot-scripts:/opt/sinusbot/scripts
+      - /container-volumes/pgadmin:/var/lib/pgadmin
 
 volumes:
-  teamspeak-data:
+  pgadmin_data:
     driver: local
     driver_opts:
       type: none
-      device: /volumes/teamspeak
+      device: /container-volumes/pgadmin
       o: bind
-  sinusbot-data:
-    driver: local
-    driver_opts:
-      type: none
-      device: /volumes/sinusbot
-      o: bind
-  sinusbot-scripts:
-    driver: local
-    driver_opts:
-      type: none
-      device: /volumes/sinusbot/scripts
-      o: bind
-
-networks:
-  postgres-network:
-    external: true
