@@ -8,7 +8,7 @@ services:
       - CAP_NET_ADMIN
     environment:
       # Samba user/password and UID/GID mapping
-      ACCOUNT_Henahax: "password"
+      ACCOUNT_Henahax: "$password"
       UID_Henahax: "1000"
       GID_Henahax: "1000"
 
@@ -22,4 +22,12 @@ services:
       SAMBA_VOLUME_CONFIG_data: "[container-volumes];path=/shares/data;available=yes;browsable=yes;writable=yes;guest ok=no;force user=Henahax"
 
     volumes:
-      - /container-volumes:/shares/data
+      - samba_data:/shares/data
+
+volumes:
+  samba_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes
+      o: bind

@@ -5,10 +5,25 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
-    volumes:
-      - /container-volumes/nextcloud/config:/config
-      - /container-volumes/nextcloud/data:/data
+      - TZ=Europe/Berlin
     ports:
       - 443:443
+    volumes:
+      - nextcloud_config:/config
+      - nextcloud_data:/data
     restart: unless-stopped
+
+volumes:
+  nextcloud_config:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/nextcloud/config
+      o: bind
+
+  nextcloud_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/nextcloud/data
+      o: bind
