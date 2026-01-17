@@ -29,5 +29,5 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /srv/container-volumes
+      device: /container-volumes
       o: bind

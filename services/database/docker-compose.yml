@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: Henahax
       POSTGRES_PASSWORD: "password"
     volumes:
-      - /srv/container-volumes/postgres:/var/lib/postgresql
+      - /container-volumes/postgres:/var/lib/postgresql
 
   pgadmin:
     image: dpage/pgadmin4
@@ -22,12 +22,12 @@ services:
       PGADMIN_DEFAULT_PASSWORD: "password"
       PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "False"
     volumes:
-      - /srv/container-volumes/pgadmin:/var/lib/pgadmin
+      - /container-volumes/pgadmin:/var/lib/pgadmin
 
 volumes:
   pgadmin_data:
     driver: local
     driver_opts:
       type: none
-      device: /srv/container-volumes/pgadmin
+      device: /container-volumes/pgadmin
       o: bind

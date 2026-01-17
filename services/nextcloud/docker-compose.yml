@@ -18,12 +18,12 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /srv/container-volumes/nextcloud/config
+      device: /container-volumes/nextcloud/config
       o: bind
 
   nextcloud_data:
     driver: local
     driver_opts:
       type: none
-      device: /srv/container-volumes/nextcloud/data
+      device: /container-volumes/nextcloud/data
       o: bind
