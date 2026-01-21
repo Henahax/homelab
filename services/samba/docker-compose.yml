@@ -19,7 +19,8 @@ services:
       NETBIOS_NAME: "services"
 
       # Share configuration with forced user/group
-      SAMBA_VOLUME_CONFIG_data: "[container-volumes];path=/shares/data;available=yes;browsable=yes;writable=yes;guest ok=no;force user=Henahax"
+      # SAMBA_VOLUME_CONFIG_data: "[container-volumes];path=/shares/data;available=yes;browsable=yes;writable=yes;guest ok=no;force user=Henahax"
+      SAMBA_VOLUME_CONFIG_data: "[container-volumes];path=/shares/data;available=yes;browsable=yes;writable=yes;guest ok=no;force user=Henahax;create mask=0664;directory mask=0775"
 
     volumes:
       - samba_data:/shares/data
