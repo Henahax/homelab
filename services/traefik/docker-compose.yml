@@ -10,7 +10,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "8080:8080"
+      - "9080:8080"
     volumes:
       - docker_sock:/var/run/docker.sock:ro
       - traefik_config:/etc/traefik/traefik.yml:ro
@@ -28,11 +28,11 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /volumes/traefik/config/traefik.yml # adjust path
+      device: /container-volumes/traefik/config/traefik.yml
       o: bind
   traefik_certs:
     driver: local
     driver_opts:
       type: none
-      device: /volumes/traefik/certs # adjust path
+      device: /container-volumes/traefik/certs
       o: bind

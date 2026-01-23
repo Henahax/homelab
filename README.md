@@ -58,7 +58,7 @@
 
 |Category|Port range|
 |-|-|
-|Admin Panels|`3000-3999`|
+|Admin Panels|`9000-9999`|
 |Internal services||
 |Monitoring||
 |Public Web|`8080-8099`|
@@ -80,18 +80,18 @@ TODO:
 
 |Category|Description|Services|Port|Info|Priority|
 |-|-|-|-|-|-|
-|**Admin**|Container management|[Portainer](https://www.portainer.io/)|`TODO:9443`||⭐⭐⭐|
+|**Admin**|Container management|[Portainer](https://www.portainer.io/)|`9443:9443`||⭐⭐⭐|
 ||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|`TODO:8080`|||
 ||Dashboard|[Homarr](https://homarr.dev/)|`TODO:7575`|||
 ||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|`TODO:3001`|||
 ||Monitoring dashboard|[Grafana](https://grafana.com/)|`TODO:3000`|||
 ||Notifications|[ntfy](https://docs.ntfy.sh/)|`TODO:80`|||
 |**Database**|Databases for services|[PostgreSQL](https://www.postgresql.org/)|`5432:5432`||⭐⭐|
-||Database administration|[pgAdmin](https://www.pgadmin.org/)|`TODO:8080`||⭐⭐|
+||Database administration|[pgAdmin](https://www.pgadmin.org/)|`9432:8080`||⭐⭐|
 |**Network**|Dynamic DNS|[ddns-updater](https://github.com/qdm12/ddns-updater)|`TODO:8000`||⭐⭐|
 ||Reverse proxy|[træfik](https://traefik.io/)|`80:80`|http|⭐⭐⭐|
 ||||`443:443`|https||
-||||`TODO:8080`|Webinterface||
+||||`9080:8080`|Webinterface||
 ||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|`TODO`||⭐|
 ||DNS ad blocking|[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) / [Pi-hole](https://pi-hole.net/)|`TODO`||⭐|
 |**Files**|File sync & share|[Nextcloud](https://docs.linuxserver.io/images/docker-nextcloud/)|`TODO:443`||⭐⭐|
