@@ -1,23 +1,14 @@
 services:
   teamspeak:
-    image: teamspeak
+    image: teamspeaksystems/teamspeak6-server:latest
     container_name: teamspeak
     restart: unless-stopped
     environment:
-      TS3SERVER_DB_PLUGIN: ts3db_postgresql
-      TS3SERVER_DB_SQLCREATEPATH: create_postgresql
-      TS3SERVER_DB_HOST: postgresql
-      TS3SERVER_DB_USER: "${TEAMSPEAK_DB_USER}"
-      TS3SERVER_DB_PASSWORD: "${TEAMSPEAK_DB_PASSWORD}"
-      TS3SERVER_DB_NAME: teamspeak
-      TS3SERVER_DB_WAITUNTILREADY: 30
       TS3SERVER_LICENSE: accept
-    networks:
-      - teamspeak-network
     ports:
-      - 9987:9987/udp
-      - 10011:10011
-      - 30033:30033
+      - "9987:9987/udp" # Voice Port
+      - "30033:30033/tcp" # File Transfer
+      - "10080:10080/tcp" # Web Query
     volumes:
       - teamspeak-data:/var/ts3server/
   sinusbot:
@@ -26,8 +17,6 @@ services:
     restart: unless-stopped
     environment:
       - TZ=Europe/Berlin
-    networks:
-      - teamspeak-network
     ports:
       - 8087:8087
     volumes:
@@ -35,25 +24,21 @@ services:
       - sinusbot-scripts:/opt/sinusbot/scripts
 
 volumes:
-  teamspeak_data:
+  teamspeak-data:
     driver: local
     driver_opts:
       type: none
-      device: /volumes/teamspeak # Host path on your ZFS dataset
+      device: /container-volumes/teamspeak # Host path on your ZFS dataset
       o: bind
   sinusbot-data:
     driver: local
     driver_opts:
       type: none
-      device: /volumes/sinusbot # Host path on your ZFS dataset
+      device: /container-volumes/sinusbot # Host path on your ZFS dataset
       o: bind
   sinusbot-scripts:
     driver: local
     driver_opts:
       type: none
-      device: /volumes/sinusbot/scripts # Host path on your ZFS dataset
+      device: /container-volumes/sinusbot/scripts # Host path on your ZFS dataset
       o: bind
-
-networks:
-  teamspeak-network:
-    external: true
