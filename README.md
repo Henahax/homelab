@@ -106,11 +106,9 @@ TODO:
 |**Public**|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|`TODO-TODO:80`|Port range for multiple websites||
 ||Voice chat|[TeamSpeak](https://teamspeak.com/)|`UDP` `9987:9987`|Voice|⭐⭐|
 ||||`30033:30033`|Filetransfer||
-||||`10011:10011`|ServerQuery (raw)||
 ||||`10022:10022`|ServerQuery (SSH)||
-||||`10080:10080`|WebQuery (http)||
-||||`10443:10443`|WebQuery (https)||
-||||`41144:41144`|TSDNS||
+||||`8087:10080`|WebQuery (http)||
+||||`TODO:10443`|WebQuery (https)||
 |**Miscellaneous**|Research contribution|[Folding@home](https://docs.linuxserver.io/images/docker-foldingathome/)|`TODO:7396`|||
 ||SSH tarpit|[endlessh-go](https://github.com/shizunge/endlessh-go)|`TODO`|||
 
