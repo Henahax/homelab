@@ -1,155 +1,118 @@
 ################################################################
 #
-# Configuration sample for Traefik v2.
+# Static configuration for Traefik v2/v3
 #
-# For Traefik v1: https://github.com/traefik/traefik/blob/v1.7/traefik.sample.toml
+# This file defines infrastructure-level settings:
+# - entrypoints (ports)
+# - certificate resolver (Let's Encrypt)
+# - providers (Docker)
+#
+# Dynamic routing for services is configured via Docker labels.
 #
 ################################################################
 
 ################################################################
 # Global configuration
 ################################################################
+
 global:
+  # Check if a new Traefik version is available
   checkNewVersion: true
-  sendAnonymousUsage: true
+
+  # Send anonymous usage data (disable if you prefer privacy)
+  sendAnonymousUsage: false
 
 ################################################################
 # EntryPoints configuration
 ################################################################
 
-# EntryPoints definition
-#
-# Optional
-#
 entryPoints:
+  # HTTP entrypoint
+  # Used for:
+  # - Let's Encrypt HTTP challenge
+  # - redirecting HTTP → HTTPS
   web:
-    address: :80
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
+          permanent: true
 
+  # HTTPS entrypoint
+  # All routers using TLS will use this entrypoint
   websecure:
-    address: :443
+    address: ":443"
+    http:
+      tls:
+        # Use the certificate resolver defined below
+        certResolver: le
+
+  # Traefik dashboard entrypoint
+  # Dedicated port for dashboard and internal API
+  traefik:
+    address: ":8080"
+
+################################################################
+# Let's Encrypt (ACME) configuration
+################################################################
+
+certificatesResolvers:
+  le:
+    acme:
+      # Email used for Let's Encrypt registration and expiry notices
+      email: "letsencrypt@henahax.net"
+
+      # Storage for certificates (must be writable)
+      # File must exist and have permissions 600
+      storage: "/certs/acme.json"
+
+      # HTTP-01 challenge
+      # Let's Encrypt will verify domain ownership via:
+      # http://yourdomain/.well-known/acme-challenge/*
+      httpChallenge:
+        entryPoint: web
 
 ################################################################
 # Traefik logs configuration
 ################################################################
 
-# Traefik logs
-# Enabled by default and log to stdout
-#
-# Optional
-#
-#log:
-# Log level
-#
-# Optional
-# Default: "ERROR"
-#
-#  level: DEBUG
-
-# Sets the filepath for the traefik log. If not specified, stdout will be used.
-# Intermediate directories are created if necessary.
-#
-# Optional
-# Default: os.Stdout
-#
-#  filePath: log/traefik.log
-
-# Format is either "json" or "common".
-#
-# Optional
-# Default: "common"
-#
-#  format: json
+log:
+  # Recommended level for production
+  level: INFO
 
 ################################################################
-# Access logs configuration
+# Access logs
 ################################################################
 
-# Enable access logs
-# By default it will write to stdout and produce logs in the textual
-# Common Log Format (CLF), extended with additional fields.
-#
-# Optional
-#
-#accessLog:
-# Sets the file path for the access log. If not specified, stdout will be used.
-# Intermediate directories are created if necessary.
-#
-# Optional
-# Default: os.Stdout
-#
-#  filePath: /path/to/log/log.txt
-
-# Format is either "json", "common", or "genericCLF".
-# - "common": Traefik's extended CLF format (default)
-# - "genericCLF": Standard CLF format compatible with standard log analyzers
-# - "json": JSON format for structured logging
-#
-# Optional
-# Default: "common"
-#
-#  format: json
-#  format: genericCLF
+# Logs every HTTP request handled by Traefik
+accessLog: {}
 
 ################################################################
-# API and dashboard configuration
+# API and Dashboard
 ################################################################
 
-# Enable API and dashboard
-#
-# Optional
-#
-#api:
-# Enable the API in insecure mode
-#
-# Optional
-# Default: false
-#
-#  insecure: true
+api:
+  # Enables the internal API
+  dashboard: true
 
-# Enabled Dashboard
-#
-# Optional
-# Default: true
-#
-#  dashboard: false
+  # DO NOT enable insecure mode in production
+  # It exposes the dashboard without authentication
+  insecure: true
 
 ################################################################
-# Ping configuration
+# Docker provider
 ################################################################
 
-# Enable ping
-#ping:
-# Name of the related entry point
-#
-# Optional
-# Default: "traefik"
-#
-#  entryPoint: traefik
+providers:
+  docker:
+    # Use Docker socket
+    endpoint: "unix:///var/run/docker.sock"
 
-################################################################
-# Docker configuration backend
-################################################################
+    # Do NOT expose containers automatically
+    # Containers must explicitly enable Traefik via labels
+    exposedByDefault: false
 
-#providers:
-# Enable Docker configuration backend
-#  docker:
-# Docker server endpoint. Can be a tcp or a unix socket endpoint.
-#
-# Required
-# Default: "unix:///var/run/docker.sock"
-#
-#    endpoint: tcp://10.10.10.10:2375
-
-# Default host rule.
-#
-# Optional
-# Default: "Host(`{{ normalize .Name }}`)"
-#
-#    defaultRule: Host(`{{ normalize .Name }}.docker.localhost`)
-
-# Expose containers by default in traefik
-#
-# Optional
-# Default: true
-#
-#    exposedByDefault: false
+    # Optional but helpful when running multiple Docker networks
+    #network: traefik

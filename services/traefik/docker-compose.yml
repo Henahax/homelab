@@ -3,10 +3,7 @@ services:
     image: traefik:latest
     container_name: traefik
     command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
+      - "--configFile=/etc/traefik/traefik.yml"
     ports:
       - "80:80"
       - "443:443"
@@ -14,11 +11,10 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - traefik_config:/etc/traefik:ro
-      - traefik_certs:/certs:ro
+      - traefik_certs:/certs
     restart: unless-stopped
 
 volumes:
-  # Traefik configuration directory (wrap traefik.yml in this directory)
   traefik_config:
     driver: local
     driver_opts:
@@ -26,7 +22,6 @@ volumes:
       device: /container-volumes/traefik/config
       o: bind
 
-  # Certificates directory
   traefik_certs:
     driver: local
     driver_opts:
