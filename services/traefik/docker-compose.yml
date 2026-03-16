@@ -3,25 +3,83 @@ services:
     image: traefik:latest
     container_name: traefik
     command:
-      - "--configFile=/etc/traefik/traefik.yml"
+      # Global configuration
+      - "--global.checkNewVersion=true"
+      - "--global.sendAnonymousUsage=false"
+
+      # Entrypoints
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
+      - "--entrypoints.websecure.address=:443"
+      - "--entrypoints.websecure.http.tls.certResolver=le"
+      - "--entrypoints.traefik.address=:8080"
+
+      # Certificates (Let's Encrypt)
+      - "--certificatesresolvers.le.acme.email=letsencrypt@henahax.net"
+      - "--certificatesresolvers.le.acme.storage=/certs/acme.json"
+      - "--certificatesresolvers.le.acme.httpchallenge.entrypoint=web"
+
+      # Logs
+      - "--log.level=INFO"
+      - "--accesslog=true"
+
+      # API and Dashboard
+      - "--api.dashboard=true"
+      - "--api.insecure=true"
+
+      # Docker provider
+      - "--providers.docker=true"
+      - "--providers.docker.endpoint=unix:///var/run/docker.sock"
+      - "--providers.docker.exposedbydefault=false"
+
+      # Services
+      # henahax: Proxies requests to the main homepage application running on internal IP 192.168.0.11:8081
+      - "--services.henahax.loadbalancer.server.url=http://192.168.0.11:8081"
+      # portainer: Proxies requests to Portainer (Docker management UI) on internal IP 192.168.0.11:9443
+      - "--services.portainer.loadbalancer.server.url=https://192.168.0.11:9443"
+      # github: Dummy service for redirect middleware; requests are redirected before reaching this service
+      - "--services.github.loadbalancer.server.url=http://127.0.0.1:8080"
+
+      # Middlewares
+      # portainer-ip: IP allowlist middleware to restrict Portainer access to local network (192.168.0.0/16) and localhost
+      - "--middlewares.portainer-ip.ipallowlist.sourcerange=192.168.0.0/16,127.0.0.1/32"
+      # github-redirect: Redirect regex middleware for permanent redirect from github.henahax.net to github.com/Henahax, preserving path
+      - "--middlewares.github-redirect.redirectregex.regex=\"^https://github\\.henahax\\.net/(.*)\""
+      - "--middlewares.github-redirect.redirectregex.replacement=https://github.com/Henahax/${1}"
+      - "--middlewares.github-redirect.redirectregex.permanent=true"
+
+      # Routers
+      # henahax: Routes henahax.net and www.henahax.net to henahax service via HTTPS with auto-SSL certificates
+      - "--routers.henahax.rule=Host(`henahax.net`) || Host(`www.henahax.net`)"
+      - "--routers.henahax.entrypoints=websecure"
+      - "--routers.henahax.tls.certresolver=le"
+      - "--routers.henahax.service=henahax"
+
+      # portainer: Routes portainer.henahax.net to portainer service via HTTPS with IP restriction middleware
+      - "--routers.portainer.rule=Host(`portainer.henahax.net`)"
+      - "--routers.portainer.entrypoints=websecure"
+      - "--routers.portainer.tls.certresolver=le"
+      - "--routers.portainer.service=portainer"
+      - "--routers.portainer.middlewares=portainer-ip"
+
+      # github: Routes github.henahax.net to github service with redirect middleware for external GitHub profile
+      - "--routers.github.rule=Host(`github.henahax.net`)"
+      - "--routers.github.entrypoints=websecure"
+      - "--routers.github.tls.certresolver=le"
+      - "--routers.github.middlewares=github-redirect"
+      - "--routers.github.service=github"
     ports:
       - "80:80"
       - "443:443"
       - "9080:8080" # Dashboard
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - traefik_config:/etc/traefik:ro
       - traefik_certs:/certs
     restart: unless-stopped
 
 volumes:
-  traefik_config:
-    driver: local
-    driver_opts:
-      type: none
-      device: /container-volumes/traefik/config
-      o: bind
-
   traefik_certs:
     driver: local
     driver_opts:
