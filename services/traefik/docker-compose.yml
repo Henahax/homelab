@@ -3,50 +3,24 @@ services:
     image: traefik:latest
     container_name: traefik
     command:
-      # Global configuration
-      - "--global.checkNewVersion=true"
-      - "--global.sendAnonymousUsage=false"
-
-      # Entrypoints
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
-      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
-      - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
-      - "--entrypoints.websecure.address=:443"
-      - "--entrypoints.websecure.http.tls.certResolver=le"
-      - "--entrypoints.traefik.address=:8080"
-
-      # Certificates (Let's Encrypt)
-      - "--certificatesresolvers.le.acme.email=letsencrypt@henahax.net"
-      - "--certificatesresolvers.le.acme.storage=/certs/acme.json"
-      - "--certificatesresolvers.le.acme.httpchallenge.entrypoint=web"
-
-      # Logs
-      - "--log.level=INFO"
-      - "--accesslog=true"
-
-      # API and Dashboard
-      - "--api.dashboard=true"
-      - "--api.insecure=true"
-
-      # Docker provider
-      - "--providers.docker=true"
-      - "--providers.docker.endpoint=unix:///var/run/docker.sock"
-      - "--providers.docker.exposedbydefault=false"
+      # Load all static config from the volume
+      - "--configFile=/container-volumes/traefik/traefik.yml"
 
     ports:
       - "80:80"
       - "443:443"
       - "9080:8080" # Dashboard
+
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - traefik_certs:/certs
+      - traefik_data:/container-volumes/traefik
+
     restart: unless-stopped
 
 volumes:
-  traefik_certs:
+  traefik_data:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/traefik/certs
+      device: /container-volumes/traefik
       o: bind

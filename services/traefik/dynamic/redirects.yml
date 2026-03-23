@@ -1,0 +1,24 @@
+http:
+  routers:
+    github-redirect:
+      rule: "Host(`github.henahax.net`)"
+      entryPoints:
+        - web
+        - websecure
+      middlewares:
+        - redirect-github
+      service: noop
+      priority: 100
+
+  middlewares:
+    redirect-github:
+      redirectRegex:
+        regex: "^https?://github\\.henahax\\.net(.*)"
+        replacement: "https://github.com/henahax$1"
+        permanent: true
+
+  services:
+    noop:
+      loadBalancer:
+        servers:
+          - url: "http://0.0.0.0"
