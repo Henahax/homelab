@@ -9,6 +9,16 @@ services:
     ports:
       - 8080:4321
     restart: unless-stopped
+  henahax-voice-server-api: #nginx
+    container_name: henahax-voice-server-api
+    image: henahax/voice-server-api:latest
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+    ports:
+      - 8082:3000
+    restart: unless-stopped
   henahax-gw2tools: #nginx
     container_name: henahax-gw2tools
     image: henahax/gw2tools:latest
@@ -19,13 +29,3 @@ services:
     ports:
       - 8081:3000
     restart: unless-stopped
-#  henahax-treasurehunt: #nginx
-#    container_name: henahax-treasurehunt
-#    image: henahax/treasurehunt:latest
-#    environment:
-#      - PUID=1000
-#      - PGID=1000
-#      - TZ=Europe/Berlin
-#    ports:
-#      - 8082:3000
-#    restart: unless-stopped
