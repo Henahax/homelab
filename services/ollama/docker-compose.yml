@@ -29,4 +29,14 @@ services:
 
 volumes:
   ollama_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/ollama # Host path on your ZFS dataset
+      o: bind
   openwebui_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/openwebui # Host path on your ZFS dataset
+      o: bind
