@@ -1,6 +1,3 @@
-# Entwurf
-# TODO
-
 services:
   ollama:
     image: ollama/ollama:latest
@@ -20,9 +17,9 @@ services:
     depends_on:
       - ollama
     environment:
-      - OLLAMA_API_BASE_URL=http://ollama:11434/api
+      - OLLAMA_API_BASE_URL=http://ollama:11434
     ports:
-      - "3000:8080"
+      - "8019:8080"
     volumes:
       - openwebui_data:/app/backend/data
     restart: unless-stopped
@@ -38,5 +35,5 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/openwebui # Host path on your ZFS dataset
+      device: /container-volumes/ollama/openwebui # Host path on your ZFS dataset
       o: bind
