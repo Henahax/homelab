@@ -8,7 +8,8 @@ services:
       - "11434:11434"
     environment:
       - OLLAMA_KEEP_ALIVE=12h
-      - OLLAMA_NUM_PARALLEL=2
+      - OLLAMA_NUM_PARALLEL=8
+      - OLLAMA_MAX_LOADED_MODELS=4
     restart: unless-stopped
 
   open-webui:
