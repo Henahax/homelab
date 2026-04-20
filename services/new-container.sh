@@ -1,9 +1,12 @@
 # New ZFS Dataset for Container
 # on ProxMox Host
-zfs create rpool/container-volumes/new-container
+zfs create rpool/container-volumes/[new-container]
 
-# test ?
-chown -R root:root /rpool/container-volumes/
-chmod -R 755 /rpool/container-volumes/
+# permissions & ownership for new container volume
+chown -R root:root /rpool/container-volumes/[new-container]
+chmod -R 755 /rpool/container-volumes/[new-container]
 
 # remove volumes in portainer from previous attempts
+
+# special user permissions for teamspeak
+chown -R 9987:9987 /rpool/container-volumes/teamspeak/
