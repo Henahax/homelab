@@ -8,5 +8,6 @@ chmod -R 755 /rpool/container-volumes/[new-container]
 
 # remove volumes in portainer from previous attempts
 
-# special user permissions for teamspeak
+# special user permissions/ownersip
 chown -R 9987:9987 /rpool/container-volumes/teamspeak/
+chown -R 5050:5050 /rpool/container-volumes/pgadmin/
