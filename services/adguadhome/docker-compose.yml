@@ -1,0 +1,25 @@
+services:
+  adguardhome:
+    container_name: adguardhome
+    image: adguard/adguardhome
+    ports:
+      - 53:53/tcp # plain dns over tcp
+      - 53:53/udp # plain dns over udp
+      - 8053:3000/tcp # http web interface
+    volumes:
+      - adguardhome_config:/opt/adguardhome/conf # app configuration
+      - adguardhome_work:/opt/adguardhome/work # app working directory
+
+volumes:
+  adguardhome_config:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/adguardhome/config
+      o: bind
+  adguardhome_work:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/adguardhome/work
+      o: bind
