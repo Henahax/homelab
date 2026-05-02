@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: Henahax
       POSTGRES_PASSWORD: "password"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
 
   pgadmin:
     image: dpage/pgadmin4

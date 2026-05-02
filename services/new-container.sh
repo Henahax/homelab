@@ -11,7 +11,7 @@ done
 # copy example
 cp -r /rpool/container-volumes/nextcloud/data /rpool/container-volumes/data/nextcloud
 
-# special user ownersip
+# special user ownersip, on vm
 chown -R 9987:9987 /rpool/container-volumes/teamspeak/
 chown -R 5050:5050 /rpool/container-volumes/pgadmin/
 
