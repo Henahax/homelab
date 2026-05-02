@@ -8,7 +8,7 @@ services:
       - CAP_NET_ADMIN
     environment:
       # Samba user/password and UID/GID mapping
-      ACCOUNT_Henahax: "$password"
+      ACCOUNT_Henahax: "password"
       UID_Henahax: "1000"
       GID_Henahax: "1000"
 
@@ -19,8 +19,7 @@ services:
       NETBIOS_NAME: "services"
 
       # Share configuration with forced user/group
-      # SAMBA_VOLUME_CONFIG_data: "[container-volumes];path=/shares/data;available=yes;browsable=yes;writable=yes;guest ok=no;force user=Henahax"
-      SAMBA_VOLUME_CONFIG_data: "[container-volumes];path=/shares/data;available=yes;browsable=yes;writable=yes;guest ok=no;force user=Henahax;create mask=0664;directory mask=0775"
+      SAMBA_VOLUME_CONFIG_data: "[container-volumes];path=/shares/data;available=yes;browsable=yes;read only=no;writable=yes;guest ok=no;force user=Henahax;force group=Henahax;create mask=0777;directory mask=0777;force create mode=0777;force directory mode=0777;delete readonly=yes"
 
     volumes:
       - samba_data:/shares/data

@@ -2,25 +2,37 @@ services:
   traefik:
     image: traefik:latest
     container_name: traefik
+
     command:
-      # Load all static config from the volume
-      - "--configFile=/container-volumes/traefik/traefik.yml"
+      - "--configFile=/etc/traefik/traefik.yml"
 
     ports:
       - "80:80"
       - "443:443"
-      - "9080:8080" # Dashboard
+      - "9080:8080" # dashboard
 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - traefik_data:/container-volumes/traefik
+
+      # config (static config only)
+      - traefik_config:/etc/traefik
+
+      # data (ACME, certificates, state)
+      - traefik_data:/data
 
     restart: unless-stopped
 
 volumes:
+  traefik_config:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/config/traefik
+      o: bind
+
   traefik_data:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/traefik
+      device: /container-volumes/data/traefik
       o: bind

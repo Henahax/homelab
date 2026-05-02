@@ -1,10 +1,15 @@
 # New ZFS Dataset for Container
 # on ProxMox Host
-zfs create rpool/container-volumes/[new-container]
+# zfs create rpool/container-volumes/[new-container]
 
 # ownership & permission for new container volume
-chown -R root:root /rpool/container-volumes/[new-container]
-chmod -R 755 /rpool/container-volumes/[new-container]
+for dir in config data media work; do
+  chown -R root:root "/rpool/container-volumes/$dir"
+  chmod -R 755 "/rpool/container-volumes/$dir"
+done
+
+# copy example
+cp -r /rpool/container-volumes/nextcloud/data /rpool/container-volumes/data/nextcloud
 
 # special user ownersip
 chown -R 9987:9987 /rpool/container-volumes/teamspeak/

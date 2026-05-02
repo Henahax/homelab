@@ -2,6 +2,7 @@ services:
   adguardhome:
     container_name: adguardhome
     image: adguard/adguardhome
+    restart: unless-stopped
     ports:
       - 53:53/tcp # plain dns over tcp
       - 53:53/udp # plain dns over udp
@@ -15,11 +16,11 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/adguardhome/config
+      device: /container-volumes/config/adguardhome
       o: bind
   adguardhome_work:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/adguardhome/work
+      device: /container-volumes/work/adguardhome
       o: bind

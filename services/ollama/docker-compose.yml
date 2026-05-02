@@ -30,11 +30,11 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/ollama # Host path on your ZFS dataset
+      device: /container-volumes/data/ollama # Host path on your ZFS dataset
       o: bind
   openwebui_data:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/ollama/openwebui # Host path on your ZFS dataset
+      device: /container-volumes/data/ollama/openwebui # Host path on your ZFS dataset
       o: bind

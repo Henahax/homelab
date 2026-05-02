@@ -13,34 +13,11 @@ services:
       - "8087:10080/tcp" # Web Query - TODO: Change
     volumes:
       - teamspeak-data:/var/tsserver/
-#  sinusbot:
-#    image: sinusbot/docker
-#    container_name: sinusbot
-#    restart: unless-stopped
-#    environment:
-#      - TZ=Europe/Berlin
-#    ports:
-#      - 8087:8087
-#    volumes:
-#      - sinusbot-data:/opt/sinusbot/data
-#      - sinusbot-scripts:/opt/sinusbot/scripts
 
 volumes:
   teamspeak-data:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/teamspeak # Host path on your ZFS dataset
+      device: /container-volumes/data/teamspeak # Host path on your ZFS dataset
       o: bind
-#  sinusbot-data:
-#    driver: local
-#    driver_opts:
-#      type: none
-#      device: /container-volumes/sinusbot # Host path on your ZFS dataset
-#      o: bind
-#  sinusbot-scripts:
-#    driver: local
-#    driver_opts:
-#      type: none
-#      device: /container-volumes/sinusbot/scripts # Host path on your ZFS dataset
-#      o: bind
