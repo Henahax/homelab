@@ -15,7 +15,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/portainer
+      device: /container-volumes/config/portainer
       o: bind
 
 networks:

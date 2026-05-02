@@ -95,8 +95,7 @@ TODO:
 ||VPN server|[WireGuard](https://wireguard.com/) / [tailscale](https://tailscale.com/)|`TODO`|||
 ||DNS ad blocking|[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)|`53:53`|DNS|✅|
 ||||`UDP` `53:53`|DNS||
-||||`8053:80`|Web Interface||
-||||`80053:3000`|Initial Setup||
+||||`8053:3000`|Web Interface||
 |**Files**|File sync & share|[Nextcloud](https://docs.linuxserver.io/images/docker-nextcloud/)|`9009:443`|||
 ||file synchronisation|[Syncthing](https://hub.docker.com/r/linuxserver/syncthing)|`TODO`|||
 ||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|`TODO:8000`|||
