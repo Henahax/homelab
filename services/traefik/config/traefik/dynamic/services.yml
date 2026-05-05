@@ -1,0 +1,7 @@
+# todo
+http:
+  services:
+    app-service:
+      loadBalancer:
+        servers:
+          - url: "http://app:3000" #(app = your Docker container name or network alias)

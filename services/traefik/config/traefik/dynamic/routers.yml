@@ -1,0 +1,10 @@
+http:
+  routers:
+    github-redirect:
+      rule: "Host(`github.henahax.net`)"
+      entryPoints:
+        - web
+        - websecure
+      middlewares:
+        - github-redirect
+      service: noop@internal

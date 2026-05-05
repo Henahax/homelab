@@ -1,0 +1,8 @@
+# redirects
+http:
+  middlewares:
+    github-redirect:
+      redirectRegex:
+        regex: "^https?://github\\.henahax\\.net/(.*)"
+        replacement: "https://github.com/henahax/${1}"
+        permanent: true

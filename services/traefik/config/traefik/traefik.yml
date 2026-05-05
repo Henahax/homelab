@@ -1,0 +1,21 @@
+api:
+  dashboard: true
+  insecure: true # OK for local testing only
+
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+providers:
+  docker:
+    exposedByDefault: false
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: letsencrypt@henahax.net
+      storage: /data/acme.json
+      httpChallenge:
+        entryPoint: web
