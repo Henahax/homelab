@@ -8,3 +8,9 @@ http:
       middlewares:
         - github-redirect
       service: noop@internal
+    traefik-dashboard:
+      rule: "Host(`traefik.henahax.net`)"
+      entryPoints:
+        - web
+        - websecure
+      service: api@internal
