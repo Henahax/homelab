@@ -2,39 +2,73 @@ services:
   ollama:
     image: ollama/ollama:latest
     container_name: ollama
+    restart: unless-stopped
+
     volumes:
       - ollama_data:/root/.ollama
+
+    # 🧯 DIRECT ACCESS (kept)
     ports:
       - "11434:11434"
+
     environment:
       - OLLAMA_KEEP_ALIVE=12h
       - OLLAMA_NUM_PARALLEL=8
       - OLLAMA_MAX_LOADED_MODELS=4
-    restart: unless-stopped
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
     depends_on:
       - ollama
+    restart: unless-stopped
+
     environment:
       - OLLAMA_API_BASE_URL=http://ollama:11434
-    ports:
-      - "8019:8080"
+
     volumes:
       - openwebui_data:/app/backend/data
-    restart: unless-stopped
+
+    # 🧯 DIRECT ACCESS (kept)
+    ports:
+      - "8019:8080"
+
+    networks:
+      - traefik
+      - internal
+
+    labels:
+      - "traefik.enable=true"
+
+      # 🌐 LAN-only domain access
+      - "traefik.http.routers.ollama-ui.rule=Host(`ollama.henahax.net`,`ollama.henahax.de`)"
+      - "traefik.http.routers.ollama-ui.entrypoints=websecure"
+      - "traefik.http.routers.ollama-ui.tls=true"
+
+      # 🔒 LAN-only restriction
+      - "traefik.http.routers.ollama-ui.middlewares=lan-only@file"
+
+      # 🧭 Open WebUI runs on port 8080 inside container
+      - "traefik.http.services.ollama-ui.loadbalancer.server.port=8080"
 
 volumes:
   ollama_data:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/data/ollama # Host path on your ZFS dataset
+      device: /container-volumes/data/ollama
       o: bind
+
   openwebui_data:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/data/ollama/openwebui # Host path on your ZFS dataset
+      device: /container-volumes/data/ollama/openwebui
       o: bind
+
+networks:
+  traefik:
+    external: true
+
+  internal:
+    driver: bridge

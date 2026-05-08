@@ -3,26 +3,53 @@ services:
     image: postgres
     container_name: postgres
     restart: always
-    ports:
-      - "5432:5432"
+
     environment:
       POSTGRES_USER: Henahax
       POSTGRES_PASSWORD: "password"
+
     volumes:
-      - postgres_data:/var/lib/postgresql
+      - postgres_data:/var/lib/postgresql/data
+
+    # 🧯 DIRECT LAN ACCESS (kept as requested)
+    ports:
+      - "5432:5432"
+
+    networks:
+      - backend
 
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin
     restart: always
-    ports:
-      - "9432:80"
+
     environment:
-      PGADMIN_DEFAULT_EMAIL: mail@test.com
+      PGADMIN_DEFAULT_EMAIL: pgadmin@henahax.net
       PGADMIN_DEFAULT_PASSWORD: "password"
       PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "False"
+
     volumes:
       - pgadmin_data:/var/lib/pgadmin
+
+    # 🧯 DIRECT LAN ACCESS (kept as requested)
+    ports:
+      - "9432:80"
+
+    networks:
+      - traefik
+      - backend
+
+    labels:
+      - "traefik.enable=true"
+
+      # 🌐 Domain access (LAN-only via middleware)
+      - "traefik.http.routers.pgadmin.rule=Host(`pgadmin.henahax.net`,`pgadmin.henahax.de`)"
+      - "traefik.http.routers.pgadmin.entrypoints=websecure"
+      - "traefik.http.routers.pgadmin.tls=true"
+      - "traefik.http.routers.pgadmin.middlewares=lan-only@file"
+
+      # 🧭 internal container port
+      - "traefik.http.services.pgadmin.loadbalancer.server.port=80"
 
 volumes:
   postgres_data:
@@ -38,3 +65,10 @@ volumes:
       type: none
       device: /container-volumes/data/pgadmin
       o: bind
+
+networks:
+  traefik:
+    external: true
+
+  backend:
+    driver: bridge

@@ -1,31 +1,89 @@
 services:
-  henahax-homepage: #nginx
+  henahax-homepage:
     container_name: henahax-homepage
     image: henahax/homepage:latest
+    restart: unless-stopped
+
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
+
+    # 🧯 DIRECT ACCESS (kept)
     ports:
-      - 8080:4321
-    restart: unless-stopped
-  henahax-voice-server-api: #nginx
+      - "8080:4321"
+
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+
+      # 🌐 Public homepage domain
+      - "traefik.http.routers.homepage.rule=Host(`henahax.net`,`henahax.de`)"
+      - "traefik.http.routers.homepage.entrypoints=websecure"
+      - "traefik.http.routers.homepage.tls=true"
+
+      - "traefik.http.services.homepage.loadbalancer.server.port=4321"
+
+  henahax-voice-server-api:
     container_name: henahax-voice-server-api
     image: henahax/voice-server-api:latest
+    restart: unless-stopped
+
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
+
+    # 🧯 DIRECT ACCESS (kept)
     ports:
-      - 8082:3000
-    restart: unless-stopped
-  henahax-gw2tools: #nginx
+      - "8082:3000"
+
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+
+      # 🌐 Public API domain
+      - "traefik.http.routers.voice.rule=Host(`voice-server-api.henahax.net`,`voice-server-api.henahax.de`)"
+      - "traefik.http.routers.voice.entrypoints=websecure"
+      - "traefik.http.routers.voice.tls=true"
+
+      # PUBLIC → no middleware restriction
+      - "traefik.http.services.voice.loadbalancer.server.port=3000"
+
+  henahax-gw2tools:
     container_name: henahax-gw2tools
     image: henahax/gw2tools:latest
+    restart: unless-stopped
+
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
+
+    # 🧯 DIRECT ACCESS (kept)
     ports:
-      - 8081:3000
-    restart: unless-stopped
+      - "8081:3000"
+
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+
+      # 🌐 Public domain
+      - "traefik.http.routers.gw2tools.rule=Host(`gw2tools.henahax.net`,`gw2tools.henahax.de`)"
+      - "traefik.http.routers.gw2tools.entrypoints=websecure"
+      - "traefik.http.routers.gw2tools.tls=true"
+
+      # optional LAN restriction (you had this before)
+      - "traefik.http.routers.gw2tools.middlewares=lan-only@file"
+
+      - "traefik.http.services.gw2tools.loadbalancer.server.port=3000"
+
+networks:
+  traefik:
+    external: true

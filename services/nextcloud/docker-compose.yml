@@ -2,16 +2,38 @@ services:
   nextcloud:
     image: lscr.io/linuxserver/nextcloud:latest
     container_name: nextcloud
+    restart: unless-stopped
+
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
+
+    # 🧯 KEEP direct LAN access
     ports:
-      - 9009:443
+      - "9009:443"
+
     volumes:
       - nextcloud_config:/config
       - nextcloud_data:/data
-    restart: unless-stopped
+
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+
+      # 🌐 Domain routing
+      - "traefik.http.routers.nextcloud.rule=Host(`nextcloud.henahax.net`,`nextcloud.henahax.de`)"
+      - "traefik.http.routers.nextcloud.entrypoints=websecure"
+      - "traefik.http.routers.nextcloud.tls=true"
+
+      # 🔒 LAN-only access via middleware (your existing file middleware)
+      - "traefik.http.routers.nextcloud.middlewares=lan-only@file"
+
+      # 🧭 Internal container port (IMPORTANT for this image)
+      - "traefik.http.services.nextcloud.loadbalancer.server.port=443"
+      - "traefik.http.services.nextcloud.loadbalancer.server.scheme=https"
 
 volumes:
   nextcloud_config:
@@ -27,3 +49,7 @@ volumes:
       type: none
       device: /container-volumes/data/nextcloud
       o: bind
+
+networks:
+  traefik:
+    external: true

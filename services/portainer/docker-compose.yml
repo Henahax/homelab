@@ -10,14 +10,14 @@ services:
 
     # 🔥 KEEP direct LAN access
     ports:
-      - 9443:9443
+      - "9443:9443"
 
     networks:
       - traefik
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.portainer.rule=Host(`portainer.henahax.net`)"
+      - "traefik.http.routers.portainer.rule=Host(`portainer.henahax.net`, `portainer.henahax.de`)"
       - "traefik.http.routers.portainer.entrypoints=websecure"
       - "traefik.http.routers.portainer.tls=true"
       - "traefik.http.routers.portainer.middlewares=lan-only@file"
