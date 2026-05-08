@@ -1,16 +1,13 @@
+# todo delete
+
 http:
   routers:
+    # redirects
     github-redirect:
-      rule: "Host(`github.henahax.net`)"
+      rule: "Host(`github.henahax.net`, `github.henahax.de`)"
       entryPoints:
         - web
         - websecure
       middlewares:
-        - github-redirect
+        - github
       service: noop@internal
-    traefik-dashboard:
-      rule: "Host(`traefik.henahax.net`)"
-      entryPoints:
-        - web
-        - websecure
-      service: api@internal

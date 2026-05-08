@@ -1,7 +1,10 @@
-# todo
+# todo delete
+
 http:
   services:
-    app-service:
+    portainer:
       loadBalancer:
         servers:
-          - url: "http://app:3000" #(app = your Docker container name or network alias)
+          - url: "https://192.168.0.11:9443"
+      passHostHeader: true
+      serversTransport: insecureTransport

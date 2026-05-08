@@ -2,25 +2,27 @@ services:
   traefik:
     image: traefik:latest
     container_name: traefik
+    restart: unless-stopped
 
     command:
       - "--configFile=/etc/traefik/traefik.yml"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
 
     ports:
-      - "80:80"
-      - "443:443"
-      - "9080:8080" # dashboard
+      - 80:80
+      - 443:443
+
+      # 🧯 EMERGENCY LAN-ONLY DASHBOARD ACCESS
+      - 9080:8080
 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-
-      # config (static config only)
       - traefik_config:/etc/traefik
-
-      # data (ACME, certificates, state)
       - traefik_data:/data
 
-    restart: unless-stopped
+    networks:
+      - traefik
 
 volumes:
   traefik_config:
@@ -36,3 +38,7 @@ volumes:
       type: none
       device: /container-volumes/data/traefik
       o: bind
+
+networks:
+  traefik:
+    external: true

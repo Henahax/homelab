@@ -3,12 +3,26 @@ services:
     container_name: portainer
     image: portainer/portainer-ce:lts
     restart: always
+
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock # bind socket directly
-      - portainer_data:/data # persistent ZFS volume
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+    # 🔥 KEEP direct LAN access
     ports:
       - 9443:9443
-      # - 8000:8000 # Edge Agents
+
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portainer.rule=Host(`portainer.henahax.net`)"
+      - "traefik.http.routers.portainer.entrypoints=websecure"
+      - "traefik.http.routers.portainer.tls=true"
+      - "traefik.http.routers.portainer.middlewares=lan-only@file"
+      - "traefik.http.services.portainer.loadbalancer.server.port=9443"
+      - "traefik.http.services.portainer.loadbalancer.server.scheme=https"
 
 volumes:
   portainer_data:
@@ -19,5 +33,5 @@ volumes:
       o: bind
 
 networks:
-  default:
-    name: portainer_network
+  traefik:
+    external: true
