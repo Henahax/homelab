@@ -19,6 +19,7 @@ services:
 
     networks:
       - traefik
+      - database
 
     labels:
       - "traefik.enable=true"
@@ -52,4 +53,6 @@ volumes:
 
 networks:
   traefik:
+    external: true
+  database:
     external: true
