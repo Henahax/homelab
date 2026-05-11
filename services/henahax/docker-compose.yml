@@ -20,10 +20,11 @@ services:
       - "traefik.enable=true"
 
       # 🌐 Public homepage domain
-      - "traefik.http.routers.homepage.rule=Host(`henahax.net`,`henahax.de`)"
+      - "traefik.http.routers.homepage.rule=Host(`henahax.net`) || Host(`henahax.de`)"
       - "traefik.http.routers.homepage.entrypoints=websecure"
       - "traefik.http.routers.homepage.tls=true"
 
+      # 🧭 internal container port
       - "traefik.http.services.homepage.loadbalancer.server.port=4321"
 
   henahax-voice-server-api:
@@ -47,7 +48,7 @@ services:
       - "traefik.enable=true"
 
       # 🌐 Public API domain
-      - "traefik.http.routers.voice.rule=Host(`voice-server-api.henahax.net`,`voice-server-api.henahax.de`)"
+      - "traefik.http.routers.voice.rule=Host(`voice-server-api.henahax.net`) || Host(`voice-server-api.henahax.de`)"
       - "traefik.http.routers.voice.entrypoints=websecure"
       - "traefik.http.routers.voice.tls=true"
 
@@ -75,7 +76,7 @@ services:
       - "traefik.enable=true"
 
       # 🌐 Public domain
-      - "traefik.http.routers.gw2tools.rule=Host(`gw2tools.henahax.net`,`gw2tools.henahax.de`)"
+      - "traefik.http.routers.gw2tools.rule=Host(`gw2tools.henahax.net`) || Host(`gw2tools.henahax.de`)"
       - "traefik.http.routers.gw2tools.entrypoints=websecure"
       - "traefik.http.routers.gw2tools.tls=true"
 

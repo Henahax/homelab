@@ -41,7 +41,7 @@ services:
       - "traefik.enable=true"
 
       # 🌐 LAN-only domain access
-      - "traefik.http.routers.ollama-ui.rule=Host(`ollama.henahax.net`,`ollama.henahax.de`)"
+      - "traefik.http.routers.ollama-ui.rule=Host(`ollama.henahax.net`) || Host(`ollama.henahax.de`)"
       - "traefik.http.routers.ollama-ui.entrypoints=websecure"
       - "traefik.http.routers.ollama-ui.tls=true"
 

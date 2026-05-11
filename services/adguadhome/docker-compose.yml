@@ -21,14 +21,14 @@ services:
       - "traefik.enable=true"
 
       # 🌐 Web UI via domain
-      - "traefik.http.routers.adguard.rule=Host(`adguard.henahax.net`,`adguard.henahax.de`)"
+      - "traefik.http.routers.adguard.rule=Host(`adguard.henahax.net`) || Host(`adguard.henahax.de`)"
       - "traefik.http.routers.adguard.entrypoints=websecure"
       - "traefik.http.routers.adguard.tls=true"
 
-      # 🔒 LAN-only access (your existing middleware)
+      # 🔒 LAN-only access
       - "traefik.http.routers.adguard.middlewares=lan-only@file"
 
-      # 🧭 Internal port (AdGuard UI runs on 3000 in container)
+      # 🧭 Internal port
       - "traefik.http.services.adguard.loadbalancer.server.port=3000"
 
 volumes:
