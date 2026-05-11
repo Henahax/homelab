@@ -82,7 +82,7 @@ TODO:
 |-|-|-|-|-|-|
 |**Admin**|Container management|[Portainer](https://www.portainer.io/)|`9443:9443`||✅|
 ||Auto-update containers|[Watchtower](https://github.com/containrrr/watchtower)|`TODO:8080`|||
-||Dashboard|[Homarr](https://homarr.dev/)|`TODO:7575`|||
+||Dashboard|[Homarr](https://homarr.dev/)|`TODO:7575`||✅|
 ||Monitoring|[Uptime Kuma](https://uptime.kuma.pet/)|`TODO:3001`|||
 ||Monitoring dashboard|[Grafana](https://grafana.com/)|`TODO:3000`|||
 ||Notifications|[ntfy](https://docs.ntfy.sh/)|`TODO:80`|||
@@ -96,7 +96,7 @@ TODO:
 ||DNS ad blocking|[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)|`53:53`|DNS|✅|
 ||||`UDP` `53:53`|DNS||
 ||||`8053:3000`|Web Interface||
-|**Files**|File sync & share|[Nextcloud](https://docs.linuxserver.io/images/docker-nextcloud/)|`9009:443`|||
+|**Files**|File sync & share|[Nextcloud](https://docs.linuxserver.io/images/docker-nextcloud/)|`9009:443`||✅|
 ||file synchronisation|[Syncthing](https://hub.docker.com/r/linuxserver/syncthing)|`TODO`|||
 ||Document management|[Paperless-ngx](https://docs.paperless-ngx.com/)|`TODO:8000`|||
 |**Media**|Media system|[Jellyfin](https://docs.linuxserver.io/images/docker-jellyfin/)|`TODO`|||
@@ -106,7 +106,7 @@ TODO:
 ||Personal notes|[Joplin](https://docs.linuxserver.io/images/docker-joplin/)|`TODO`|||
 ||Large Langugage Model|[Ollama](https://ollama.com/)|`11434:11434`|Ollama|✅|
 ||||`8019:8080`|Web-UI|✅|
-|**Public**|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|`TODO-TODO:80`|Port range for multiple websites||
+|**Public**|Websites|[Node.js](https://nodejs.org/) / [Deno](https://deno.com/)|`TODO-TODO:80`|Port range for multiple websites|✅|
 ||Voice chat|[TeamSpeak](https://teamspeak.com/)|`UDP` `9987:9987`|Voice|✅|
 ||||`30033:30033`|Filetransfer|✅|
 ||||`10022:10022`|ServerQuery (SSH)|✅|

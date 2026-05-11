@@ -1,0 +1,84 @@
+services:
+  redis:
+    image: docker.io/library/redis:8
+    restart: unless-stopped
+    networks:
+      - database
+  paperless-ngx:
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    restart: unless-stopped
+    depends_on:
+      - redis
+    ports:
+      - "9010:8000"
+    networks:
+      - traefik
+      - database
+    volumes:
+      - data:/usr/src/paperless/data
+      - media:/usr/src/paperless/media
+      - ./export:/usr/src/paperless/export
+      - ./consume:/usr/src/paperless/consume
+    labels:
+      - "traefik.enable=true"
+
+      # 🌐 LAN-only domain access
+      - "traefik.http.routers.paperless-ngx-ui.rule=Host(`paperless-ngx.henahax.net`) || Host(`paperless-ngx.henahax.de`)"
+      - "traefik.http.routers.paperless-ngx-ui.entrypoints=websecure"
+      - "traefik.http.routers.paperless-ngx-ui.tls=true"
+
+      # 🔒 LAN-only restriction
+      - "traefik.http.routers.paperless-ngx-ui.middlewares=lan-only@file"
+
+      # 🧭 internal container port
+      - "traefik.http.services.paperless-ngx-ui.loadbalancer.server.port=9010"
+    environment:
+      PAPERLESS_REDIS: redis://redis:6379
+      PAPERLESS_DBHOST: postgres
+      # See http://docs.paperless-ngx.com/configuration/ for all available options.
+
+      # The UID and GID of the user used to run paperless in the container. Set this to your UID and consumption directory.
+      USERMAP_UID: 1000
+      USERMAP_GID: 1000
+
+      # See the documentation linked above for all options. A few commonly adjusted settings are provided below.
+
+      # This is required if you will be exposing Paperless-ngx on a public domain (if doing so please consider security measures such as reverse proxy)
+      PAPERLESS_URL: https://paperless-ngx.henahax.net
+
+      # Adjust this key if you plan to make paperless available publicly. It should be a very long sequence of random characters. You don't need to remember it.
+      PAPERLESS_SECRET_KEY: mysecretkey
+
+      # Use this variable to set a timezone for the Paperless Docker containers. Defaults to UTC.
+      PAPERLESS_TIME_ZONE: Europe/Berlin
+
+      # The default language to use for OCR. Set this to the language most of your documents are written in.
+      PAPERLESS_OCR_LANGUAGE: deu+eng
+
+      # Additional languages to install for text recognition, separated by a whitespace.
+      # Note that this is different from PAPERLESS_OCR_LANGUAGE (default=eng), which defines the language used for OCR.
+      # The container installs English, German, Italian, Spanish and French by default.
+      # See https://packages.debian.org/search?keywords=tesseract-ocr-&searchon=names
+      # for available languages.
+      PAPERLESS_OCR_LANGUAGES: deu eng
+volumes:
+  data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/data/paperless-ngx
+      o: bind
+
+  media:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/media/paperless-ngx
+      o: bind
+
+networks:
+  traefik:
+    external: true
+
+  database:
+    external: true
