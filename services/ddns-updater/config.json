@@ -1,0 +1,20 @@
+{
+    "settings": [
+        {
+            "provider": "cloudflare",
+            "zone_identifier": "henahax.net",
+            "domain": "*.henahax.net",
+            "token": "CLOUDFLARE_API_TOKEN",
+            "ttl": 300,
+            "proxied": true
+        },
+        {
+            "provider": "cloudflare",
+            "zone_identifier": "henahax.de",
+            "domain": "*.henahax.de",
+            "token": "CLOUDFLARE_API_TOKEN",
+            "ttl": 300,
+            "proxied": true
+        }
+    ]
+}

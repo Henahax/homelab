@@ -1,0 +1,45 @@
+services:
+  ddns-updater:
+    container_name: ddns-updater
+    image: qmcgaw/ddns-updater:latest
+    restart: unless-stopped
+
+    environment:
+      - TZ=Europe/Berlin
+
+      # 🌐 No direct LAN port needed (Traefik only)
+      # ports:
+      - "8000:8000"
+
+    volumes:
+      # persistent config + history
+      - ddns_data:/updater/data
+
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+
+      # 🌐 Dashboard hostname
+      - "traefik.http.routers.ddns.rule=Host(`ddns.henahax.net`) || Host(`ddns.henahax.de`)"
+      - "traefik.http.routers.ddns.entrypoints=websecure"
+      - "traefik.http.routers.ddns.tls=true"
+
+      # 🔒 LAN-only middleware (same as your stack)
+      - "traefik.http.routers.ddns.middlewares=lan-only@file"
+
+      # 🧭 internal container port
+      - "traefik.http.services.ddns.loadbalancer.server.port=8000"
+
+volumes:
+  ddns_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/data/ddns-updater
+      o: bind
+
+networks:
+  traefik:
+    external: true
