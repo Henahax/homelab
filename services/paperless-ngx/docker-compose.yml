@@ -1,10 +1,12 @@
 services:
   redis:
+    container_name: redis
     image: docker.io/library/redis:8
     restart: unless-stopped
     networks:
       - database
   paperless-ngx:
+    container_name: paperless-ngx
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
     restart: unless-stopped
     depends_on:
@@ -15,15 +17,15 @@ services:
       - traefik
       - database
     volumes:
-      - data:/usr/src/paperless/data
-      - media:/usr/src/paperless/media
-      - ./export:/usr/src/paperless/export
-      - ./consume:/usr/src/paperless/consume
+      - data:/usr/src/paperless/data # todo: pfad (nas?) | orginale, verarbeitete dokumente, struktur
+      - media:/usr/src/paperless/media # todo: pfad (nas?) | archiviere versionen der dokumente, thumbnails
+      - ./export:/usr/src/paperless/export # todo: pfad (nas?) | exportierte dokumente, z.B. für backups/migration
+      - ./consume:/usr/src/paperless/consume # todo: pfad (nas?) | eingehende pdfs & scans die verarbeiter werden sollen
     labels:
       - "traefik.enable=true"
 
       # 🌐 LAN-only domain access
-      - "traefik.http.routers.paperless-ngx-ui.rule=Host(`paperless-ngx.henahax.net`) || Host(`paperless-ngx.henahax.de`)"
+      - "traefik.http.routers.paperless-ngx-ui.rule=Host(`paperless.henahax.net`) || Host(`paperless.henahax.de`)"
       - "traefik.http.routers.paperless-ngx-ui.entrypoints=websecure"
       - "traefik.http.routers.paperless-ngx-ui.tls=true"
 
@@ -35,6 +37,10 @@ services:
     environment:
       PAPERLESS_REDIS: redis://redis:6379
       PAPERLESS_DBHOST: postgres
+      PAPERLESS_DBENGINE: postgresql
+      PAPERLESS_DBNAME: paperless
+      PAPERLESS_DBUSER: Henahax
+      PAPERLESS_DBPASS: password
       # See http://docs.paperless-ngx.com/configuration/ for all available options.
 
       # The UID and GID of the user used to run paperless in the container. Set this to your UID and consumption directory.
@@ -44,7 +50,7 @@ services:
       # See the documentation linked above for all options. A few commonly adjusted settings are provided below.
 
       # This is required if you will be exposing Paperless-ngx on a public domain (if doing so please consider security measures such as reverse proxy)
-      PAPERLESS_URL: https://paperless-ngx.henahax.net
+      PAPERLESS_URL: https://paperless.henahax.net
 
       # Adjust this key if you plan to make paperless available publicly. It should be a very long sequence of random characters. You don't need to remember it.
       PAPERLESS_SECRET_KEY: mysecretkey
