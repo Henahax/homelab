@@ -9,8 +9,9 @@ services:
       - PGID=1000
       - TZ=Europe/Berlin
 
+    # optional LAN access (kann bleiben)
     ports:
-      - "9009:443" # optional direct LAN access
+      - "9009:443"
 
     volumes:
       - nextcloud_config:/config
@@ -23,16 +24,18 @@ services:
     labels:
       - "traefik.enable=true"
 
-      # Routing
+      # 🌐 Routing
       - "traefik.http.routers.nextcloud.rule=Host(`nextcloud.henahax.net`) || Host(`nextcloud.henahax.de`)"
       - "traefik.http.routers.nextcloud.entrypoints=websecure"
       - "traefik.http.routers.nextcloud.tls=true"
 
-      # Middleware
+      # 🔒 Middleware (LAN restriction)
       - "traefik.http.routers.nextcloud.middlewares=lan-only@file"
 
-      # IMPORTANT: HTTP to container (NO HTTPS)
-      - "traefik.http.services.nextcloud.loadbalancer.server.port=80"
+      # 🧭 Backend (IMPORTANT: LSIO Nextcloud uses HTTPS internally)
+      - "traefik.http.services.nextcloud.loadbalancer.server.port=443"
+      - "traefik.http.services.nextcloud.loadbalancer.server.scheme=https"
+      - "traefik.http.services.nextcloud.loadbalancer.serversTransport=insecure@file"
 
 volumes:
   nextcloud_config:
