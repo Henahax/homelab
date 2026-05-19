@@ -1,13 +1,10 @@
-# redirects
 http:
   middlewares:
-    # whitelists
     lan-only:
       ipWhiteList:
         sourceRange:
           - 192.168.0.0/16
 
-    # redirects
     github:
       redirectRegex:
         regex: "^https?://github\\.henahax\\.(net|de)(/.*)?$"

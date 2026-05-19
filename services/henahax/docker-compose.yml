@@ -80,9 +80,7 @@ services:
       - "traefik.http.routers.gw2tools.entrypoints=websecure"
       - "traefik.http.routers.gw2tools.tls=true"
 
-      # optional LAN restriction (you had this before)
-      - "traefik.http.routers.gw2tools.middlewares=lan-only@file"
-
+      # PUBLIC → no middleware restriction
       - "traefik.http.services.gw2tools.loadbalancer.server.port=3000"
 
 networks:

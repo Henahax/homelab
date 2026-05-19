@@ -8,7 +8,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
 
-    # 🔥 KEEP direct LAN access
     ports:
       - "9443:9443"
 
@@ -17,12 +16,11 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.portainer.rule=Host(`portainer.henahax.net`, `portainer.henahax.de`)"
+      - "traefik.http.routers.portainer.rule=Host(`portainer.henahax.net`) || Host(`portainer.henahax.de`)"
       - "traefik.http.routers.portainer.entrypoints=websecure"
       - "traefik.http.routers.portainer.tls=true"
       - "traefik.http.routers.portainer.middlewares=lan-only@file"
       - "traefik.http.services.portainer.loadbalancer.server.port=9443"
-      - "traefik.http.services.portainer.loadbalancer.server.scheme=https"
 
 volumes:
   portainer_data:
