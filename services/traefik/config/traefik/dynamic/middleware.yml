@@ -11,9 +11,21 @@ http:
         replacement: "https://github.com/henahax"
         permanent: true
 
+    ts.henahax.net:
+      redirectRegex:
+        regex: "^https?://(ts|discord|ts3|ts6)\\.henahax\\.net(/.*)?$"
+        replacement: "https://henahax.net/server"
+        permanent: true
+
+    ts.henahax.de:
+      redirectRegex:
+        regex: "^https?://(ts|discord|ts3|ts6)\\.henahax\\.de(/.*)?$"
+        replacement: "https://henahax.de/server"
+        permanent: true
+
   routers:
     traefik-dashboard:
-      rule: Host(`traefik.henahax.net`) || Host(`traefik.henahax.de`)
+      rule: Host(`traefik.henahax.net`)
       service: api@internal
       entryPoints:
         - websecure
