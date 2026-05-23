@@ -39,16 +39,9 @@ services:
 
     labels:
       - "traefik.enable=true"
-
-      # 🌐 LAN-only domain access
-      - "traefik.http.routers.ollama-ui.rule=Host(`ollama.henahax.net`) || Host(`ollama.henahax.de`)"
-      - "traefik.http.routers.ollama-ui.entrypoints=websecure"
-      - "traefik.http.routers.ollama-ui.tls=true"
-
-      # 🔒 LAN-only restriction
-      - "traefik.http.routers.ollama-ui.middlewares=lan-only@file"
-
-      # 🧭 Open WebUI runs on port 8080 inside container
+      - "traefik.http.routers.ollama-local.rule=Host(`ollama.local`)"
+      - "traefik.http.routers.ollama-local.entrypoints=web"
+      - "traefik.http.routers.ollama-local.middlewares=lan-only@file"
       - "traefik.http.services.ollama-ui.loadbalancer.server.port=8080"
 
 volumes:

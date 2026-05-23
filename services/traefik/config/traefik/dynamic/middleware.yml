@@ -24,11 +24,10 @@ http:
         permanent: true
 
   routers:
-    traefik-dashboard:
-      rule: Host(`traefik.henahax.net`)
+    traefik-dashboard-local:
+      rule: Host(`traefik.local`)
       service: api@internal
       entryPoints:
-        - websecure
-      tls: true
+        - web
       middlewares:
         - lan-only@file

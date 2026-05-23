@@ -16,10 +16,9 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.portainer.rule=Host(`portainer.henahax.net`) || Host(`portainer.henahax.de`)"
-      - "traefik.http.routers.portainer.entrypoints=websecure"
-      - "traefik.http.routers.portainer.tls=true"
-      - "traefik.http.routers.portainer.middlewares=lan-only@file"
+      - "traefik.http.routers.portainer-local.rule=Host(`portainer.local`)"
+      - "traefik.http.routers.portainer-local.entrypoints=web"
+      - "traefik.http.routers.portainer-local.middlewares=lan-only@file"
       - "traefik.http.services.portainer.loadbalancer.server.port=9000"
 
 volumes:
