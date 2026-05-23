@@ -4,6 +4,9 @@ services:
     image: qmcgaw/ddns-updater:latest
     restart: unless-stopped
 
+    healthcheck:
+      disable: true
+
     environment:
       - TZ=Europe/Berlin
 
