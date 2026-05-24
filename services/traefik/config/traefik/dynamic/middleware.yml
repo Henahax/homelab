@@ -1,14 +1,34 @@
 http:
   middlewares:
     lan-only:
-      ipWhiteList:
+      ipAllowList:
         sourceRange:
           - 192.168.0.0/16
+          - 10.0.0.0/8
+          - 172.16.0.0/12
 
-    github:
+    links.henahax.net:
       redirectRegex:
-        regex: "^https?://github\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://github.com/henahax"
+        regex: "^https?://(kontakt|contact|links)\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://henahax.net/contact"
+        permanent: true
+
+    links.henahax.de:
+      redirectRegex:
+        regex: "^https?://(kontakt|contact|links)\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://henahax.de/contact"
+        permanent: true
+
+    magicfind.henahax.de:
+      redirectRegex:
+        regex: "^https?://(magicfind|mf)\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://gw2tools.henahax.de/magicfind"
+        permanent: true
+
+    reset.henahax.de:
+      redirectRegex:
+        regex: "^https?://reset\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://gw2tools.henahax.de/reset"
         permanent: true
 
     ts.henahax.net:
@@ -21,6 +41,72 @@ http:
       redirectRegex:
         regex: "^https?://(ts|discord|ts3|ts6)\\.henahax\\.de(/.*)?$"
         replacement: "https://henahax.de/server"
+        permanent: true
+
+    discord:
+      redirectRegex:
+        regex: "^https?://discord\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://discord.com/invite/26Kc9mJYKT"
+        permanent: true
+
+    docker:
+      redirectRegex:
+        regex: "^https?://docker\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://hub.docker.com/u/henahax"
+        permanent: true
+
+    facebook:
+      redirectRegex:
+        regex: "^https?://facebook\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://facebook.com/henahax"
+        permanent: true
+
+    github:
+      redirectRegex:
+        regex: "^https?://github\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://github.com/henahax"
+        permanent: true
+
+    homelab:
+      redirectRegex:
+        regex: "^https?://homelab\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://github.com/henahax/homelab"
+        permanent: true
+
+    instagram:
+      redirectRegex:
+        regex: "^https?://instagram\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://instagram.com/henahax"
+        permanent: true
+
+    killproof:
+      redirectRegex:
+        regex: "^https?://(killproof|kp)\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://killproof.me/proof/z44xx"
+        permanent: true
+
+    rickroll:
+      redirectRegex:
+        regex: "^https?://(rickroll|info)\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://youtube.com/watch?v=dQw4w9WgXcQ"
+        permanent: true
+
+    steam:
+      redirectRegex:
+        regex: "^https?://steam\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://steamcommunity.com/id/henahax"
+        permanent: true
+
+    twitch:
+      redirectRegex:
+        regex: "^https?://twitch\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://twitch.tv/henahax"
+        permanent: true
+
+    x:
+      redirectRegex:
+        regex: "^https?://(x|twitter)\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://x.com/henahax"
         permanent: true
 
   routers:

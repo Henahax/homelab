@@ -9,7 +9,6 @@ services:
       - PGID=1000
       - TZ=Europe/Berlin
 
-    # optional LAN access (kann bleiben)
     ports:
       - "9009:443"
 
@@ -23,12 +22,11 @@ services:
 
     labels:
       - "traefik.enable=true"
+
       - "traefik.http.routers.nextcloud-local.rule=Host(`nextcloud.local`)"
       - "traefik.http.routers.nextcloud-local.entrypoints=web"
       - "traefik.http.routers.nextcloud-local.middlewares=lan-only@file"
-      - "traefik.http.services.nextcloud.loadbalancer.server.port=443"
-      - "traefik.http.services.nextcloud.loadbalancer.server.scheme=https"
-      - "traefik.http.services.nextcloud.loadbalancer.serversTransport=insecure@file"
+      - "traefik.http.services.nextcloud.loadbalancer.server.port=80"
 
 volumes:
   nextcloud_config:

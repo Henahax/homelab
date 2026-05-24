@@ -1,5 +1,6 @@
 api:
   dashboard: true
+  insecure: true
 
 entryPoints:
   web:
@@ -12,19 +13,11 @@ entryPoints:
 
   websecure:
     address: ":443"
-    http:
-      tls:
-        certResolver: letsencrypt
-        domains:
-          - main: "*.henahax.net"
-            sans:
-              - "*.henahax.de"
-              - "henahax.net"
-              - "henahax.de"
 
 providers:
   docker:
     exposedByDefault: false
+
   file:
     directory: /etc/traefik/dynamic
     watch: true

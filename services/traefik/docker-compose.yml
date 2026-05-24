@@ -6,8 +6,6 @@ services:
 
     command:
       - "--configFile=/etc/traefik/traefik.yml"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
 
     ports:
       - "80:80"
