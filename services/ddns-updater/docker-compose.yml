@@ -9,6 +9,7 @@ services:
 
     environment:
       - TZ=Europe/Berlin
+      - CONFIG=${CONFIG}
 
       # 🌐 No direct LAN port needed (Traefik only)
       # ports:
