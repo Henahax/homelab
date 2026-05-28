@@ -10,11 +10,11 @@ services:
       - TZ=Europe/Berlin
 
     ports:
-      - "9009:443"
+      - "9009:80"
 
     volumes:
       - nextcloud_config:/config
-      - /mnt/files/documents:/data
+      - /mnt/files/documents/nextcloud:/data
 
     networks:
       - traefik
@@ -22,7 +22,6 @@ services:
 
     labels:
       - "traefik.enable=true"
-
       - "traefik.http.routers.nextcloud-local.rule=Host(`nextcloud.local`)"
       - "traefik.http.routers.nextcloud-local.entrypoints=web"
       - "traefik.http.routers.nextcloud-local.middlewares=lan-only@file"
