@@ -1,0 +1,32 @@
+services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    container_name: tailscale
+    hostname: services
+    restart: unless-stopped
+
+    environment:
+      TS_AUTHKEY: ${TS_AUTHKEY}
+      TS_STATE_DIR: /var/lib/tailscale
+      TS_AUTH_ONCE: "true"
+      TS_USERSPACE: "false"
+      # TS_EXTRA_ARGS: --advertise-routes=192.168.0.0/24
+      # TS_EXTRA_ARGS: --advertise-exit-node
+
+    volumes:
+      - tailscale_config:/var/lib/tailscale
+      - /dev/net/tun:/dev/net/tun
+
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+
+    network_mode: host
+
+volumes:
+  tailscale_config:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/config/tailscale
+      o: bind
