@@ -5,8 +5,8 @@ services:
     restart: always
 
     environment:
-      POSTGRES_USER: Henahax
-      POSTGRES_PASSWORD: "password"
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
     volumes:
       - postgres_data:/var/lib/postgresql
@@ -24,8 +24,8 @@ services:
     restart: always
 
     environment:
-      PGADMIN_DEFAULT_EMAIL: pgadmin@henahax.net
-      PGADMIN_DEFAULT_PASSWORD: "password"
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
       PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "False"
 
     volumes:
