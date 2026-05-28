@@ -14,7 +14,7 @@ services:
 
     volumes:
       - nextcloud_config:/config
-      - nextcloud_data:/data
+      - /mnt/files/documents:/data
 
     networks:
       - traefik
@@ -34,13 +34,6 @@ volumes:
     driver_opts:
       type: none
       device: /container-volumes/config/nextcloud
-      o: bind
-
-  nextcloud_data:
-    driver: local
-    driver_opts:
-      type: none
-      device: /container-volumes/data/nextcloud
       o: bind
 
 networks:
