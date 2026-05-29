@@ -8,7 +8,7 @@ services:
       - TZ=Europe/Berlin
       # - JELLYFIN_PublishedServerUrl=http://192.168.0.11 #optional
     volumes:
-      - /path/to/jellyfin/library:/config
+      - jellyfin_config:/config
       - /mnt/files/media/movies:/data/movies
       - /mnt/files/media/tv:/data/tvshows
     ports:
@@ -17,3 +17,10 @@ services:
       - 7359:7359/udp #optional client discover in lan
       - 1900:1900/udp #optional discovery DNLA
     restart: unless-stopped
+volumes:
+  jellyfin_config:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/config/jellyfin
+      o: bind
