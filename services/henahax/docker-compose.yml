@@ -9,7 +9,6 @@ services:
       - PGID=1000
       - TZ=Europe/Berlin
 
-    # 🧯 DIRECT ACCESS (kept)
     ports:
       - "8080:4321"
 
@@ -18,16 +17,9 @@ services:
 
     labels:
       - "traefik.enable=true"
-
-      # 🌐 Public homepage domain
       - "traefik.http.routers.homepage.rule=Host(`henahax.net`) || Host(`henahax.de`)"
       - "traefik.http.routers.homepage.entrypoints=websecure"
       - "traefik.http.routers.homepage.tls=true"
-
-      # 🌐 Local domain (also public within LAN)
-      - "traefik.http.routers.homepage-local.rule=Host(`henahax.local`)"
-      - "traefik.http.routers.homepage-local.entrypoints=web"
-
       - "traefik.http.services.homepage.loadbalancer.server.port=4321"
 
   henahax-voice-server-api:
@@ -40,7 +32,6 @@ services:
       - PGID=1000
       - TZ=Europe/Berlin
 
-    # 🧯 DIRECT ACCESS (kept)
     ports:
       - "8082:3000"
 
@@ -49,16 +40,9 @@ services:
 
     labels:
       - "traefik.enable=true"
-
-      # 🌐 Public API domain
       - "traefik.http.routers.voice.rule=Host(`voice-server-api.henahax.net`) || Host(`voice-server-api.henahax.de`)"
       - "traefik.http.routers.voice.entrypoints=websecure"
       - "traefik.http.routers.voice.tls=true"
-
-      # 🌐 Local domain (also public within LAN)
-      - "traefik.http.routers.voice-local.rule=Host(`voice-server-api.local`)"
-      - "traefik.http.routers.voice-local.entrypoints=web"
-
       - "traefik.http.services.voice.loadbalancer.server.port=3000"
 
   henahax-gw2tools:
@@ -71,7 +55,6 @@ services:
       - PGID=1000
       - TZ=Europe/Berlin
 
-    # 🧯 DIRECT ACCESS (kept)
     ports:
       - "8081:3000"
 
@@ -80,16 +63,9 @@ services:
 
     labels:
       - "traefik.enable=true"
-
-      # 🌐 Public domain
       - "traefik.http.routers.gw2tools.rule=Host(`gw2tools.henahax.net`) || Host(`gw2tools.henahax.de`)"
       - "traefik.http.routers.gw2tools.entrypoints=websecure"
       - "traefik.http.routers.gw2tools.tls=true"
-
-      # 🌐 Local domain (also public within LAN)
-      - "traefik.http.routers.gw2tools-local.rule=Host(`gw2tools.local`)"
-      - "traefik.http.routers.gw2tools-local.entrypoints=web"
-
       - "traefik.http.services.gw2tools.loadbalancer.server.port=3000"
 
 networks:

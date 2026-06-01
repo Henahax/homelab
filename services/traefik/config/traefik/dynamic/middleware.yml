@@ -111,9 +111,10 @@ http:
 
   routers:
     traefik-dashboard-local:
-      rule: Host(`traefik.local`)
+      rule: Host(`traefik.henahax.net`) || Host(`traefik.henahax.de`)
       service: api@internal
       entryPoints:
-        - web
+        - websecure
+      tls: {}
       middlewares:
         - lan-only@file

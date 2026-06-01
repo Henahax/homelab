@@ -24,9 +24,10 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.ddns-local.rule=Host(`ddns.local`)"
-      - "traefik.http.routers.ddns-local.entrypoints=web"
-      - "traefik.http.routers.ddns-local.middlewares=lan-only@file"
+      - "traefik.http.routers.ddns.rule=Host(`ddns.henahax.net`) || Host(`ddns.henahax.de`)"
+      - "traefik.http.routers.ddns.entrypoints=websecure"
+      - "traefik.http.routers.ddns.tls=true"
+      - "traefik.http.routers.ddns.middlewares=lan-only@file"
       - "traefik.http.services.ddns.loadbalancer.server.port=8000"
 
 volumes:

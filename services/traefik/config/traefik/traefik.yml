@@ -13,6 +13,16 @@ entryPoints:
 
   websecure:
     address: ":443"
+    http:
+      tls:
+        certResolver: letsencrypt
+        domains:
+          - main: henahax.net
+            sans:
+              - "*.henahax.net"
+          - main: henahax.de
+            sans:
+              - "*.henahax.de"
 
 providers:
   docker:
@@ -27,5 +37,5 @@ certificatesResolvers:
     acme:
       email: letsencrypt@henahax.net
       storage: /data/acme.json
-      httpChallenge:
-        entryPoint: web
+      dnsChallenge:
+        provider: cloudflare

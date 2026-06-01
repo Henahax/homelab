@@ -39,9 +39,10 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.ollama-local.rule=Host(`ollama.local`)"
-      - "traefik.http.routers.ollama-local.entrypoints=web"
-      - "traefik.http.routers.ollama-local.middlewares=lan-only@file"
+      - "traefik.http.routers.ollama.rule=Host(`ollama.henahax.net`) || Host(`ollama.henahax.de`)"
+      - "traefik.http.routers.ollama.entrypoints=websecure"
+      - "traefik.http.routers.ollama.tls=true"
+      - "traefik.http.routers.ollama.middlewares=lan-only@file"
       - "traefik.http.services.ollama-ui.loadbalancer.server.port=8080"
 
 volumes:

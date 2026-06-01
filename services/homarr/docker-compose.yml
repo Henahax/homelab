@@ -23,9 +23,10 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.homarr-local.rule=Host(`homarr.local`)"
-      - "traefik.http.routers.homarr-local.entrypoints=web"
-      - "traefik.http.routers.homarr-local.middlewares=lan-only@file"
+      - "traefik.http.routers.homarr.rule=Host(`homarr.henahax.net`) || Host(`homarr.henahax.de`)"
+      - "traefik.http.routers.homarr.entrypoints=websecure"
+      - "traefik.http.routers.homarr.tls=true"
+      - "traefik.http.routers.homarr.middlewares=lan-only@file"
       - "traefik.http.services.homarr.loadbalancer.server.port=7575"
 
 volumes:

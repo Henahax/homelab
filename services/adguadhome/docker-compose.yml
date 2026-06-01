@@ -19,9 +19,10 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.adguard-local.rule=Host(`adguard.local`)"
-      - "traefik.http.routers.adguard-local.entrypoints=web"
-      - "traefik.http.routers.adguard-local.middlewares=lan-only@file"
+      - "traefik.http.routers.adguard.rule=Host(`adguard.henahax.net`) || Host(`adguard.henahax.de`)"
+      - "traefik.http.routers.adguard.entrypoints=websecure"
+      - "traefik.http.routers.adguard.tls=true"
+      - "traefik.http.routers.adguard.middlewares=lan-only@file"
       - "traefik.http.services.adguard.loadbalancer.server.port=3000"
 
 volumes:
