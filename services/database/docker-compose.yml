@@ -11,7 +11,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql
 
-    # 🧯 DIRECT LAN ACCESS (kept as requested)
     ports:
       - "5432:5432"
 
@@ -31,7 +30,6 @@ services:
     volumes:
       - pgadmin_data:/var/lib/pgadmin
 
-    # 🧯 DIRECT LAN ACCESS (kept as requested)
     ports:
       - "9432:80"
 

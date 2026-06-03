@@ -7,15 +7,12 @@ services:
     environment:
       - SECRET_ENCRYPTION_KEY=8483eeef15e492f2ebc4373e01522679fd5d8f5b0df73bd145c870efee43f736
 
-    # 🧯 DIRECT ACCESS (kept)
     ports:
       - "8075:7575"
 
     volumes:
       # optional Docker integration
       - /var/run/docker.sock:/var/run/docker.sock:ro
-
-      # persistent app data
       - homarr_data:/appdata
 
     networks:

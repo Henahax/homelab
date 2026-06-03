@@ -4,7 +4,6 @@ services:
     image: adguard/adguardhome
     restart: unless-stopped
 
-    # 🧯 KEEP DIRECT ACCESS (DNS + UI fallback)
     ports:
       - "53:53/tcp"
       - "53:53/udp"
