@@ -63,10 +63,10 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.gw2tools.rule=Host(`gw2tools.henahax.net`) || Host(`gw2tools.henahax.de`)"
-      - "traefik.http.routers.gw2tools.entrypoints=websecure"
-      - "traefik.http.routers.gw2tools.tls=true"
-      - "traefik.http.services.gw2tools.loadbalancer.server.port=3000"
+      - "traefik.http.routers.gw2.rule=Host(`gw2.henahax.net`) || Host(`gw2.henahax.de`)"
+      - "traefik.http.routers.gw2.entrypoints=websecure"
+      - "traefik.http.routers.gw2.tls=true"
+      - "traefik.http.services.gw2.loadbalancer.server.port=3000"
 
 networks:
   traefik:
