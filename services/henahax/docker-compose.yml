@@ -17,7 +17,7 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.homepage.rule=Host(`henahax.net`) || Host(`henahax.de`)"
+      - "traefik.http.routers.homepage.rule=Host(`henahax.net`,`www.henahax.net`,`henahax.de`,`www.henahax.de`)"
       - "traefik.http.routers.homepage.entrypoints=websecure"
       - "traefik.http.routers.homepage.tls=true"
       - "traefik.http.services.homepage.loadbalancer.server.port=4321"
@@ -40,7 +40,7 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.voice.rule=Host(`voice-server-api.henahax.net`) || Host(`voice-server-api.henahax.de`)"
+      - "traefik.http.routers.voice.rule=Host(`voice-server-api.henahax.net`)"
       - "traefik.http.routers.voice.entrypoints=websecure"
       - "traefik.http.routers.voice.tls=true"
       - "traefik.http.services.voice.loadbalancer.server.port=3000"
@@ -63,7 +63,7 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.gw2.rule=Host(`gw2.henahax.net`) || Host(`gw2.henahax.de`)"
+      - "traefik.http.routers.gw2.rule=Host(`gw2.henahax.net`, `gw2.henahax.de`)"
       - "traefik.http.routers.gw2.entrypoints=websecure"
       - "traefik.http.routers.gw2.tls=true"
       - "traefik.http.services.gw2.loadbalancer.server.port=3000"

@@ -23,7 +23,7 @@ services:
       - ./consume:/usr/src/paperless/consume # todo: pfad (nas?) | eingehende pdfs & scans die verarbeiter werden sollen
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.paperless.rule=Host(`paperless.henahax.net`) || Host(`paperless.henahax.de`)"
+      - "traefik.http.routers.paperless.rule=Host(`paperless.henahax.net`)"
       - "traefik.http.routers.paperless.entrypoints=websecure"
       - "traefik.http.routers.paperless.tls=true"
       - "traefik.http.routers.paperless.middlewares=lan-only@file"

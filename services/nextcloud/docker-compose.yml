@@ -22,7 +22,7 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.nextcloud.rule=Host(`nextcloud.henahax.net`) || Host(`nextcloud.henahax.de`)"
+      - "traefik.http.routers.nextcloud.rule=Host(`nextcloud.henahax.net`)"
       - "traefik.http.routers.nextcloud.entrypoints=websecure"
       - "traefik.http.routers.nextcloud.tls=true"
       - "traefik.http.routers.nextcloud.middlewares=lan-only@file"

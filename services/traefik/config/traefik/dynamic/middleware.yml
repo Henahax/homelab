@@ -13,20 +13,24 @@ http:
         regex: "^https?://gw2tools\\.henahax\\.net(/.*)?$"
         replacement: "https://gw2.henahax.net${1}"
         permanent: true
-    ## todo
 
     # .de to .net redirects
+    henahax.de:
+      redirectRegex:
+        regex: "^https?://\\.henahax\\.de(/.*)?$"
+        replacement: "https://henahax.net${1}"
+        permanent: true
+
     gw2.de:
       redirectRegex:
         regex: "^https?://(gw2|gw2tools)\\.henahax\\.de(/.*)?$"
         replacement: "https://gw2.henahax.net${1}"
         permanent: true
-    ## todo
 
     # subdomain to path redirects
-    links:
+    contact:
       redirectRegex:
-        regex: "^https?://(kontakt|contact|links)\\.henahax\\.(net|de)(/.*)?$"
+        regex: "^https?://(contact|kontakt|links)\\.henahax\\.(net|de)(/.*)?$"
         replacement: "https://henahax.net/contact"
         permanent: true
 
@@ -36,18 +40,23 @@ http:
         replacement: "https://gw2.henahax.net/magicfind"
         permanent: true
 
+    onlyfans:
+      redirectRegex:
+        regex: "^https?://(onlyfans|of)\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://henahax.net/onlyfans"
+        permanent: true
+
     reset:
       redirectRegex:
         regex: "^https?://reset\\.henahax\\.(net|de)(/.*)?$"
         replacement: "https://gw2.henahax.net/reset"
         permanent: true
 
-    ts:
+    voice:
       redirectRegex:
-        regex: "^https?://(ts|discord|ts3|ts6)\\.henahax\\.(net|de)(/.*)?$"
+        regex: "^https?://(voice|discord|teamspeak|ts|ts3|ts6)\\.henahax\\.(net|de)(/.*)?$"
         replacement: "https://henahax.net/server"
         permanent: true
-    ## todo
 
     # external
     discord:
@@ -58,7 +67,7 @@ http:
 
     docker:
       redirectRegex:
-        regex: "^https?://docker\\.henahax\\.(net|de)(/.*)?$"
+        regex: "^https?://(docker|dockerhub)\\.henahax\\.(net|de)(/.*)?$"
         replacement: "https://hub.docker.com/u/henahax"
         permanent: true
 
@@ -115,4 +124,3 @@ http:
         regex: "^https?://(x|twitter)\\.henahax\\.(net|de)(/.*)?$"
         replacement: "https://x.com/henahax"
         permanent: true
-    ## todo

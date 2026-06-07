@@ -20,7 +20,7 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.homarr.rule=Host(`homarr.henahax.net`) || Host(`homarr.henahax.de`)"
+      - "traefik.http.routers.homarr.rule=Host(`homarr.henahax.net`)"
       - "traefik.http.routers.homarr.entrypoints=websecure"
       - "traefik.http.routers.homarr.tls=true"
       - "traefik.http.routers.homarr.middlewares=lan-only@file"

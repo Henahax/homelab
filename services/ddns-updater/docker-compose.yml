@@ -20,7 +20,7 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.ddns.rule=Host(`ddns.henahax.net`) || Host(`ddns.henahax.de`)"
+      - "traefik.http.routers.ddns.rule=Host(`ddns.henahax.net`, `ddns.henahax.de`)"
       - "traefik.http.routers.ddns.entrypoints=websecure"
       - "traefik.http.routers.ddns.tls=true"
       - "traefik.http.routers.ddns.middlewares=lan-only@file"
