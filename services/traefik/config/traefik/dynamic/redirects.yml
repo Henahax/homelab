@@ -1,89 +1,74 @@
 http:
   routers:
     redirect-gw2-net:
-      rule: "Host(`gw2tools.henahax.net`) || Host(`gw2tools.henahax.de`)"
+      rule: "Host(`gw2tools.henahax.net`)"
       entryPoints:
         - websecure
-      tls:
-        certResolver: letsencrypt
       middlewares:
         - gw2.net
         - security-headers@file
       service: noop@internal
-      priority: 100
 
     redirect-henahax-de:
       rule: "Host(`henahax.de`) || Host(`www.henahax.de`)"
       entryPoints:
         - websecure
-      tls:
-        certResolver: letsencrypt
       middlewares:
         - henahax.de
         - security-headers@file
       service: noop@internal
-      priority: 100
 
     redirect-gw2-de:
       rule: "Host(`gw2.henahax.de`) || Host(`gw2tools.henahax.de`)"
       entryPoints:
         - websecure
-      tls:
-        certResolver: letsencrypt
       middlewares:
         - gw2.de
         - security-headers@file
       service: noop@internal
-      priority: 100
 
-    # Subdomain Redirects (Priorität 90)
+    # Subdomain Redirects
     redirect-contact:
       rule: "Host(`contact.henahax.net`) || Host(`contact.henahax.de`) || Host(`kontakt.henahax.net`) || Host(`kontakt.henahax.de`) || Host(`links.henahax.net`) || Host(`links.henahax.de`)"
       entryPoints:
         - websecure
-      tls:
-        certResolver: letsencrypt
       middlewares:
         - contact
         - security-headers@file
       service: noop@internal
-      priority: 90
 
     redirect-magicfind:
       rule: "Host(`magicfind.henahax.net`) || Host(`magicfind.henahax.de`) || Host(`mf.henahax.net`) || Host(`mf.henahax.de`)"
       entryPoints:
         - websecure
-      tls:
-        certResolver: letsencrypt
       middlewares:
         - magicfind
         - security-headers@file
       service: noop@internal
-      priority: 90
 
     redirect-onlyfans:
       rule: "Host(`onlyfans.henahax.net`) || Host(`onlyfans.henahax.de`) || Host(`of.henahax.net`) || Host(`of.henahax.de`)"
       entryPoints:
         - websecure
-      tls:
-        certResolver: letsencrypt
       middlewares:
         - onlyfans
         - security-headers@file
       service: noop@internal
-      priority: 90
 
     redirect-reset:
       rule: "Host(`reset.henahax.net`) || Host(`reset.henahax.de`)"
       entryPoints:
         - websecure
-      tls:
-        certResolver: letsencrypt
       middlewares:
         - reset
         - security-headers@file
       service: noop@internal
-      priority: 90
 
     redirect-voice:
-      rule: "Host(`voice.henahax.net`) || Host(`voice.henahax.de`) || Host(`teamspeak.henahax.net`) || Host(`teamspeak.henahax.de`) || Host(`ts.henahax.net`) || Host(`ts.henahax.de`) || Host(`ts3.henahax.net`) || Host(`ts3.henahax.de`) || Host(`ts6.henahax.net`) || Host(`ts6.henah
+      rule: "Host(`voice.henahax.net`) || Host(`voice.henahax.de`) || Host(`teamspeak.henahax.net`) || Host(`teamspeak.henahax.de`) || Host(`ts.henahax.net`) || Host(`ts.henahax.de`) || Host(`ts3.henahax.net`) || Host(`ts3.henahax.de`) || Host(`ts6.henahax.net`) || Host(`ts6.henahax.de`)"
+      entryPoints:
+        - websecure
+      middlewares:
+        - voice
+        - security-headers@file
+      service: noop@internal

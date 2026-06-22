@@ -10,6 +10,13 @@ services:
     environment:
       - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
 
+    healthcheck:
+      test: ["CMD", "traefik", "healthcheck", "--ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
     ports:
       - "80:80"
       - "443:443"
@@ -19,14 +26,17 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik-dashboard-local.rule=Host(`traefik.henahax.net`)"
       - "traefik.http.routers.traefik-dashboard-local.service=api@internal"
-      - "traefik.http.routers.traefik-dashboard-local.entrypoints=websecure"
-      - "traefik.http.routers.traefik-dashboard-local.tls=true"
       - "traefik.http.routers.traefik-dashboard-local.middlewares=lan-only@file"
 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - traefik_config:/etc/traefik
+      - traefik_config:/etc/traefik:ro
       - traefik_data:/data
+
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
 
     networks:
       - traefik
