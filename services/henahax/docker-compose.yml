@@ -17,9 +17,10 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.homepage.rule=Host(`henahax.net`,`www.henahax.net`,`henahax.de`,`www.henahax.de`)"
+      - "traefik.http.routers.homepage.rule=Host(`henahax.net`) || Host(`www.henahax.net`) || Host(`henahax.de`) || Host(`www.henahax.de`)"
       - "traefik.http.routers.homepage.entrypoints=websecure"
       - "traefik.http.routers.homepage.tls=true"
+      - "traefik.http.routers.homepage.tls.certresolver=letsencrypt"
       - "traefik.http.services.homepage.loadbalancer.server.port=4321"
 
   henahax-voice-server-api:
@@ -40,13 +41,15 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.voice.rule=Host(`api.henahax.net`,`voice-server-api.henahax.net`)"
+      - "traefik.http.routers.voice.rule=Host(`api.henahax.net`) || Host(`voice-server-api.henahax.net`)"
       - "traefik.http.routers.voice.entrypoints=websecure"
       - "traefik.http.routers.voice.tls=true"
+      - "traefik.http.routers.voice.tls.certresolver=letsencrypt"
       - "traefik.http.routers.voice.service=voice"
-      - "traefik.http.routers.voice-homepage-api.rule=Host(`henahax.net`,`www.henahax.net`) && PathPrefix(`/api/teamspeak`)"
+      - "traefik.http.routers.voice-homepage-api.rule=(Host(`henahax.net`) || Host(`www.henahax.net`)) && PathPrefix(`/api/teamspeak`)"
       - "traefik.http.routers.voice-homepage-api.entrypoints=websecure"
       - "traefik.http.routers.voice-homepage-api.tls=true"
+      - "traefik.http.routers.voice-homepage-api.tls.certresolver=letsencrypt"
       - "traefik.http.routers.voice-homepage-api.priority=100"
       - "traefik.http.routers.voice-homepage-api.service=voice"
       - "traefik.http.services.voice.loadbalancer.server.port=3000"
@@ -69,9 +72,10 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.gw2.rule=Host(`gw2.henahax.net`, `gw2.henahax.de`)"
+      - "traefik.http.routers.gw2.rule=Host(`gw2.henahax.net`) || Host(`gw2.henahax.de`)"
       - "traefik.http.routers.gw2.entrypoints=websecure"
       - "traefik.http.routers.gw2.tls=true"
+      - "traefik.http.routers.gw2.tls.certresolver=letsencrypt"
       - "traefik.http.services.gw2.loadbalancer.server.port=3000"
 
 networks:

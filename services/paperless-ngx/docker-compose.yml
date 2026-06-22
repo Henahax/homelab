@@ -26,6 +26,7 @@ services:
       - "traefik.http.routers.paperless.rule=Host(`paperless.henahax.net`)"
       - "traefik.http.routers.paperless.entrypoints=websecure"
       - "traefik.http.routers.paperless.tls=true"
+      - "traefik.http.routers.paperless.tls.certresolver=letsencrypt"
       - "traefik.http.routers.paperless.middlewares=lan-only@file"
       - "traefik.http.services.paperless-ngx-ui.loadbalancer.server.port=8000"
     environment:
