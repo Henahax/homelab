@@ -7,6 +7,16 @@ http:
           - 10.0.0.0/8
           - 172.16.0.0/12
 
+    # Security Headers (Best Practice)
+    security-headers:
+      headers:
+        customResponseHeaders:
+          X-Frame-Options: "DENY"
+          X-Content-Type-Options: "nosniff"
+          Strict-Transport-Security: "max-age=31536000; includeSubDomains"
+          Referrer-Policy: "strict-origin-when-cross-origin"
+          ContentTypeCharset: "UTF-8"
+
     # subdomain renames
     gw2.net:
       redirectRegex:
@@ -16,111 +26,100 @@ http:
 
     # .de to .net redirects
     henahax.de:
-      redirectRegex:
-        regex: "^https?://\\.henahax\\.de(/.*)?$"
+      redirectregex:
+        regex: "^https?://(www\\.)?henahax\\.de(/.*)?$"
         replacement: "https://henahax.net${1}"
         permanent: true
 
     gw2.de:
-      redirectRegex:
+      redirectregex:
         regex: "^https?://(gw2|gw2tools)\\.henahax\\.de(/.*)?$"
         replacement: "https://gw2.henahax.net${1}"
         permanent: true
 
-    # subdomain to path redirects
+    # subdomain to path redirects (Pfade bleiben erhalten via ${2})
     contact:
-      redirectRegex:
+      redirectregex:
         regex: "^https?://(contact|kontakt|links)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://henahax.net/contact"
+        replacement: "https://henahax.net/contact${2}"
         permanent: true
 
     magicfind:
-      redirectRegex:
+      redirectregex:
         regex: "^https?://(magicfind|mf)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://gw2.henahax.net/magicfind"
+        replacement: "https://gw2.henahax.net/magicfind${2}"
         permanent: true
 
     onlyfans:
-      redirectRegex:
+      redirectregex:
         regex: "^https?://(onlyfans|of)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://henahax.net/onlyfans"
+        replacement: "https://henahax.net/onlyfans${2}"
         permanent: true
 
     reset:
-      redirectRegex:
+      redirectregex:
         regex: "^https?://reset\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://gw2.henahax.net/reset"
+        replacement: "https://gw2.henahax.net/reset${2}"
         permanent: true
 
     voice:
-      redirectRegex:
+      redirectregex:
         regex: "^https?://(voice|discord|teamspeak|ts|ts3|ts6)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://henahax.net/server"
+        replacement: "https://henahax.net/server${2}"
         permanent: true
 
-    # external
+    # external (redirectURL ist effizienter als Regex)
     discord:
-      redirectRegex:
-        regex: "^https?://discord\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://discord.com/invite/26Kc9mJYKT"
-        permanent: true
+      redirectURL:
+        url: "https://discord.com/invite/26Kc9mJYKT"
+        statusCode: 301
 
     docker:
-      redirectRegex:
-        regex: "^https?://(docker|dockerhub)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://hub.docker.com/u/henahax"
-        permanent: true
+      redirectURL:
+        url: "https://hub.docker.com/u/henahax"
+        statusCode: 301
 
     facebook:
-      redirectRegex:
-        regex: "^https?://facebook\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://facebook.com/henahax"
-        permanent: true
+      redirectURL:
+        url: "https://facebook.com/henahx"
+        statusCode: 301
 
     github:
-      redirectRegex:
-        regex: "^https?://github\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://github.com/henahax"
-        permanent: true
+      redirectURL:
+        url: "https://github.com/henahax"
+        statusCode: 301
 
     homelab:
-      redirectRegex:
-        regex: "^https?://homelab\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://github.com/henahax/homelab"
-        permanent: true
+      redirectURL:
+        url: "https://github.com/henahax/homelab"
+        statusCode: 301
 
     instagram:
-      redirectRegex:
-        regex: "^https?://instagram\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://instagram.com/henahax"
-        permanent: true
+      redirectURL:
+        url: "https://instagram.com/henahax"
+        statusCode: 301
 
     killproof:
-      redirectRegex:
-        regex: "^https?://(killproof|kp)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://killproof.me/proof/z44xx"
-        permanent: true
+      redirectURL:
+        url: "https://killproof.me/proof/z44xx"
+        statusCode: 301
 
     rickroll:
-      redirectRegex:
-        regex: "^https?://(rickroll|info)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://youtube.com/watch?v=dQw4w9WgXcQ"
-        permanent: true
+      redirectURL:
+        url: "https://youtube.com/watch?v=dQw4w9WgXcQ"
+        statusCode: 301
 
     steam:
-      redirectRegex:
-        regex: "^https?://steam\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://steamcommunity.com/id/henahax"
-        permanent: true
+      redirectURL:
+        url: "https://steamcommunity.com/id/henahax"
+        statusCode: 301
 
     twitch:
-      redirectRegex:
-        regex: "^https?://twitch\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://twitch.tv/henahax"
-        permanent: true
+      redirectURL:
+        url: "https://twitch.tv/henahax"
+        statusCode: 301
 
     x:
-      redirectRegex:
-        regex: "^https?://(x|twitter)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://x.com/henahax"
-        permanent: true
+      redirectURL:
+        url: "https://x.com/henahax"
+        statusCode: 301

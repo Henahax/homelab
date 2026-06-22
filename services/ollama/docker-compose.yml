@@ -42,6 +42,7 @@ services:
       - "traefik.http.routers.ollama.rule=Host(`ollama.henahax.net`)"
       - "traefik.http.routers.ollama.entrypoints=websecure"
       - "traefik.http.routers.ollama.tls=true"
+      - "traefik.http.routers.ollama.tls.certresolver=letsencrypt"
       - "traefik.http.routers.ollama.middlewares=lan-only@file"
       - "traefik.http.services.ollama-ui.loadbalancer.server.port=8080"
 
