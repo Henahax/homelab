@@ -10,13 +10,6 @@ services:
     environment:
       - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
 
-    healthcheck:
-      test: ["CMD", "traefik", "healthcheck", "--ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
-      start_period: 5s
-
     ports:
       - "80:80"
       - "443:443"

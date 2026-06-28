@@ -78,58 +78,69 @@ http:
         replacement: "https://henahax.net/server$3"
         permanent: true
 
-    # external (redirectURL ist effizienter als Regex)
+    # external redirects using redirectRegex (catch all and redirect)
     discord:
-      redirectURL:
-        url: "https://discord.com/invite/26Kc9mJYKT"
-        statusCode: 301
+      redirectRegex:
+        regex: "^https?://discord\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://discord.com/invite/26Kc9mJYKT"
+        permanent: true
 
     docker:
-      redirectURL:
-        url: "https://hub.docker.com/u/henahax"
-        statusCode: 301
+      redirectRegex:
+        regex: "^https?://docker\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://hub.docker.com/u/henahax"
+        permanent: true
 
     facebook:
-      redirectURL:
-        url: "https://facebook.com/henahx"
-        statusCode: 301
+      redirectRegex:
+        regex: "^https?://facebook\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://facebook.com/henahx"
+        permanent: true
 
     github:
-      redirectURL:
-        url: "https://github.com/henahax"
-        statusCode: 301
+      redirectRegex:
+        regex: "^https?://github\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://github.com/henahax"
+        permanent: true
 
     homelab:
-      redirectURL:
-        url: "https://github.com/henahax/homelab"
-        statusCode: 301
+      redirectRegex:
+        regex: "^https?://homelab\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://github.com/henahax/homelab"
+        permanent: true
 
     instagram:
-      redirectURL:
-        url: "https://instagram.com/henahax"
-        statusCode: 301
+      redirectRegex:
+        regex: "^https?://instagram\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://instagram.com/henahax"
+        permanent: true
 
     killproof:
-      redirectURL:
-        url: "https://killproof.me/proof/z44xx"
-        statusCode: 301
+      redirectRegex:
+        regex: "^https?://killproof\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://killproof.me/proof/z44xx"
+        permanent: true
 
     rickroll:
-      redirectURL:
-        url: "https://youtube.com/watch?v=dQw4w9WgXcQ"
-        statusCode: 301
+      redirectRegex:
+        regex: "^https?://rickroll\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://youtube.com/watch?v=dQw4w9WgXcQ"
+        permanent: true
 
     steam:
-      redirectURL:
-        url: "https://steamcommunity.com/id/henahax"
-        statusCode: 301
+      redirectRegex:
+        regex: "^https?://steam\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://steamcommunity.com/id/henahax"
+        permanent: true
 
     twitch:
-      redirectURL:
-        url: "https://twitch.tv/henahax"
-        statusCode: 301
+      redirectRegex:
+        regex: "^https?://twitch\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://twitch.tv/henahax"
+        permanent: true
 
     x:
-      redirectURL:
-        url: "https://x.com/henahax"
-        statusCode: 301
+      redirectRegex:
+        regex: "^https?://x\\.henahax\\.(net|de)(/.*)?$"
+        replacement: "https://x.com/henahax"
+        permanent: true
