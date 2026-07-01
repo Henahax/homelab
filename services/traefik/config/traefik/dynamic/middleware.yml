@@ -1,146 +1,48 @@
 http:
   middlewares:
+    security-headers:
+      headers:
+        # browserXssFilter entfernt (veraltet, Content-Security-Policy greift)
+        contentTypeNosniff: true
+        frameDeny: false
+
+        referrerPolicy: "strict-origin-when-cross-origin"
+
+        # NEU: HSTS (Strict-Transport-Security) hinzugefügt
+        forceSTSHeader: true
+        stsIncludeSubdomains: true
+        stsSeconds: 31536000
+        stsPreload: true
+
+        permissionsPolicy: >-
+          geolocation=(),
+          microphone=(),
+          camera=()
+
+        contentSecurityPolicy: >-
+          default-src 'self';
+          script-src 'self' 'unsafe-inline' https:;
+          script-src-elem 'self' 'unsafe-inline' https:;
+          style-src 'self' 'unsafe-inline' https:;
+          style-src-elem 'self' 'unsafe-inline' https:;
+          img-src 'self' data: https:;
+          font-src 'self' data: https:;
+          connect-src 'self' https:;
+          frame-src https:;
+          object-src 'none';
+          base-uri 'self';
+          form-action 'self' https:;
+
     lan-only:
       ipAllowList:
         sourceRange:
-          - 192.168.0.0/16
-          - 10.0.0.0/8
-          - 172.16.0.0/12
+          - "127.0.0.1/32"
+          - "192.168.0.0/16"
+          - "10.0.0.0/8"
+          - "172.16.0.0/12"
 
     lan-only-secure:
       chain:
         middlewares:
           - lan-only
           - security-headers
-
-    # Security Headers (Best Practice)
-    security-headers:
-      headers:
-        customResponseHeaders:
-          X-Frame-Options: "DENY"
-          X-Content-Type-Options: "nosniff"
-          Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
-          Referrer-Policy: "strict-origin-when-cross-origin"
-          X-Permitted-Cross-Domain-Policies: "none"
-          Permissions-Policy: "geolocation=(), microphone=(), camera=(), payment=()"
-          Content-Security-Policy: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:"
-        customRequestHeaders:
-          X-Forwarded-Proto: "https"
-
-    # subdomain renames
-    gw2.net:
-      redirectRegex:
-        regex: "^https?://(gw2|gw2tools)\\.henahax\\.net(/.*)?$"
-        replacement: "https://gw2.henahax.net$2"
-        permanent: true
-
-    # .de to .net redirects
-    henahax.de:
-      redirectRegex:
-        regex: "^https?://(www\\.)?henahax\\.de(/.*)?$"
-        replacement: "https://henahax.net$2"
-        permanent: true
-
-    gw2.de:
-      redirectRegex:
-        regex: "^https?://(gw2|gw2tools)\\.henahax\\.de(/.*)?$"
-        replacement: "https://gw2.henahax.net$2"
-        permanent: true
-
-    # subdomain to path redirects (Pfade bleiben erhalten via ${2})
-    contact:
-      redirectRegex:
-        regex: "^https?://(contact|kontakt|links)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://henahax.net/contact$3"
-        permanent: true
-
-    magicfind:
-      redirectRegex:
-        regex: "^https?://(magicfind|mf)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://gw2.henahax.net/magicfind$3"
-        permanent: true
-
-    onlyfans:
-      redirectRegex:
-        regex: "^https?://(onlyfans|of)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://henahax.net/onlyfans$3"
-        permanent: true
-
-    reset:
-      redirectRegex:
-        regex: "^https?://reset\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://gw2.henahax.net/reset$2"
-        permanent: true
-
-    voice:
-      redirectRegex:
-        regex: "^https?://(voice|teamspeak|ts|ts3|ts6)\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://henahax.net/server$3"
-        permanent: true
-
-    # external redirects using redirectRegex (catch all and redirect)
-    discord:
-      redirectRegex:
-        regex: "^https?://discord\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://discord.com/invite/26Kc9mJYKT"
-        permanent: true
-
-    docker:
-      redirectRegex:
-        regex: "^https?://docker\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://hub.docker.com/u/henahax"
-        permanent: true
-
-    facebook:
-      redirectRegex:
-        regex: "^https?://facebook\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://facebook.com/henahx"
-        permanent: true
-
-    github:
-      redirectRegex:
-        regex: "^https?://github\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://github.com/henahax"
-        permanent: true
-
-    homelab:
-      redirectRegex:
-        regex: "^https?://homelab\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://github.com/henahax/homelab"
-        permanent: true
-
-    instagram:
-      redirectRegex:
-        regex: "^https?://instagram\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://instagram.com/henahax"
-        permanent: true
-
-    killproof:
-      redirectRegex:
-        regex: "^https?://killproof\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://killproof.me/proof/z44xx"
-        permanent: true
-
-    rickroll:
-      redirectRegex:
-        regex: "^https?://rickroll\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://youtube.com/watch?v=dQw4w9WgXcQ"
-        permanent: true
-
-    steam:
-      redirectRegex:
-        regex: "^https?://steam\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://steamcommunity.com/id/henahax"
-        permanent: true
-
-    twitch:
-      redirectRegex:
-        regex: "^https?://twitch\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://twitch.tv/henahax"
-        permanent: true
-
-    x:
-      redirectRegex:
-        regex: "^https?://x\\.henahax\\.(net|de)(/.*)?$"
-        replacement: "https://x.com/henahax"
-        permanent: true

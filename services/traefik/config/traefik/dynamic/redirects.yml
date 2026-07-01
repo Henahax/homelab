@@ -1,74 +1,213 @@
 http:
   routers:
-    redirect-gw2-net:
-      rule: "Host(`gw2tools.henahax.net`)"
+    redirect-links:
       entryPoints:
         - websecure
+      rule: "Host(`links.henahax.net`) || Host(`links.henahax.de`) || Host(`contact.henahax.net`) || Host(`contact.henahax.de`) || Host(`kontakt.henahax.net`) || Host(`kontakt.henahax.de`)"
       middlewares:
-        - gw2.net
-        - security-headers@file
+        - redirect-links
       service: noop@internal
-
-    redirect-henahax-de:
-      rule: "Host(`henahax.de`) || Host(`www.henahax.de`)"
-      entryPoints:
-        - websecure
-      middlewares:
-        - henahax.de
-        - security-headers@file
-      service: noop@internal
-
-    redirect-gw2-de:
-      rule: "Host(`gw2.henahax.de`) || Host(`gw2tools.henahax.de`)"
-      entryPoints:
-        - websecure
-      middlewares:
-        - gw2.de
-        - security-headers@file
-      service: noop@internal
-
-    # Subdomain Redirects
-    redirect-contact:
-      rule: "Host(`contact.henahax.net`) || Host(`contact.henahax.de`) || Host(`kontakt.henahax.net`) || Host(`kontakt.henahax.de`) || Host(`links.henahax.net`) || Host(`links.henahax.de`)"
-      entryPoints:
-        - websecure
-      middlewares:
-        - contact
-        - security-headers@file
-      service: noop@internal
-
-    redirect-magicfind:
-      rule: "Host(`magicfind.henahax.net`) || Host(`magicfind.henahax.de`) || Host(`mf.henahax.net`) || Host(`mf.henahax.de`)"
-      entryPoints:
-        - websecure
-      middlewares:
-        - magicfind
-        - security-headers@file
-      service: noop@internal
-
-    redirect-onlyfans:
-      rule: "Host(`onlyfans.henahax.net`) || Host(`onlyfans.henahax.de`) || Host(`of.henahax.net`) || Host(`of.henahax.de`)"
-      entryPoints:
-        - websecure
-      middlewares:
-        - onlyfans
-        - security-headers@file
-      service: noop@internal
+      tls: {}
 
     redirect-reset:
+      entryPoints:
+        - websecure
       rule: "Host(`reset.henahax.net`) || Host(`reset.henahax.de`)"
-      entryPoints:
-        - websecure
       middlewares:
-        - reset
-        - security-headers@file
+        - redirect-reset
       service: noop@internal
+      tls: {}
 
-    redirect-voice:
-      rule: "Host(`voice.henahax.net`) || Host(`voice.henahax.de`) || Host(`teamspeak.henahax.net`) || Host(`teamspeak.henahax.de`) || Host(`ts.henahax.net`) || Host(`ts.henahax.de`) || Host(`ts3.henahax.net`) || Host(`ts3.henahax.de`) || Host(`ts6.henahax.net`) || Host(`ts6.henahax.de`)"
+    redirect-servers:
       entryPoints:
         - websecure
+      rule: "Host(`ts.henahax.net`) || Host(`ts.henahax.de`) || Host(`ts3.henahax.net`) || Host(`ts3.henahax.de`) || Host(`ts6.henahax.net`) || Host(`ts6.henahax.de`) || Host(`discord.henahax.net`) || Host(`discord.henahax.de`) || Host(`teamspeak.henahax.net`) || Host(`teamspeak.henahax.de`) || Host(`voice.henahax.net`) || Host(`voice.henahax.de`)"
       middlewares:
-        - voice
-        - security-headers@file
+        - redirect-servers
       service: noop@internal
+      tls: {}
+
+    redirect-magicfind:
+      entryPoints:
+        - websecure
+      rule: "Host(`magicfind.henahax.de`) || Host(`mf.henahax.de`) || Host(`magicfind.henahax.net`) || Host(`mf.henahax.net`)"
+      middlewares:
+        - redirect-magicfind
+      service: noop@internal
+      tls: {}
+
+    redirect-docker:
+      entryPoints:
+        - websecure
+      rule: "Host(`docker.henahax.net`) || Host(`docker.henahax.de`)"
+      middlewares:
+        - redirect-docker
+      service: noop@internal
+      tls: {}
+
+    redirect-facebook:
+      entryPoints:
+        - websecure
+      rule: "Host(`facebook.henahax.net`) || Host(`facebook.henahax.de`)"
+      middlewares:
+        - redirect-facebook
+      service: noop@internal
+      tls: {}
+
+    redirect-github:
+      entryPoints:
+        - websecure
+      rule: "Host(`github.henahax.net`) || Host(`github.henahax.de`)"
+      middlewares:
+        - redirect-github
+      service: noop@internal
+      tls: {}
+
+    redirect-homelab:
+      entryPoints:
+        - websecure
+      rule: "Host(`homelab.henahax.net`) || Host(`homelab.henahax.de`)"
+      middlewares:
+        - redirect-homelab
+      service: noop@internal
+      tls: {}
+
+    redirect-instagram:
+      entryPoints:
+        - websecure
+      rule: "Host(`instagram.henahax.net`) || Host(`instagram.henahax.de`)"
+      middlewares:
+        - redirect-instagram
+      service: noop@internal
+      tls: {}
+
+    redirect-killproof:
+      entryPoints:
+        - websecure
+      rule: "Host(`killproof.henahax.net`) || Host(`kp.henahax.net`) || Host(`killproof.henahax.de`) || Host(`kp.henahax.de`)"
+      middlewares:
+        - redirect-killproof
+      service: noop@internal
+      tls: {}
+
+    redirect-rickroll:
+      entryPoints:
+        - websecure
+      rule: "Host(`rickroll.henahax.net`) || Host(`info.henahax.net`) || Host(`rickroll.henahax.de`) || Host(`info.henahax.de`)"
+      middlewares:
+        - redirect-rickroll
+      service: noop@internal
+      tls: {}
+
+    redirect-steam:
+      entryPoints:
+        - websecure
+      rule: "Host(`steam.henahax.net`) || Host(`steam.henahax.de`)"
+      middlewares:
+        - redirect-steam
+      service: noop@internal
+      tls: {}
+
+    redirect-twitch:
+      entryPoints:
+        - websecure
+      rule: "Host(`twitch.henahax.net`) || Host(`twitch.henahax.de`)"
+      middlewares:
+        - redirect-twitch
+      service: noop@internal
+      tls: {}
+
+    redirect-x:
+      entryPoints:
+        - websecure
+      rule: "Host(`x.henahax.net`) || Host(`twitter.henahax.net`) || Host(`x.henahax.de`) || Host(`twitter.henahax.de`)"
+      middlewares:
+        - redirect-x
+      service: noop@internal
+      tls: {}
+
+  middlewares:
+    redirect-links:
+      redirectRegex:
+        regex: "^https?://(kontakt|contact|links)\\.henahax\\.(net|de)(.*)"
+        replacement: "https://henahax.net/links$3"
+        permanent: true
+
+    redirect-reset:
+      redirectRegex:
+        regex: "^https?://reset\\.henahax\\.(net|de)(.*)"
+        replacement: "https://gw2.henahax.net/reset$2"
+        permanent: true
+
+    redirect-servers:
+      redirectRegex:
+        regex: "^https?://(ts|ts3|ts6|discord|teamspeak|voice)\\.henahax\\.(net|de)(.*)"
+        replacement: "https://henahax.net/servers$3"
+        permanent: true
+
+    redirect-magicfind:
+      redirectRegex:
+        regex: "^https?://(magicfind|mf)\\.henahax\\.(net|de)(.*)"
+        replacement: "https://gw2tools.henahax.de/magicfind$3"
+        permanent: true
+
+    redirect-docker:
+      redirectRegex:
+        regex: "^https?://docker\\.henahax\\.(net|de)(.*)"
+        replacement: "https://hub.docker.com/u/henahax$2"
+        permanent: true
+
+    redirect-facebook:
+      redirectRegex:
+        regex: "^https?://facebook\\.henahax\\.(net|de)(.*)"
+        replacement: "https://facebook.com/henahax$2"
+        permanent: true
+
+    redirect-github:
+      redirectRegex:
+        regex: "^https?://github\\.henahax\\.(net|de)(.*)"
+        replacement: "https://github.com/henahax$2"
+        permanent: true
+
+    redirect-homelab:
+      redirectRegex:
+        regex: "^https?://homelab\\.henahax\\.(net|de)(.*)"
+        replacement: "https://github.com/henahax/homelab$2"
+        permanent: true
+
+    redirect-instagram:
+      redirectRegex:
+        regex: "^https?://instagram\\.henahax\\.(net|de)(.*)"
+        replacement: "https://instagram.com/henahax$2"
+        permanent: true
+
+    redirect-killproof:
+      redirectRegex:
+        regex: "^https?://(killproof|kp)\\.henahax\\.(net|de)(.*)"
+        replacement: "https://killproof.me/proof/z44xx$3"
+        permanent: true
+
+    redirect-rickroll:
+      redirectRegex:
+        # Optmiert: Unnötige Capture-Group (.*) entfernt
+        regex: "^https?://(rickroll|info)\\.henahax\\.(net|de).*"
+        replacement: "https://youtube.com/watch?v=dQw4w9WgXcQ"
+        permanent: true
+
+    redirect-steam:
+      redirectRegex:
+        regex: "^https?://steam\\.henahax\\.(net|de)(.*)"
+        replacement: "https://steamcommunity.com/id/henahax$2"
+        permanent: true
+
+    redirect-twitch:
+      redirectRegex:
+        regex: "^https?://twitch\\.henahax\\.(net|de)(.*)"
+        replacement: "https://twitch.tv/henahax$2"
+        permanent: true
+
+    redirect-x:
+      redirectRegex:
+        regex: "^https?://(x|twitter)\\.henahax\\.(net|de)(.*)"
+        replacement: "https://x.com/henahax$3"
+        permanent: true
