@@ -148,7 +148,7 @@ http:
     redirect-magicfind:
       redirectRegex:
         regex: "^https?://(magicfind|mf)\\.henahax\\.(net|de)(.*)"
-        replacement: "https://gw2tools.henahax.de/magicfind$3"
+        replacement: "https://gw2.henahax.net/magicfind$3"
         permanent: true
 
     redirect-docker:

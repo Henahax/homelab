@@ -1,0 +1,22 @@
+services:
+  teamspeak:
+    image: teamspeak:latest
+    container_name: teamspeak3
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Berlin
+      - TS3SERVER_LICENSE=accept
+    ports:
+      - "9987:9987/udp" # Voice Port
+      - "30033:30033/tcp" # File Transfer
+      - "10011:10011/tcp" # Server Query
+    volumes:
+      - teamspeak3-data:/var/ts3server/
+
+volumes:
+  teamspeak3-data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/data/teamspeak3 # Host path on your ZFS dataset
+      o: bind
