@@ -10,6 +10,7 @@ services:
     ports:
       - "9987:9987/udp" # Voice Port
       - "30033:30033/tcp" # File Transfer
+      - "10011:10011/tcp" # Server Query
       - "8087:10080/tcp" # Web Query - TODO: Change
       # - "8087:10443/tcp" # Web Query - TODO: Change
     volumes:
