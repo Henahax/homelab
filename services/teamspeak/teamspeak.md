@@ -18,8 +18,8 @@
     - Adresse & Viewer: [url=https://ts.henahax.net]ts.henahax.net[/url]
 
     [B][U]Regeln:[/U][/B]
-    - §1: Macht keinen Scheiß
-    - §2: -
+    - [B]§1[/B]: Macht keinen Scheiß
+    - [B]§2[/B]: -
 
     [B][U]Kontakt:[/U][/B]
     - [url=https://kontakt.henahax.net]kontakt.henahax.net[/url]
