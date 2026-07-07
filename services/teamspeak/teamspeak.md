@@ -15,7 +15,7 @@
     - Ich versuche Kanäle & Berechtigungen wieder ähnlich herzustellen, kann aber etwas dauern
 
     [B][U]Links & Kontakt:[/U][/B]
-    - [url=https://ts.henahax.net]ts.henahax.net[/url] [I]Adresse & Viewer[/I]
+    - [url=https://ts.henahax.net]ts.henahax.net[/url] [I]Server-Adresse & Viewer[/I]
     - [url=https://kontakt.henahax.net]kontakt.henahax.net[/url] [I]Kontakt[/I]
 
     [B][U]Regeln:[/U][/B]
