@@ -6,6 +6,9 @@ services:
     environment:
       - TZ=Europe/Berlin
       - TS3SERVER_LICENSE=accept
+      - TS3SERVER_QUERY_PROTOCOLS=raw,ssh,http,https
+      - TS3SERVER_QUERY_HTTP_PORT=10080
+      - TS3SERVER_QUERY_HTTPS_PORT=10443
     ports:
       - "9987:9987/udp" # Voice Port
       - "30033:30033/tcp" # File Transfer
