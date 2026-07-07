@@ -4,23 +4,40 @@
 
 - ### `henahax TeamSpeak`
 
+## Willkommensnachricht
+
+- ```BBCode
+  Willkommen auf dem [b]neuen[/b] [URL=https://ts.henahax.net]ts.henahax.net[/URL] Server
+  ```
+
+## Hostnachricht
+
+- ### `Server umgezogen & umgebaut – Bitte Info-Kanal lesen!`
+
 ## Kanäle
 
 - ### `Info & Regeln` 🔇
 
     ```BBCode
     [B][U]Info:[/U][/B]
-    - Server läuft auf neuer Hardware und Datenbank
-    - Aktuell können Ausfälle auftreten, kontaktiert mich dann bitte!
-    - Ich versuche Kanäle & Berechtigungen wieder ähnlich herzustellen, kann aber etwas dauern
+    - Server läuft auf neuer Hardware, Software und Datenbank
+    - bevorzugte Server-Adresse ist jetzt [URL=https://ts.henahax.net]ts.henahax.net[/URL] (Ändert eure Lesezeichen!)
+    - aktuell können Ausfälle auftreten, kontaktiert mich dann bitte!
 
-    [B][U]Links & Kontakt:[/U][/B]
-    - [url=https://ts.henahax.net]ts.henahax.net[/url] [I]Server-Adresse & Viewer[/I]
-    - [url=https://kontakt.henahax.net]kontakt.henahax.net[/url] [I]Kontakt[/I]
+    [B][U]TeamSpeak 6:[/U][/B]
+    - TeamSpeak 6 Server Beta (abwärtskompatibel)
+    - TeamSpeak 6 Client (optional) mit zusätzlichen Funktionen:
+      - Bildschirmübertragung
+      - Chat mit Bildern und Videos
+      - ...
 
     [B][U]Regeln:[/U][/B]
     - [B]§1[/B]: Macht keinen Scheiß
     - [B]§2[/B]: -
+
+    [B][U]Links & Kontakt:[/U][/B]
+    - [url=https://ts.henahax.net]ts.henahax.net[/url] [I]Server-Adresse & Viewer[/I]
+    - [url=https://kontakt.henahax.net]kontakt.henahax.net[/url] [I]Kontakt[/I]
     ```
 
 - ### `[spacer]Spiele` 🚧
