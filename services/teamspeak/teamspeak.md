@@ -14,16 +14,13 @@
     - Aktuell können Ausfälle auftreten, kontaktiert mich dann bitte!
     - Ich versuche Kanäle & Berechtigungen wieder ähnlich herzustellen, kann aber etwas dauern
 
-    [B][U]Links:[/U][/B]
-    - Adresse & Viewer: [url=https://ts.henahax.net]ts.henahax.net[/url]
+    [B][U]Links & Kontakt:[/U][/B]
+    - [url=https://ts.henahax.net]ts.henahax.net[/url] [I]Adresse & Viewer[/I]
+    - [url=https://kontakt.henahax.net]kontakt.henahax.net[/url] [I]Kontakt[/I]
 
     [B][U]Regeln:[/U][/B]
     - [B]§1[/B]: Macht keinen Scheiß
     - [B]§2[/B]: -
-
-    [B][U]Kontakt:[/U][/B]
-    - [url=https://kontakt.henahax.net]kontakt.henahax.net[/url]
-    - private Handynummer
     ```
 
 - ### `[spacer]Spiele` 🚧
