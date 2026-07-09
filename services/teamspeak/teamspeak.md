@@ -20,9 +20,9 @@
 
     ```BBCode
     [B][U]Info:[/U][/B]
+    - [B]aktuell fast tägliche Ausfälle[/B], kann leider nur alle ~24h beim nächsten Ausfall die geänderte Netzwerk-Konfiguration testen...
     - Server läuft auf neuer Hardware, Software und Datenbank
     - bevorzugte Server-Adresse ist jetzt [URL=https://ts.henahax.net]ts.henahax.net[/URL] (Ändert eure Lesezeichen!)
-    - aktuell können Ausfälle auftreten, kontaktiert mich dann bitte!
 
     [B][U]TeamSpeak 6:[/U][/B]
     - TeamSpeak 6 Server Beta (abwärtskompatibel)
