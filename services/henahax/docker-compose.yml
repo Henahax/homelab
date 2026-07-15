@@ -8,6 +8,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
+      - CACHE_TTL=${CACHE_TTL}
+      - VOICE_API_URL=${VOICE_API_URL}
 
     networks:
       - traefik
@@ -26,13 +28,18 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
+      - CACHE_TTL=${CACHE_TTL}
+      - TEAMSPEAK_BASE_URL=${TEAMSPEAK_BASE_URL}
+      - TEAMSPEAK_QUERY_PORT=${TEAMSPEAK_QUERY_PORT}
+      - TEAMSPEAK_SERVER_ID=${TEAMSPEAK_SERVER_ID}
+      - TEAMSPEAK_API_KEY=${TEAMSPEAK_API_KEY}
 
     networks:
       - traefik
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.voice.rule=Host(`api.henahax.net`) || Host(`api.henahax.de`)"
+      - "traefik.http.routers.voice.rule=Host(`api.henahax.net`) || Host(`voice-server-api.henahax.net`)"
       - "traefik.http.routers.voice.service=voice"
       - "traefik.http.routers.voice-homepage-api.rule=(Host(`henahax.net`) || Host(`www.henahax.net`)) && PathPrefix(`/api/teamspeak`)"
       - "traefik.http.routers.voice-homepage-api.priority=100"
