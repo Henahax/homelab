@@ -9,9 +9,6 @@ services:
       - PGID=1000
       - TZ=Europe/Berlin
 
-    ports:
-      - "8080:4321"
-
     networks:
       - traefik
 
@@ -30,15 +27,12 @@ services:
       - PGID=1000
       - TZ=Europe/Berlin
 
-    ports:
-      - "8082:3000"
-
     networks:
       - traefik
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.voice.rule=Host(`api.henahax.net`) || Host(`voice-server-api.henahax.net`)"
+      - "traefik.http.routers.voice.rule=Host(`api.henahax.net`) || Host(`api.henahax.de`)"
       - "traefik.http.routers.voice.service=voice"
       - "traefik.http.routers.voice-homepage-api.rule=(Host(`henahax.net`) || Host(`www.henahax.net`)) && PathPrefix(`/api/teamspeak`)"
       - "traefik.http.routers.voice-homepage-api.priority=100"
@@ -54,9 +48,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
-
-    ports:
-      - "8081:3000"
 
     networks:
       - traefik

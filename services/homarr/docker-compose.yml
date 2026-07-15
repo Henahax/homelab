@@ -7,9 +7,6 @@ services:
     environment:
       - SECRET_ENCRYPTION_KEY=8483eeef15e492f2ebc4373e01522679fd5d8f5b0df73bd145c870efee43f736
 
-    ports:
-      - "8075:7575"
-
     volumes:
       # optional Docker integration
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -20,8 +17,9 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.homarr.rule=Host(`homarr.henahax.net`)"
-      - "traefik.http.routers.homarr.middlewares=lan-only-secure@file"
+      - "traefik.http.routers.homarr.rule=Host(`homarr.henahax.net`) || Host(`homarr.henahax.de`) || Host(`dashboard.henahax.net`) || Host(`dashboard.henahax.de`)"
+      - "traefik.http.routers.homarr.entrypoints=websecure"
+      - "traefik.http.routers.homarr.tls=true"
       - "traefik.http.services.homarr.loadbalancer.server.port=7575"
 
 volumes:
