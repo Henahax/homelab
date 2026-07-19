@@ -8,16 +8,17 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
 
-    ports:
-      - "9000:9000"
-
     networks:
       - traefik
 
+    ports:
+      - "9000:9000"
+
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.portainer.rule=Host(`portainer.henahax.net`)"
-      - "traefik.http.routers.portainer.middlewares=lan-only-secure@file"
+      - "traefik.http.routers.portainer.rule=Host(`portainer.henahax.net`) || Host(`portainer.henahax.de`)"
+      - "traefik.http.routers.portainer.entrypoints=websecure"
+      - "traefik.http.routers.portainer.tls=true"
       - "traefik.http.services.portainer.loadbalancer.server.port=9000"
 
 volumes:

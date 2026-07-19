@@ -4,14 +4,17 @@ global:
 
 api:
   dashboard: true
-  insecure: true
+  insecure: false
 
 log:
-  level: INFO
+  level: WARN
   format: json
 
 accessLog:
   format: json
+  filters:
+    statusCodes:
+      - "400-599"
 
 metrics:
   prometheus: {}

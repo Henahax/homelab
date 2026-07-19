@@ -1,0 +1,56 @@
+http:
+  routers:
+    ha-router:
+      entryPoints:
+        - websecure
+      rule: "Host(`homeassistant.henahax.net`) || Host(`homeassistant.henahax.de`) || Host(`home.henahax.net`) || Host(`home.henahax.de`)"
+      service: ha-service
+      tls: {}
+
+    proxmox-router:
+      entryPoints:
+        - websecure
+      rule: "Host(`proxmox.henahax.net`) || Host(`proxmox.henahax.de`) || Host(`server.henahax.net`) || Host(`server.henahax.de`)"
+      service: proxmox-service
+      middlewares:
+        - proxmox-host
+      tls: {}
+
+    truenas-router:
+      entryPoints:
+        - websecure
+      rule: "Host(`truenas.henahax.net`) || Host(`truenas.henahax.de`) || Host(`nas.henahax.net`) || Host(`nas.henahax.de`)"
+      service: truenas-service
+      tls: {}
+
+  services:
+    ha-service:
+      loadBalancer:
+        passHostHeader: true
+        servers:
+          - url: "http://192.168.0.13:8123"
+
+    proxmox-service:
+      loadBalancer:
+        passHostHeader: false
+        servers:
+          - url: "https://192.168.0.2:8006"
+        serversTransport: proxmox-transport
+
+    truenas-service:
+      loadBalancer:
+        passHostHeader: true
+        servers:
+          - url: "http://192.168.0.12"
+
+  serversTransports:
+    proxmox-transport:
+      insecureSkipVerify: true
+
+  middlewares:
+    proxmox-host:
+      headers:
+        customRequestHeaders:
+          Host: "server"
+          X-Forwarded-Host: "proxmox.henahax.net"
+          X-Forwarded-Proto: "https"

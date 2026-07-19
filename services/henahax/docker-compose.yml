@@ -8,9 +8,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
-
-    ports:
-      - "8080:4321"
+      - CACHE_TTL=${CACHE_TTL}
+      - VOICE_API_URL=${VOICE_API_URL}
 
     networks:
       - traefik
@@ -29,9 +28,11 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
-
-    ports:
-      - "8082:3000"
+      - CACHE_TTL=${CACHE_TTL}
+      - TEAMSPEAK_BASE_URL=${TEAMSPEAK_BASE_URL}
+      - TEAMSPEAK_QUERY_PORT=${TEAMSPEAK_QUERY_PORT}
+      - TEAMSPEAK_SERVER_ID=${TEAMSPEAK_SERVER_ID}
+      - TEAMSPEAK_API_KEY=${TEAMSPEAK_API_KEY}
 
     networks:
       - traefik
@@ -54,9 +55,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
-
-    ports:
-      - "8081:3000"
 
     networks:
       - traefik
