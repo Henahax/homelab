@@ -10,26 +10,26 @@
   Willkommen auf dem [b]neuen[/b] [URL=https://ts.henahax.net]ts.henahax.net[/URL] Server
   ```
 
-## Hostnachricht
+## Hostnachricht (im Chat)
 
-- ### `Server umgezogen & umgebaut – Bitte Info-Kanal lesen!`
+- ### `Willkommen, bitte regelmäßig Neuigkeiten im Infokanal lesen!`
 
 ## Kanäle
 
 - ### `Info & Regeln` 🔇
 
     ```BBCode
-    [B][U]Info:[/U][/B]
-    - [B]aktuell fast tägliche Ausfälle[/B], kann leider nur alle ~24h beim nächsten Ausfall die geänderte Netzwerk-Konfiguration testen...
+    [B][U]Neuigkeiten:[/U][/B]
     - Server läuft auf neuer Hardware, Software und Datenbank
     - bevorzugte Server-Adresse ist jetzt [URL=https://ts.henahax.net]ts.henahax.net[/URL] (Ändert eure Lesezeichen!)
-
+    - gerne mit dem neuen TeamSpeak 6 Beta Client die neuen Features testen
+    
     [B][U]TeamSpeak 6:[/U][/B]
     - TeamSpeak 6 Server Beta (abwärtskompatibel)
     - TeamSpeak 6 Client (optional) mit zusätzlichen Funktionen:
-      - Bildschirmübertragung
-      - Chat mit Bildern und Videos
-      - ...
+      - Bildschirm- & Kameraübertragung
+      - schnelles Teilen von Screenshots im Chat
+      - rich Chat mit Bildern, Videos, Tabellen und mehr.
 
     [B][U]Regeln:[/U][/B]
     - [B]§1[/B]: Macht keinen Scheiß
