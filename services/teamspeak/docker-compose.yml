@@ -15,11 +15,58 @@ services:
       # - "8087:10443/tcp" # Web Query - TODO: Change
     volumes:
       - teamspeak-data:/var/tsserver/
+    networks:
+      - teamspeak
+
+  sinusbot:
+    image: ghcr.io/gamer92000/sinusbot-docker:latest
+    container_name: sinusbot
+    restart: unless-stopped
+    depends_on:
+      - teamspeak
+    environment:
+      - TZ=Europe/Berlin
+      - UID=1000
+      - GID=1000
+      - USER_UID=1000
+      - USER_GID=1000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.sinusbot.rule=Host(`sinusbot.henahax.net`) || Host(`sinusbot.henahax.de`)"
+      - "traefik.http.routers.sinusbot.entrypoints=websecure"
+      - "traefik.http.routers.sinusbot.tls=true"
+      - "traefik.http.services.sinusbot.loadbalancer.server.port=8087"
+    volumes:
+      - sinusbot-data:/opt/sinusbot/data
+      - sinusbot-scripts:/opt/sinusbot/scripts
+    networks:
+      - traefik
+      - teamspeak
 
 volumes:
   teamspeak-data:
     driver: local
     driver_opts:
       type: none
-      device: /container-volumes/data/teamspeak # Host path on your ZFS dataset
+      device: /container-volumes/data/teamspeak
       o: bind
+
+  sinusbot-data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/data/sinusbot/data
+      o: bind
+
+  sinusbot-scripts:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/data/sinusbot/scripts
+      o: bind
+
+networks:
+  traefik:
+    external: true
+  teamspeak:
+    driver: bridge
