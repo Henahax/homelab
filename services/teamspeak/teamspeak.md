@@ -91,6 +91,25 @@
     ```BBCode
     ```
 
+    - `Musik`
+
+    ```BBCode
+    [B][U]Musikbot Befehle:[/U][/B]
+    [I]Als private Nachricht an den Bot oder im Kanal.[/I]
+
+    [B]!qyt <URL>[/B]
+    [I]Setzt Lied in Warteschlange - "Queue Youtube"[/I]
+
+    [B]!next[/B]
+    [I]Springt zum nächsten Lied in der Warteschlange[/I]
+
+    [B]!volume <0-100>[/B]
+    [I]Setzt die Lautstärke[/I]
+
+    [B]!stop[/B]
+    [I]Beendet Wiedergabe[/I]
+    ```
+
   - `Abwesend` 🔇
 
     ```BBCode
