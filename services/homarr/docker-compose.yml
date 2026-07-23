@@ -17,6 +17,7 @@ services:
 
     labels:
       - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
       - "traefik.http.routers.homarr.rule=Host(`homarr.henahax.net`) || Host(`homarr.henahax.de`) || Host(`dashboard.henahax.net`) || Host(`dashboard.henahax.de`)"
       - "traefik.http.routers.homarr.entrypoints=websecure"
       - "traefik.http.routers.homarr.tls=true"

@@ -3,22 +3,18 @@ services:
     container_name: ddns-updater
     image: qmcgaw/ddns-updater:latest
     restart: unless-stopped
-
     healthcheck:
       disable: true
-
     environment:
       - TZ=Europe/Berlin
       - CONFIG=${CONFIG}
-
     volumes:
       - ddns_data:/updater/data
-
     networks:
       - traefik
-
     labels:
       - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
       - "traefik.http.routers.ddns.rule=Host(`ddns.henahax.net`) || Host(`ddns.henahax.de`)"
       - "traefik.http.routers.ddns.entrypoints=websecure"
       - "traefik.http.routers.ddns.tls=true"

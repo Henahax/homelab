@@ -1,7 +1,7 @@
 services:
   teamspeak:
-    image: teamspeaksystems/teamspeak6-server:latest
     container_name: teamspeak
+    image: teamspeaksystems/teamspeak6-server:latest
     restart: unless-stopped
     environment:
       - TZ=Europe/Berlin
@@ -19,8 +19,8 @@ services:
       - teamspeak
 
   sinusbot:
-    image: ghcr.io/gamer92000/sinusbot-docker:latest
     container_name: sinusbot
+    image: ghcr.io/gamer92000/sinusbot-docker:latest
     restart: unless-stopped
     depends_on:
       - teamspeak
@@ -32,6 +32,7 @@ services:
       - USER_GID=1000
     labels:
       - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
       - "traefik.http.routers.sinusbot.rule=Host(`sinusbot.henahax.net`) || Host(`sinusbot.henahax.de`)"
       - "traefik.http.routers.sinusbot.entrypoints=websecure"
       - "traefik.http.routers.sinusbot.tls=true"

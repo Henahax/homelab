@@ -1,7 +1,7 @@
 services:
   teamspeak:
-    image: teamspeak:latest
     container_name: teamspeak3
+    image: teamspeak:latest
     restart: unless-stopped
     environment:
       - TZ=Europe/Berlin

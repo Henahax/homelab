@@ -3,17 +3,14 @@ services:
     container_name: henahax-homepage
     image: henahax/homepage:latest
     restart: unless-stopped
-
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
       - CACHE_TTL=${CACHE_TTL}
       - VOICE_API_URL=${VOICE_API_URL}
-
     networks:
       - traefik
-
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.homepage.rule=Host(`henahax.net`) || Host(`www.henahax.net`) || Host(`henahax.de`) || Host(`www.henahax.de`)"
@@ -23,7 +20,6 @@ services:
     container_name: henahax-voice-server-api
     image: henahax/voice-server-api:latest
     restart: unless-stopped
-
     environment:
       - PUID=1000
       - PGID=1000
@@ -33,10 +29,8 @@ services:
       - TEAMSPEAK_QUERY_PORT=${TEAMSPEAK_QUERY_PORT}
       - TEAMSPEAK_SERVER_ID=${TEAMSPEAK_SERVER_ID}
       - TEAMSPEAK_API_KEY=${TEAMSPEAK_API_KEY}
-
     networks:
       - traefik
-
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.voice.rule=Host(`api.henahax.net`) || Host(`voice-server-api.henahax.net`)"
@@ -50,15 +44,12 @@ services:
     container_name: henahax-gw2tools
     image: henahax/gw2tools:latest
     restart: unless-stopped
-
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Berlin
-
     networks:
       - traefik
-
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.gw2.rule=Host(`gw2.henahax.net`) || Host(`gw2.henahax.de`)"

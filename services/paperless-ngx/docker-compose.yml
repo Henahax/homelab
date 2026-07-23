@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     networks:
       - database
+
   paperless-ngx:
     container_name: paperless-ngx
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
