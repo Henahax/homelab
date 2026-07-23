@@ -16,12 +16,13 @@
 
 ## Kanäle
 
-- ### `Info & Regeln` 🔇
+- ### `ℹ️ Info & Regeln ⚖️` 🔇
 
     ```BBCode
     [B][U]Neuigkeiten:[/U][/B]
     - Server läuft auf neuer Hardware, Software und Datenbank
-    - bevorzugte Server-Adresse ist jetzt [URL=https://ts.henahax.net]ts.henahax.net[/URL] (Ändert eure Lesezeichen!)
+    - bevorzugte Server-Adresse ist jetzt [URL=https://ts.henahax.net]ts.henahax.NET[/URL]
+      - Ändert eure Lesezeichen!
     - gerne mit dem neuen TeamSpeak 6 Beta Client die neuen Features testen
     
     [B][U]TeamSpeak 6:[/U][/B]
@@ -36,8 +37,8 @@
     - [B]§2[/B]: -
 
     [B][U]Links & Kontakt:[/U][/B]
-    - [url=https://ts.henahax.net]ts.henahax.net[/url] [I]Server-Adresse & Viewer[/I]
-    - [url=https://kontakt.henahax.net]kontakt.henahax.net[/url] [I]Kontakt[/I]
+    - [url=https://ts.henahax.net]ts.henahax.net[/url] – [I]Server-Adresse & Viewer[/I]
+    - [url=https://kontakt.henahax.net]kontakt.henahax.net[/url] – [I]Kontakt[/I]
     ```
 
 - ### `[spacer]Spiele` 🚧
