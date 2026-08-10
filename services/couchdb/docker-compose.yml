@@ -1,0 +1,35 @@
+services:
+  couchdb:
+    container_name: couchdb
+    image: couchdb:3
+    restart: unless-stopped
+
+    environment:
+      - COUCHDB_USER=${USERNAME}
+      - COUCHDB_PASSWORD=${PASSWORD}
+
+    volumes:
+      - couchdb_data:/opt/couchdb/data
+
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.couchdb.rule=Host(`couchdb.henahax.net`) || Host(`couchdb.henahax.de`)"
+      - "traefik.http.routers.couchdb.entrypoints=websecure"
+      - "traefik.http.routers.couchdb.tls=true"
+      - "traefik.http.services.couchdb.loadbalancer.server.port=5984"
+
+volumes:
+  couchdb_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/data/couchdb
+      o: bind
+
+networks:
+  traefik:
+    external: true

@@ -16,45 +16,6 @@ services:
       - "traefik.http.routers.homepage.rule=Host(`henahax.net`) || Host(`www.henahax.net`) || Host(`henahax.de`) || Host(`www.henahax.de`)"
       - "traefik.http.services.homepage.loadbalancer.server.port=4321"
 
-  henahax-voice-server-api:
-    container_name: henahax-voice-server-api
-    image: henahax/voice-server-api:latest
-    restart: unless-stopped
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Berlin
-      - CACHE_TTL=${CACHE_TTL}
-      - TEAMSPEAK_BASE_URL=${TEAMSPEAK_BASE_URL}
-      - TEAMSPEAK_QUERY_PORT=${TEAMSPEAK_QUERY_PORT}
-      - TEAMSPEAK_SERVER_ID=${TEAMSPEAK_SERVER_ID}
-      - TEAMSPEAK_API_KEY=${TEAMSPEAK_API_KEY}
-    networks:
-      - traefik
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.voice.rule=Host(`api.henahax.net`) || Host(`voice-server-api.henahax.net`)"
-      - "traefik.http.routers.voice.service=voice"
-      - "traefik.http.routers.voice-homepage-api.rule=(Host(`henahax.net`) || Host(`www.henahax.net`)) && PathPrefix(`/api/teamspeak`)"
-      - "traefik.http.routers.voice-homepage-api.priority=100"
-      - "traefik.http.routers.voice-homepage-api.service=voice"
-      - "traefik.http.services.voice.loadbalancer.server.port=3000"
-
-  henahax-gw2tools:
-    container_name: henahax-gw2tools
-    image: henahax/gw2tools:latest
-    restart: unless-stopped
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Berlin
-    networks:
-      - traefik
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.gw2.rule=Host(`gw2.henahax.net`) || Host(`gw2.henahax.de`)"
-      - "traefik.http.services.gw2.loadbalancer.server.port=3000"
-
 networks:
   traefik:
     external: true
