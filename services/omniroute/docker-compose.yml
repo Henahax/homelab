@@ -3,33 +3,25 @@ services:
     container_name: omniroute
     image: diegosouzapw/omniroute:latest
     restart: unless-stopped
+    stop_grace_period: 40s
+
     environment:
-      - TZ=Europe/Berlin
-      # Optional: set your LLM/provider API key in the homelab env file
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      TZ: Europe/Berlin
+
     networks:
       - traefik
+
     labels:
       - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
       - "traefik.http.routers.omniroute.rule=Host(`omniroute.henahax.net`) || Host(`omniroute.henahax.de`)"
       - "traefik.http.routers.omniroute.entrypoints=websecure"
       - "traefik.http.routers.omniroute.tls=true"
-      - "traefik.http.services.omniroute.loadbalancer.server.port=3000"
-    # If you prefer a direct port mapping instead of Traefik, uncomment below:
-    # ports:
-    #   - "9001:3000"
+      - "traefik.http.services.omniroute.loadbalancer.server.port=20128"
 
     volumes:
-      - omniroute_data:/data
+      - /container-volumes/data/omniroute:/app/data
 
 networks:
   traefik:
     external: true
-
-volumes:
-  omniroute_data:
-    driver: local
-    driver_opts:
-      type: none
-      device: /container-volumes/data/omniroute
-      o: bind
