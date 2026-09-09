@@ -1,0 +1,46 @@
+services:
+  obsidian:
+    image: lscr.io/linuxserver/obsidian:latest
+    container_name: obsidian
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - SELKIES_USE_BROWSER_CURSORS=true|locked # cursor fix
+
+    shm_size: "1gb"
+    restart: unless-stopped
+
+    devices:
+      - /dev/dri:/dev/dri
+
+    volumes:
+      - obsidian_data:/config
+
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.obsidian.rule=Host(`obsidian.henahax.net`) || Host(`obsidian.henahax.de`) || Host(`dashboard.henahax.net`) || Host(`dashboard.henahax.de`)"
+      - "traefik.http.routers.obsidian.entrypoints=websecure"
+      - "traefik.http.routers.obsidian.tls=true"
+      - "traefik.http.routers.obsidian.middlewares=obsidian-auth"
+
+      - "traefik.http.middlewares.obsidian-auth.basicauth.users=${OBSIDIAN_AUTH_USER}:${OBSIDIAN_AUTH_PASSWORD_HASH}"
+
+      - "traefik.http.services.obsidian.loadbalancer.server.port=3000"
+
+volumes:
+  obsidian_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/data/obsidian
+      o: bind
+
+networks:
+  traefik:
+    external: true
