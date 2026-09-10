@@ -24,7 +24,7 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik"
 
-      - "traefik.http.routers.obsidian.rule=Host(`obsidian.henahax.net`) || Host(`obsidian.henahax.de`) || Host(`dashboard.henahax.net`) || Host(`dashboard.henahax.de`)"
+      - "traefik.http.routers.obsidian.rule=Host(`obsidian.henahax.net`) || Host(`obsidian.henahax.de`)"
       - "traefik.http.routers.obsidian.entrypoints=websecure"
       - "traefik.http.routers.obsidian.tls=true"
       - "traefik.http.routers.obsidian.middlewares=obsidian-auth"
