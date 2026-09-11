@@ -39,6 +39,6 @@ Web fallback: `https://github.com/henahax/agents`
 Relevant skills:
 
 - `core/caveman`
-- `tools/docker`
+- `tools/docker-compose`
 
 Use the shared skills where applicable. Keep project-specific instructions in this file.
