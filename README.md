@@ -54,15 +54,6 @@
   - photos (ZFS dataset)
 - cache
 
-## Ports
-
-|Category|Port range|
-|-|-|
-|Admin Panels|`9000-9999`|
-|Internal services||
-|Monitoring||
-|Public Web|`8080-8099`|
-
 ## Containers
 
 running on 🐋 Services-VM
