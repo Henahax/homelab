@@ -15,9 +15,9 @@ http:
         stsPreload: true
 
         permissionsPolicy: >-
-          geolocation=(),
-          microphone=(),
-          camera=()
+          geolocation=(self),
+          microphone=(self),
+          camera=(self)
 
         contentSecurityPolicy: >-
           default-src 'self';
