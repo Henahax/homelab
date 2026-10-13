@@ -38,7 +38,7 @@ Web fallback: `https://github.com/henahax/agents`
 
 Relevant skills:
 
-- `core/token-efficiency`
+- `core/concise-responses`
 - `tools/docker-compose`
 
 Use the shared skills where applicable. Keep project-specific instructions in this file.
