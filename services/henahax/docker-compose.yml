@@ -82,6 +82,41 @@ services:
       - "traefik.http.routers.treasurehunt.rule=Host(`treasurehunt.henahax.net`) || Host(`treasurehunt.henahax.de`) || Host(`schnitzeljagd.henahax.net`) || Host(`schnitzeljagd.henahax.de`)"
       - "traefik.http.services.treasurehunt.loadbalancer.server.port=3000"
 
+  henahax-amoeben-indikator:
+    container_name: henahax-amoeben-indikator
+    image: henahax/amoeben-indikator:latest
+    restart: unless-stopped
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - PORT=3000
+      - DATABASE_URL=/app/data/amoeben-indikator.db
+
+    volumes:
+      - amoeben-indikator-data:/app/data
+
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.amoebe.rule=Host(`xn--ambe-6qa.henahax.net`) || Host(`xn--ambe-6qa.henahax.de`) || Host(`amoebe.henahax.net`) || Host(`amoebe.henahax.de`) || Host(`rainer.henahax.net`) || Host(`rainer.henahax.de`)"
+      - "traefik.http.routers.amoebe.entrypoints=websecure"
+      - "traefik.http.routers.amoebe.tls=true"
+      - "traefik.http.routers.amoebe.tls.certresolver=letsencrypt"
+      - "traefik.http.services.amoebe.loadbalancer.server.port=3000"
+
+volumes:
+  amoeben-indikator-data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/data/amoeben-indikator
+      o: bind
+
 networks:
   traefik:
     external: true
