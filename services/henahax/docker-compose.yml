@@ -46,9 +46,9 @@ services:
       - "traefik.http.routers.voice-homepage-api.service=voice"
       - "traefik.http.services.voice.loadbalancer.server.port=3000"
 
-  henahax-gw2tools:
-    container_name: henahax-gw2tools
-    image: henahax/gw2tools:latest
+  henahax-gw2-tools:
+    container_name: henahax-gw2-tools
+    image: henahax/gw2-tools:latest
     restart: unless-stopped
 
     environment:
@@ -64,9 +64,9 @@ services:
       - "traefik.http.routers.gw2.rule=Host(`gw2.henahax.net`) || Host(`gw2.henahax.de`)"
       - "traefik.http.services.gw2.loadbalancer.server.port=3000"
 
-  henahax-treasurehunt:
-    container_name: henahax-treasurehunt
-    image: henahax/treasurehunt:latest
+  henahax-treasure-hunt:
+    container_name: henahax-treasure-hunt
+    image: henahax/treasure-hunt:latest
     restart: unless-stopped
 
     environment:
@@ -79,8 +79,8 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.treasurehunt.rule=Host(`treasurehunt.henahax.net`) || Host(`treasurehunt.henahax.de`) || Host(`schnitzeljagd.henahax.net`) || Host(`schnitzeljagd.henahax.de`)"
-      - "traefik.http.services.treasurehunt.loadbalancer.server.port=3000"
+      - "traefik.http.routers.treasure-hunt.rule=Host(`treasure-hunt.henahax.net`) || Host(`treasure-hunt.henahax.de`) || Host(`treasure.henahax.net`) || Host(`treasure.henahax.de`) || Host(`schnitzeljagd.henahax.net`) || Host(`schnitzeljagd.henahax.de`) || Host(`schatz.henahax.net`) || Host(`schatz.henahax.de`)"
+      - "traefik.http.services.treasure-hunt.loadbalancer.server.port=3000"
 
   henahax-amoeben-indikator:
     container_name: henahax-amoeben-indikator
