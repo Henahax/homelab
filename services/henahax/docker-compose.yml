@@ -109,7 +109,38 @@ services:
       - "traefik.http.routers.amoebe.tls.certresolver=letsencrypt"
       - "traefik.http.services.amoebe.loadbalancer.server.port=3000"
 
+  henahax-lunch:
+    container_name: henahax-lunch
+    image: henahax/lunch:latest
+    restart: unless-stopped
+
+    environment:
+      - TZ=Europe/Berlin
+      - DATABASE_URL=/app/data/lunch.db
+      - CRON_SECRET=${CRON_SECRET}
+
+    volumes:
+      - lunch-data:/app/data
+
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.lunch.rule=Host(`lunch.henahax.net`) || Host(`lunch.henahax.de`) || Host(`mittag.henahax.net`) || Host(`mittag.henahax.de`)"
+      - "traefik.http.routers.lunch.entrypoints=websecure"
+      - "traefik.http.routers.lunch.tls=true"
+      - "traefik.http.routers.lunch.tls.certresolver=letsencrypt"
+      - "traefik.http.services.lunch.loadbalancer.server.port=3000"
+
 volumes:
+  lunch-data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /container-volumes/data/lunch
+      o: bind
   amoeben-indikator-data:
     driver: local
     driver_opts:
