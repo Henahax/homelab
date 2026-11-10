@@ -95,20 +95,30 @@
     - `Musik`
 
     ```BBCode
-    [B][U]Musikbot Befehle:[/U][/B]
-    [I]Als private Nachricht an den Bot oder im Kanal.[/I]
+    [B][U]🎵 Musikbot – Befehle[/U][/B]
 
-    [B]!qyt <URL>[/B]
-    [I]Setzt Lied in Warteschlange - "Queue Youtube"[/I]
+    [I]Die Befehle können sowohl im Channel als auch per privater Nachricht an den Bot gesendet werden.[/I]
 
-    [B]!next[/B]
-    [I]Springt zum nächsten Lied in der Warteschlange[/I]
+    [B]!play <URL>[/B]
+    [I]Fügt einen Titel zur Warteschlange hinzu.[/I]
 
-    [B]!volume <0-100>[/B]
-    [I]Setzt die Lautstärke[/I]
+    [B]Unterstützte Plattformen:[/B]
+    Direkt: YouTube, SoundCloud, Bandcamp, Mixcloud, Vimeo, Twitch
+    Indirekt: Spotify, Apple Music, Deezer, Tidal
+
+    [B]!skip[/B] / [B]!next[/B]
+    [I]Überspringt den aktuellen Titel.[/I]
+
+    [B]!vol <0-100>[/B]
+    [I]Legt die Wiedergabelautstärke fest.[/I]
 
     [B]!stop[/B]
-    [I]Beendet Wiedergabe[/I]
+    [I]Stoppt die Wiedergabe.[/I]
+
+    [B]!queue[/B]
+    [I]Zeigt die aktuelle Warteschlange an.[/I]
+
+    [B][URL=https://github.com/KaanBahaSever/panda#chat-commands]📖 Alle verfügbaren Befehle[/URL][/B]
     ```
 
   - `Abwesend` 🔇
