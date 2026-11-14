@@ -1,5 +1,11 @@
 # TeamSpeak Server
 
+## Kompatibilität der Kanalbeschreibungen
+
+- Der Server läuft mit TeamSpeak 6; TeamSpeak-3- und TeamSpeak-6-Clients können sich verbinden.
+- TeamSpeak 3 verwendet BBCode, TeamSpeak 6 BBCode und Markdown für Kanalbeschreibungen.
+- Kanalbeschreibungen sollen sowohl in TeamSpeak-3- als auch in TeamSpeak-6-Clients gut aussehen.
+
 ## Name
 
 - ### `henahax TeamSpeak`
@@ -7,7 +13,11 @@
 ## Willkommensnachricht
 
 - ```BBCode
-  Willkommen auf dem [b]neuen[/b] [URL=https://ts.henahax.net]ts.henahax.net[/URL] Server
+  Willkommen auf dem [b]neuen[/b] [URL=https://ts.henahax.net]ts.henahax.net[/URL] Server.
+
+  Bitte ändert euer Lesezeichen von
+  henahax[color=red].de[/color] zu henahax[color=cyan].net[/color]
+  Es sollte langfristig zuverlässiger funktionieren.
   ```
 
 ## Hostnachricht (im Chat)
@@ -92,36 +102,36 @@
     ```BBCode
     ```
 
-    - `Musik`
+  - `Musik`
 
     ```BBCode
     [B][U]🎵 Musikbot – Befehle[/U][/B]
+    - Befehle als private Nachricht
+    - Befehle als Nachricht im Kanal
 
-    [I]Die Befehle können sowohl im Channel als auch per privater Nachricht an den Bot gesendet werden.[/I]
-
-    [B]!play <URL>[/B]
-    [I]Fügt einen Titel zur Warteschlange hinzu.[/I]
-
-    [B]Unterstützte Plattformen:[/B]
-    Direkt: YouTube, SoundCloud, Bandcamp, Mixcloud, Vimeo, Twitch
-    Indirekt: Spotify, Apple Music, Deezer, Tidal
+    [B]!play <URL/Begriff>[/B]
+    - fügt Titel zur Warteschlange hinzu
+    - Suchbegriffe: [I]"!play scooter döp döp"[/I] sucht danach auf YouTube und fügt [I]"Scooter - Maria"[/I] hinzu
+    - Plattformen für Links (direkt): YouTube, SoundCloud, Bandcamp, Mixcloud, Vimeo, Twitch
+    - Plattformen für Links (indirekt, sucht automatisch gleiches Lied auf Youtube): Spotify, Apple Music, Deezer, Tidal
 
     [B]!skip[/B] / [B]!next[/B]
-    [I]Überspringt den aktuellen Titel.[/I]
+    - überspringt aktuellen Titel
 
     [B]!vol <0-100>[/B]
-    [I]Legt die Wiedergabelautstärke fest.[/I]
+    - legt Wiedergabelautstärke fest
 
     [B]!stop[/B]
-    [I]Stoppt die Wiedergabe.[/I]
+    - stoppt Wiedergabe
 
     [B]!queue[/B]
-    [I]Zeigt die aktuelle Warteschlange an.[/I]
+    - zeigt aktuelle Warteschlange an
 
-    [B][URL=https://github.com/KaanBahaSever/panda#chat-commands]📖 Alle verfügbaren Befehle[/URL][/B]
+    [B]!help[/B]
+    - Kommandoliste
     ```
 
-  - `Abwesend` 🔇
+- `Abwesend` 🔇
 
     ```BBCode
     ```
