@@ -18,32 +18,6 @@ services:
     networks:
       - teamspeak
 
-  sinusbot:
-    container_name: sinusbot
-    image: ghcr.io/gamer92000/sinusbot-docker:latest
-    restart: unless-stopped
-    depends_on:
-      - teamspeak
-    environment:
-      - TZ=Europe/Berlin
-      - UID=1000
-      - GID=1000
-      - USER_UID=1000
-      - USER_GID=1000
-    labels:
-      - "traefik.enable=true"
-      - "traefik.docker.network=traefik"
-      - "traefik.http.routers.sinusbot.rule=Host(`sinusbot.henahax.net`) || Host(`sinusbot.henahax.de`)"
-      - "traefik.http.routers.sinusbot.entrypoints=websecure"
-      - "traefik.http.routers.sinusbot.tls=true"
-      - "traefik.http.services.sinusbot.loadbalancer.server.port=8087"
-    volumes:
-      - sinusbot-data:/opt/sinusbot/data
-      - sinusbot-scripts:/opt/sinusbot/scripts
-    networks:
-      - traefik
-      - teamspeak
-
   panda:
     container_name: panda
     build: https://github.com/KaanBahaSever/panda.git#main
@@ -55,10 +29,10 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik"
-      - "traefik.http.routers.panda.rule=Host(`panda.henahax.net`) || Host(`panda.henahax.de`)"
-      - "traefik.http.routers.panda.entrypoints=websecure"
-      - "traefik.http.routers.panda.tls=true"
-      - "traefik.http.services.panda.loadbalancer.server.port=8080"
+      - "traefik.http.routers.musikbot.rule=Host(`musikbot.henahax.net`) || Host(`musikbot.henahax.de`) || Host(`musicbot.henahax.net`) || Host(`musicbot.henahax.de`)"
+      - "traefik.http.routers.musikbot.entrypoints=websecure"
+      - "traefik.http.routers.musikbot.tls=true"
+      - "traefik.http.services.musikbot.loadbalancer.server.port=8080"
     volumes:
       - panda:/data
     networks:
@@ -71,20 +45,6 @@ volumes:
     driver_opts:
       type: none
       device: /container-volumes/data/teamspeak
-      o: bind
-
-  sinusbot-data:
-    driver: local
-    driver_opts:
-      type: none
-      device: /container-volumes/data/sinusbot/data
-      o: bind
-
-  sinusbot-scripts:
-    driver: local
-    driver_opts:
-      type: none
-      device: /container-volumes/data/sinusbot/scripts
       o: bind
 
   panda:

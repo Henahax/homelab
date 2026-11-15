@@ -105,7 +105,12 @@
   - `Musik`
 
     ```BBCode
-    [B][U]🎵 Musikbot – Befehle[/U][/B]
+    [B][U]Musikbot Webinterface[/U][/B]
+    - [url=https://musikbot.henahax.net/]Musikbot-Webinterface[/url]
+    - Benutzername: musikbot
+    - Passwort: musikbot
+
+    [B][U]Musikbot Befehle in TeamSpeak[/U][/B]
     - Befehle als private Nachricht
     - Befehle als Nachricht im Kanal
 
