@@ -14,7 +14,3 @@ For Docker Compose tasks:
 - Remove published ports unless direct access is required.
 - Use `${VARIABLE}` for passwords, tokens, and other secrets; values are set later in Portainer.
 - Do not run Docker or Compose commands. Compose files are pasted into Portainer manually.
-
-## Shared guidance
-
-If an `agents` folder is located next to this project folder, read its `AGENTS.md` file. Otherwise, use the [shared guidance online](https://github.com/Henahax/agents/blob/main/AGENTS.md). Resolve relative paths in the shared guidance from the `agents` folder. Load only task-relevant rules and skills; do not maintain a per-project skills list.
